@@ -26,7 +26,6 @@
 - Dokumentation:
   - Entwicklerdokumentation?
       -Codedokumentation (Im Code)
-      
   - Kundendokumentation?
       -Nicht nötig
   - Meeting-Protokoll-Dokumentation?
