@@ -8,27 +8,55 @@
 
 - Verwendetes Vorgehensmodell.
 - Welche Arten von Meetings finden wöchentlich statt?
-- Geplanter Ablauf der Meetings.  
+    Daily SCRUM
+- Geplanter Ablauf der Meetings.
+    Einmal die Woche Meeting in Raumm D317 Dienstags um 10:45. 
+    Besprechung der Themen
+    Retrospektive  
 - Werkzeuge für Projektorganisation? Kanban-Board?
+    GitHub -> Projekttool
+    Discord
+
 - Wie läuft ein typischer Sprint ab?
+    2 Wochen -Abschluss der User-Stories aus dem Sprint.
 - Wie sieht hier ein Codereview aus?
+    -Adrian (WIP)
 - Wie und womit wird die Teamkommunikation durchgeführt?
+    Discord
 - Dokumentation:
   - Entwicklerdokumentation?
+      -Codedokumentation (Im Code)
+      
   - Kundendokumentation?
+      -Nicht nötig
   - Meeting-Protokoll-Dokumentation?
+      -Janik (Dokumentiert hier.)
 - Was ist der Produktlieferzeitplan? (x-Mal-wöchentliche Auslieferungen / Continuous I/D/D)
+    - Tests Continous
+    - CI
+    - Alle 2 Wochen Release
+    (Kontainerisierung Docker)
 - Wie wird der Projektfortschritt gemessen und was passiert, wenn zeitlich verschoben werden muss?
+    - Kanban Board (Mehrere (Geteilt))
 - Wer setzt Erwartungen und Ziele fest und wie werden diese dokumentiert?
+    - Jeder für seinen Teil für sich.
+    - Allgemeine Einteilung zusammen.
 - Was passiert, wenn jemand Verbesserungsmöglichkeiten identifiziert?
+    - Direkte Kommunikation -> Discord
 - Einschränkungen, Betriebsbedingungen, Faktoren und Risiken, die die Entwicklung beeinflussen können.
+    - Krankheiten, Terminveränderung, Zeitstress aufgrund anderer Abhängigkeiten, unterschiedliches Know-How
 
 ### Team
 
 - Werte und menschliche Umgangsformen
+  - Nett sein :)...
 - Wie werden Meinungsverschiedenheiten gelöst?
+  -Einfach ansprechen
 - Wer legt Prioritäten und Zeitpläne fest?
+  -Janik setzt allgemeine Meilensteine vor
 - Was passiert, wenn ein Teammitglied ein Ziel nicht einhält bzw. die Erwartungen nicht erfüllt?
+  -Direkte Kommunikation, Ansprechen, Ansprechen, Ansprechen, Eskalation 
+- Falls jemand es zeitlich nicht schafft, inhaltlich nicht seinen Ansprüchen gerecht wird, es direkt anspricht und sich Hilfe sucht. (Mentoring Tätigkeit der unterstützenden Person.)
 
 ### Technik
 
@@ -39,16 +67,27 @@
   - Statische Codeanalyse
   - ...
 - Aufteilung in Repositories gemäß Systemarchitektur? Monorepo?
+  - Doku Repo
+  - Landing Page Repo
+  - Microservice- Repos
 - Versionskontrolle? Git-Workflow?
+  -GitHub-Workflow
 - Wie werden Änderungen intgriert und ausgeliefert? CI/CD? 
+  - Für die einzelnen Repositories CI
+  - Weitere Gedanken nächste Woche.(12.04.2022)
 - Wie wird die Infrastruktur spezifiziert? Containerisierung?
+  - Docker-File
 - Implementierung
   - Entwicklungsumgebung.
+    - Per Person
   - Betriebssysteme.
   - Programmiersprachen.
   - Frameworks.
+    -https://www.keycloak.org/
+    (Auth)
   - Logging.
 - Technologieauswahl: Messaging zum Beispiel mit [RabbitMQ](https://www.rabbitmq.com/) und [AsyncAPI](https://www.asyncapi.com/)
+
 
 ## Rollen und Verantwortlichkeiten
 
