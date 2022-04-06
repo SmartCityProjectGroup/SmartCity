@@ -20,7 +20,19 @@
 - Wie läuft ein typischer Sprint ab?
     2 Wochen -Abschluss der User-Stories aus dem Sprint.
 - Wie sieht hier ein Codereview aus?
-    -Adrian (WIP)
+    - Codereview immer zusammen mit einem Pullrequest(PR) in den Repos für die Microservices
+    - Für neue Features:
+        - PR-Titel = User Story ID und Name 
+        - PR-Beschreibung = Anmerkungen für die Implementierung / für das Review
+            - keine Wiederholung von bereits dokumentierten Erklärungen nötig
+    - Für Bugfixes:
+        - PR-Titel = aussagekräftiger Name
+        - PR-Beschreibung = Kurzbeschreibung des Bugs(was macht der und warum ist das so?), zur Reproduktion des Bugs, und zur Beseitigung / Lösung
+    - Für sonstige Änderungen:
+        - PR-Titel = aussagekräftiger Name
+        - PR-Beschreibung = Kurzbeschreibung des vorherigen Zustands und der Änderung (was wurde konkret geändert und wie hat sich das Verhalten der Software dadurch geändert)
+    - geprüft wird nach Qualitätsanforderungen (siehe Punkt 1 in Technik)
+    - Dokumentation und Änderungsanfragen erfolgen im PR im Repo
 - Wie und womit wird die Teamkommunikation durchgeführt?
     Discord
 - Dokumentation:
@@ -61,16 +73,24 @@
 
 - Interne Anforderungen an Softwarequalitätsmerkmale 
   - Erweiterbarkeit
+  - Lesbarkeit
   - Dokumentation
-  - automatische und manuelle Tests
-  - Statische Codeanalyse
-  - ...
+    - so viel Doku, dass Außenstehende den Code grob verstehen können
+  - automatische (und manuelle) Tests
+    - Tests für Front- und Backend
+    - optimalerweise gibt es Tests für jede Funktion
+    - Minimum sind Tests für alle wichtigen Elemente (Events können verschickt und empfangen werden, oder die Hauptfeatures)
+  - "normale" Codeconventions
+    - keine Magic Numbers
+    - kurze, prägnante Funktionen mit einer Aufgabe
+    - nicht alles in einer Datei
+    - ...
 - Aufteilung in Repositories gemäß Systemarchitektur? Monorepo?
-  - Doku Repo
+  - (dieses) Hauptrepo für Dokumentation
   - Landing Page Repo
-  - Microservice- Repos
+  - ein Repo pro Microservice
 - Versionskontrolle? Git-Workflow?
-  -GitHub-Workflow
+  -GitHub-Workflow -> https://github.com/kamilkisiela/release-based-workflow/issues/1
 - Wie werden Änderungen intgriert und ausgeliefert? CI/CD? 
   - Für die einzelnen Repositories CI
   - Weitere Gedanken nächste Woche.(12.04.2022)
