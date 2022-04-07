@@ -7,18 +7,38 @@
 ### Organisation
 
 - Verwendetes Vorgehensmodell.
+  - Scrum
 - Welche Arten von Meetings finden wöchentlich statt?
-    Daily SCRUM
+  - Daily SCRUM
 - Geplanter Ablauf der Meetings.
-    Einmal die Woche Meeting in Raumm D317 Dienstags um 10:45. 
-    Besprechung der Themen
-    Retrospektive  
+  - Wöchentliche Meetings in Raumm D317 Dienstags um 10:45. 
+  - Jede erste Woche, Dailyscrum -> Wie ist der Fortschritt?/Was behindert mich?/Schaffe ich alles?
+  - Alle zwei Wochen, Retrospektive/Sprintabschluss/Sprintplanning
 - Werkzeuge für Projektorganisation? Kanban-Board?
-    GitHub -> Projekttool
-    Discord
-
+    - Github als Versionskontrolle
+    - Github-Projekttool zur Organisation
+      - Allgemeines Kanbanboard im Hauptrepo, zeigt allgemeinen Fortschritt aller Services
+      - Detailliertes Kanbanboard in den Unterrepos, zeigt detaillierten Fortschritt der einzelnen Services
+    - Discord zur Kommunikation im Team
 - Wie läuft ein typischer Sprint ab?
-    2 Wochen -Abschluss der User-Stories aus dem Sprint.
+    - Sprintplanning:
+      - Jedes Teammitglied wählt Userstories für den Sprint aus
+      - Umfang sollte für alle ungefähr gleich sein
+      - Ziele sollten ebenfalls aufeinander abgestimmt sein
+    - Dailyscrum:
+      - Erstes Meeting nach dem Sprintplanning
+      - Jeder stellt kurz vor, was er bisher geschafft hat und was noch fehlt
+      - Gab es Probleme oder Störungen?
+      - Ist das Erreichen des Sprintziels noch realistisch?
+    - Sprintretrospektive:
+      - Zweites Meeting nach dem Sprintplanning
+      - Jeder stellt seine Ergebnisse aus dem Sprint vor
+      - Teammitglieder bewerten, ob Sprintziel erreicht wurde (Definition of Done)
+    - Sprintabschluss:
+      - Zweites Meeting nach dem Sprintplanning
+      - Jeder geht auf positive/negative Einflüsse ein
+      - Was sollte man beim nächsten Sprint anders machen, was sollte so bleiben?
+      - Repeat 
 - Wie sieht hier ein Codereview aus?
     - Codereview immer zusammen mit einem Pullrequest(PR) in den Repos für die Microservices
     - Für neue Features:
@@ -34,21 +54,22 @@
     - geprüft wird nach Qualitätsanforderungen (siehe Punkt 1 in Technik)
     - Dokumentation und Änderungsanfragen erfolgen im PR im Repo
 - Wie und womit wird die Teamkommunikation durchgeführt?
-    Discord
+  - Discord, zur Kommunikation zwischen den Teammitgliedern
 - Dokumentation:
   - Entwicklerdokumentation?
-      -Codedokumentation (Im Code)
+      - Codedokumentation (Im Code)
   - Kundendokumentation?
-      -Nicht nötig
+      - Nicht nötig
   - Meeting-Protokoll-Dokumentation?
-      -Janik (Dokumentiert hier.)
+      - Janik (Dokumentiert im Bereich "Protokolle")
 - Was ist der Produktlieferzeitplan? (x-Mal-wöchentliche Auslieferungen / Continuous I/D/D)
     - Tests Continous
     - CI
     - Alle 2 Wochen Release
     (Kontainerisierung Docker)
 - Wie wird der Projektfortschritt gemessen und was passiert, wenn zeitlich verschoben werden muss?
-    - Kanban Board (Mehrere (Geteilt))
+    - Ein allgemeines Kanbanboard 
+    - Detaillierte Kanbanboards für die einzelnen Services
 - Wer setzt Erwartungen und Ziele fest und wie werden diese dokumentiert?
     - Jeder für seinen Teil für sich.
     - Allgemeine Einteilung zusammen.
@@ -62,12 +83,17 @@
 - Werte und menschliche Umgangsformen
   - Nett sein :)...
 - Wie werden Meinungsverschiedenheiten gelöst?
-  -Einfach ansprechen
+  - Einfach ansprechen
 - Wer legt Prioritäten und Zeitpläne fest?
-  -Janik setzt allgemeine Meilensteine vor
+  - Janik setzt allgemeine Meilensteine vor
 - Was passiert, wenn ein Teammitglied ein Ziel nicht einhält bzw. die Erwartungen nicht erfüllt?
-  -Direkte Kommunikation, Ansprechen, Ansprechen, Ansprechen, Eskalation 
-- Falls jemand es zeitlich nicht schafft, inhaltlich nicht seinen Ansprüchen gerecht wird, es direkt anspricht und sich Hilfe sucht. (Mentoring Tätigkeit der unterstützenden Person.)
+  - Falls ein Mitglied merkt, dass er/sie gesetzte Ziele nicht erreichen kann:
+    - direkt ansprechen
+    - nach Hilfe fragen (Wichtig ist, dass der Helfende als Mentor agiert und die Arbeit nicht komplett übernimmt)
+  - Direkte Kommunikation ist das Ziel
+  - Teammitglied wird 3x auf die Umstände angesprochen
+  - Sollte keine Lösung gefunden werden, wird "eskaliert"
+  - Falls jemand es zeitlich nicht schafft, inhaltlich nicht seinen Ansprüchen gerecht wird, es direkt anspricht und sich Hilfe sucht. (Mentoring Tätigkeit der unterstützenden Person.)
 
 ### Technik
 
@@ -134,6 +160,8 @@ Zuästzlich zum Kanban-Board hier Meilensteine beschreiben.
 
 **Feststehende Termine:**
 
+* **Meeting 1 - Ideenfindung** KW 15 (12.04)
+* 
 * **Abgabe Spezifikation:** KW 16 (18.4.-20.4.)
 * **Erster Prototyp (MVP):** KW 20 (16.5.-18.5.) / KW 21 (23.5.-25.5.)
 * **Softwareprojektabgabe:** Ende Juni 2022 / Anfang Juli 2022
