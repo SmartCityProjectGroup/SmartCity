@@ -6,7 +6,7 @@
 
 **Meeting 1 - Kennenlernen** 05.04.2022
 
-Rollenverteilung (siehe Projektorganisation), erste Ideensammlung.
+Rollenverteilung (siehe [**Projektorganisation**](_einleitung/projektorganisation)), erste Ideensammlung.
 
 Ansatz (Microservices):
 
