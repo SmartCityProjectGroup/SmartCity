@@ -160,7 +160,7 @@ Zuästzlich zum Kanban-Board hier Meilensteine beschreiben.
 
 **Feststehende Termine:**
 
-* **Meeting 1 - Ideenfindung** KW 15 (12.04)
+* **Meeting 2 - Ideenfindung** KW 15 (12.04)
 * 
 * **Abgabe Spezifikation:** KW 16 (18.4.-20.4.)
 * **Erster Prototyp (MVP):** KW 20 (16.5.-18.5.) / KW 21 (23.5.-25.5.)
