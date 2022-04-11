@@ -7,3 +7,6 @@
 [submodule "microservices/SC_Microservice3"]
 	path = microservices/SC_Microservice3
 	url = https://github.com/MerlinChiodo/SC_Microservice3.git
+[submodule "microservices/SC_Microservice4"]
+	path = microservices/SC_Microservice4
+	url = https://github.com/MerlinChiodo/SC_Microservice4.git
