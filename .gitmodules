@@ -1,0 +1,3 @@
+[submodule "microservices/SC_Microservice1"]
+	path = microservices/SC_Microservice1
+	url = https://github.com/MerlinChiodo/SC_Microservice1.git
