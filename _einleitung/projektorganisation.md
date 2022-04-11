@@ -142,15 +142,15 @@
 | Janik Geist | Product Owner | Produktvision, Integrations-Microservice, Softwareproduktqualität |
 | Paul Nagel | DevOps Engineer | Github-Repos, Docker, CI/CD, Dokumentation, Support, Infrastrukturqualität | 
 | Adrian Koß | Software Architekt | Technische Leitung/Vision, Code Reviews, Mentoring, Technikevaluation, Softwarequalität |
-| Tristan Kechlo | Software Engineer | Microservice [Parkplatz](parkplatz/index) |
-| Celine Dridiger | Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Maximilian Hertzke | Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Marius Braun | Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Vivien Traue | Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Jonathan Hauter| Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Tom Luca Horstmann| Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Mario Blomenkamp | Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
-| Jannis Thiel | Software Engineer | Microservice [Krankenhaus](krankenhaus/index) |
+| Tristan Kechlo | Software Engineer | Microservice 1 [Parkplatz](parkplatz/index) | 
+| Celine Dridiger | Software Engineer | Microservice 2 [Krankenhaus](krankenhaus/index) |
+| Maximilian Hertzke | Software Engineer | Microservice 3 [Krankenhaus](krankenhaus/index) |
+| Marius Braun | Software Engineer | Microservice 4 [Krankenhaus](krankenhaus/index) |
+| Vivien Traue | Software Engineer | Microservice 5 [Krankenhaus](krankenhaus/index) |
+| Jonathan Hauter| Software Engineer | Microservice 6 (Auth) [Krankenhaus](krankenhaus/index) |
+| Tom Luca Horstmann| Software Engineer | Microservice 7 [Krankenhaus](krankenhaus/index) |
+| Mario Blomenkamp | Software Engineer | Microservice 8 [Krankenhaus](krankenhaus/index) |
+| Jannis Thiel | Software Engineer | Microservice 9 [Krankenhaus](krankenhaus/index) |
 
 Hinweis: Ein Microservice für die Authentifizierung/Autorisierung könnte sinnvoll sein.
 
