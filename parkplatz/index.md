@@ -30,8 +30,8 @@
 **Schablone für User Stories**
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Wer | Was | Warum | Wann akzeptiert |
+|:--------| :----- | :------ | :-------- |
+| Wer     | Was | Warum | Wann akzeptiert |
 
 **Beispiel 1**
 
