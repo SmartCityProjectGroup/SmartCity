@@ -1,8 +1,12 @@
-# Parkplatz
+# Landingpage
 
-**Autor:** Tom Mustermann
+**Autor:** Jannik Geist, Adrian Koß
 
-![](media/parkplatz.jpg)
+
+<!--
+Here goes the path to the image if there is one
+![]()
+-->
 
 
 ## Überblick
@@ -29,21 +33,21 @@
 
 **Schablone für User Stories**
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-|:--------| :----- | :------ | :-------- |
-| Wer     | Was | Warum | Wann akzeptiert |
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz**   |
+|:--------|:---------------|:------------|:----------------|
+| Wer     | Was            | Warum       | Wann akzeptiert |
 
 **Beispiel 1**
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
+| **Als**  | **möchte ich**                                | **so dass**     | **Akzeptanz**         |
+|:---------|:----------------------------------------------|:----------------|:----------------------|
 | Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
 
 **Beispiel**
 
-| **Name**| **In meiner Rolle als**...|   ...**möchte ich**...   | ..., **so dass**... | **Erfüllt, wenn**... | **Priorität**   |
-|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| Lernen  |Benutzer| bei Fehleingabe die Lösung angezeigt bekommen|ich lernen kann| Lösung wird angezeigt | Muss |
+| **Name** | **In meiner Rolle als**... | ...**möchte ich**...                          | ..., **so dass**... | **Erfüllt, wenn**...  | **Priorität** |
+|:---------|:--------------------------:|:----------------------------------------------|:--------------------|:----------------------|:--------------|
+| Lernen   |          Benutzer          | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann     | Lösung wird angezeigt | Muss          |
 
 ## Graphische Benutzerschnittstelle
 
@@ -80,67 +84,24 @@
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
 
-**Beispiel:**
-
 ### URL
 
 http://smart.city/microservices/customer
 
-### Commands
-
+### API
 **Synchronous**
 
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createCustomer() | int id | int id |
-| deleteOrder() | int id | int id |
-
-**Asynchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createContract() | int id | int id |
-| changeContract() | int id | - |
-
-### Events
-
-**Customer event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Customer Authorized | int id |
-| Customer Deleted | int id |
-
-**Contract event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Contract Received | int id |
-| Contract Deleted | int id |
-
-### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
+| **Name**      | **Parameter** | **Resultat**                                                                                                           |
+|:--------------|:--------------|:-----------------------------------------------------------------------------------------------------------------------|
+| getServices() |               | Liste von allen Microservices:<br/>[<br/>{<br/>service_name: String,<br/>about_us: String,<br/>url: String<br/>}<br/>] |
 
 ### Dependencies
 
-#### RPC
+#### Event
 
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Authorization Service | authenticateUser() |
-| Hospital Service | blockDate() |
-
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Cinema channel | CancelFilmCreatedEvent |
-| Customer reply channel | CreateCustomerEvent |
-
+| **Service**   | **Payload**                                                                                                                                                                                                    |
+|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| Alle Services | {<br/>event_id: 100,<br/>event_name:"Updated About US<br/>service_name: <i>service</i><br/>date: <i>date</i><br/>about_us:"Neuer About Us Text" (optional)<br/>picture: <i>URL to picture</i> (optional)<br/>} |
 
 ## Technische Umsetzung
 
@@ -152,44 +113,33 @@ http://smart.city/microservices/customer
 Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
 
 * Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+  * Web-Schicht: JavaScript Node.js 
+  * Logik-Schicht: JavaScript Express.js
+  * Persistenz-Schicht: MySQL Datenbank
 
 * Client
-  * View-Schicht
-  * Logik-Schicht
-  * Kommunikation-Schicht
+  * View-Schicht: HTML, CSS
+  * Logik-Schicht: JavaScript + Vue.js
+  * Kommunikation-Schicht: Axios
 
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
-
-
 
 ### Entwurf
 
 - Detaillierte UML-Diagramme für relevante Softwarebausteine
 
-### Fehlerbehandlung 
-
-* Mögliche Fehler / Exceptions auflisten
-* Fehlercodes / IDs sind hilfreich
-* Nicht nur Fehler technischer Art ("Datenbankserver nicht erreichbar") definieren, sondern auch fachliche Fehler wie "Kunde nicht gefunden", "Nachricht wurde bereits gelöscht" o.ä. sind relevant. 
-
 ### Validierung
 
-* Relevante (Integrations)-Testfälle, die aus den Use Cases abgeleitet werden können
-* Testfälle für 
-  - Datenmodell
-  - API
-  - User Interface
-* Fokussieren Sie mehr auf Integrationstestfälle als auf Unittests
-* Es bietet sich an, die IDs der Use Cases / User Stories mit den Testfällen zu verbinden,
-  so dass erkennbar ist, ob Sie alle Use Cases getestet haben.
+Test, dass die einkommenden Events zum Update der About Us Seite korrekt ausgeführt wird
+
+Test, dass alle Daten über die Services korrekt an den Client übertragen werden
+
+Test, dass alle Links zu den richtigen Microservices führen
 
 ### Verwendete Technologien
 
 - Verwendete Technologien (Programmiersprachen, Frameworks, etc.)
 
-* Frontend
-* Backend
-* Datenbank
+* HTMl, CSS, JavaScript, Vue.js, Axios
+* JavaScript, Node.js, Express.js
+* MySQL
