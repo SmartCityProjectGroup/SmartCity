@@ -1,4 +1,4 @@
-# Parkplatz
+# Landingpage
 
 **Autor:** Jannik Geist, Adrian Koß
 
