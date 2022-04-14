@@ -7,6 +7,6 @@
 - ***Microservices***
 
 * [**Parkplatz**](parkplatz/index)
-* [**Krankenhaus**](krankenhaus/index)
+* [**SmartAuth**](Auth/index)
 * [**Krankenhaus**](krankenhaus/index)
 * [**Krankenhaus**](krankenhaus/index)
