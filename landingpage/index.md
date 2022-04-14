@@ -1,6 +1,6 @@
 # Landingpage
 
-**Autor:** Jannik Geist, Adrian Koß
+**Autor:** Janik Geist, Adrian Koß
 
 
 <!--
@@ -11,52 +11,84 @@ Here goes the path to the image if there is one
 
 ## Überblick
 
-- Textuelle Beschreibung der Anwendungsdomäne
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+Die Landingpage dient als Portal zu allen vorhandenen Microservices. Übersichtliche Kacheln mit </br>
+einem kurzen Informationstext sowie einem Bild, ermöglichen dem User effizient den gesuchten </br>
+Microservice aufzurufen. Außerdem kann sich der User hier einloggen und so </br>
+auch die Mitgliedsfunktionen der anderen Services nutzen.
 
+- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
 ## Funktionale Anforderungen
 
 * Definition der Akteure
-* Use-Case Diagramme
+  * User - Person die, die Website als Portal zu anderen Services nutzt
+  * Service - Microservice der sich auf der Landingpage registrieren will
 * Strukturierung der Diagramme in funktionale Gruppen
 * Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
 * Begriffe konsistent in der Spezifikation verwenden  
 * Begriffe im Glossar darstellen
 
+**Use Cases**
+
+![](media/use_case.png) <!-- Usecase Digramm -->
+
 ## Anforderungen im Detail
 
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
-- Sicherheit: Misuse-Stories formulieren
+**Servicenavigation - User Stories**
 
-**Schablone für User Stories**
+| **ID** | **Als** | **möchte ich**                                                | **so dass**                           | **Akzeptanz**                                       | **Priorität** |
+|:-------|:--------|:--------------------------------------------------------------|:--------------------------------------|:----------------------------------------------------|:--------------|
+| 1      | User    | beim besuchen der Seite alle Microservices angezeigt bekommen | ich weiter navigieren kann            | Alle Microservices werden  angezeigt                | muss          |
+| 2      | User    | einen Microservices auswählen können                          | ich dort hin navigieren kann          | Auswahl eines Microservices führt zur Weiterleitung | muss          |
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz**   |
-|:--------|:---------------|:------------|:----------------|
-| Wer     | Was            | Warum       | Wann akzeptiert |
+**Anmeldung - User Stories**
 
-**Beispiel 1**
+| **ID** | **Als** | **möchte ich**                                                | **so dass**                           | **Akzeptanz**                                       | **Priorität** |
+|:-------|:--------|:--------------------------------------------------------------|:--------------------------------------|:----------------------------------------------------|:--------------|
+| 3      | User    | mich anmelden können                                          | ich erweiterte Funktionen nutzen kann | Userlogin ist erfolgreich                           | muss          |
+| 4      | User    | mich ausloggen können                                         | ich nicht mehr eingeloggt bin         | Ausloggen ist erfolgreich                           | muss          |
 
-| **Als**  | **möchte ich**                                | **so dass**     | **Akzeptanz**         |
-|:---------|:----------------------------------------------|:----------------|:----------------------|
-| Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
+**Service Registrierung - User Stories**
 
-**Beispiel**
+| **ID** | **Als** | **möchte ich**                                                | **so dass**                           | **Akzeptanz**                                       | **Priorität** |
+|:-------|:--------|:--------------------------------------------------------------|:--------------------------------------|:----------------------------------------------------|:--------------|
+| 5      | Service | mich registrieren können                                      | ich angezeigt werde                   | Registrierung führt zur Anzeige                     | sollte        |
+| 6      | Service | meine Anmeldung revidieren                                    | ich nicht mehr angezeigt werde        | Service wird nicht mehr angezeigt                   | sollte        |
+| 7      | Service | mein About Us verändern                                       | Informationen über mich aktuell sind  | Neue Informationen werden korrekt angezeigt         | sollte        |
+| 8      | Service | mein Bild verändern                                           | mein Bild aktuell ist                 | Neues Bild wird angezeigt                           | sollte        |
 
-| **Name** | **In meiner Rolle als**... | ...**möchte ich**...                          | ..., **so dass**... | **Erfüllt, wenn**...  | **Priorität** |
-|:---------|:--------------------------:|:----------------------------------------------|:--------------------|:----------------------|:--------------|
-| Lernen   |          Benutzer          | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann     | Lösung wird angezeigt | Muss          |
+**Missuse-Stories**
+
+| **ID** | **Als** | **könnte ich**            | **so dass**                  | **Fehler**                                          | **Bewertung** |
+|:-------|:--------|:--------------------------|:-----------------------------|:----------------------------------------------------|:--------------|
+| 9      | Service | mich doppelt registrieren | ich zwei mal angezeigt werde | Service wird mehr als einmal gespeichert            | schlecht      |
 
 ## Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
-- Mockups für unterschiedliche Akteure
+- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm (Nötig?!)
+ 
+###Seitenlayout, wenn der User nicht eingeloggt ist
+**User Story 1, 2 und 3**
 
+![](media/UI_MockUp_OFFLINE.png)
+
+Ist der User nicht eingeloggt, so kann er dennoch alle Services sehen und auch weiterhin navigieren. 
+Möchte sich der User einloggen, so kann er dies durch das Formular in der oberen rechten Ecke tun, er wird dann 
+an die weiter unten gezeigte Seite weiter geleitet. 
+Die grünen Flächen werden Bilder darstellen, welche sowohl die SmartCity, als auch die einzelnen Services repräsentieren. 
+In den weißen Flächen kann dann der "About Us"-Text dargestellt werden. Ist eins von beiden, oder auch beides, nicht vorhanden 
+wird auf standard Bilder/Texte zurückgegriffen.
+
+###Seitenlayout, wenn der User eingeloggt ist
+**User Story 4**
+
+![](media/UI_MockUp_ONLINE.png)
+
+Ein eingeloggter User findet sich auf dieser Seite wieder. Er kann, wie auch 
+schon vor dem Einloggen, weiter zu anderen Services navigieren. Mit einem Klick auf Benutzer 
+wird der User zum Auth-Service weiter geleitet und kann so seinen Account verwalten. 
+Da es nur einen Akteur, den User, geben soll, welcher mit der Landingpage interagiert, sind 
+mehr MockUps nicht sinnvoll.
 
 ## Datenmodell 
 
