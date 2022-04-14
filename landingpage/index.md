@@ -67,7 +67,7 @@ auch die Mitgliedsfunktionen der anderen Services nutzen.
 
 - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm (Nötig?!)
  
-###Seitenlayout, wenn der User nicht eingeloggt ist
+### Seitenlayout, wenn der User nicht eingeloggt ist
 
 **User Story 1, 2 und 3**
 
@@ -80,7 +80,7 @@ Die grünen Flächen werden Bilder darstellen, welche sowohl die SmartCity, als 
 In den weißen Flächen kann dann der "About Us"-Text dargestellt werden. Ist eins von beiden, oder auch beides, nicht vorhanden 
 wird auf standard Bilder/Texte zurückgegriffen.
 
-###Seitenlayout, wenn der User eingeloggt ist
+### Seitenlayout, wenn der User eingeloggt ist
 
 **User Story 4**
 
