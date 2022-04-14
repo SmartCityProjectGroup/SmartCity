@@ -8,5 +8,7 @@
 
 * [**Parkplatz**](parkplatz/index)
 * [**SmartAuth**](Auth/index)
+* [**Landingpage**](landingpage/index)
+* [**Bürgerbüro**](buergerbuero/index)
 * [**Krankenhaus**](krankenhaus/index)
 * [**Krankenhaus**](krankenhaus/index)

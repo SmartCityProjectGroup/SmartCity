@@ -109,6 +109,13 @@ Bus (Celine):
   - Anfrage an Bürgerbüro für Daten über Personen
   - Kitaausflüge organisieren
 
+Tierheim (Vivien):
+- Technik -> Rust für Backend, Frontend unentschieden
+- Hundesteuer beim Finanzamt melden
+- Sachkundenachweis für gefährliche Hunde beim Bürgerbüro anfragen
+- Schwarzes Brett gefundene/einsame Tiere melden
+- Fitnessstudio engagierte Menschen finden
+ 
 Newsletter (Marius):
   - Schwarzes Brett (Anmeldung über Events)
   - Schwarzes Brett für Bürger
