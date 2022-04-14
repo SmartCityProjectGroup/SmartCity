@@ -10,5 +10,5 @@
 * [**SmartAuth**](Auth/index)
 * [**Landingpage**](landingpage/index)
 * [**Bürgerbüro**](buergerbuero/index)
-* [**Krankenhaus**](krankenhaus/index)
+* [**Finanzamt**](finanzamt/index)
 * [**Krankenhaus**](krankenhaus/index)

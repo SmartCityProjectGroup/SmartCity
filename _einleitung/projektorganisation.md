@@ -149,7 +149,7 @@
 | Vivien Traue | Software Engineer | Microservice 5 [Krankenhaus](krankenhaus/index) |
 | Jonathan Hauter| Software Engineer | Microservice 6 (Auth) [Krankenhaus](krankenhaus/index) |
 | Tom Luca Horstmann| Software Engineer | Microservice 7 [Krankenhaus](krankenhaus/index) |
-| Mario Blomenkamp | Software Engineer | Microservice 8 [Krankenhaus](krankenhaus/index) |
+| Mario Blomenkamp | Software Engineer | Microservice 8 [Finanzamt](finanzamt/index) |
 | Jannis Thiel | Software Engineer | Microservice 9 [Krankenhaus](krankenhaus/index) |
 
 Hinweis: Ein Microservice für die Authentifizierung/Autorisierung könnte sinnvoll sein.
