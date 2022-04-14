@@ -7,6 +7,6 @@
 - ***Microservices***
 
 * [**Landingpage**](landingpage/index)
-* [**Krankenhaus**](krankenhaus/index)
+* [**Bürgerbüro**](buergerbuero/index)
 * [**Krankenhaus**](krankenhaus/index)
 * [**Krankenhaus**](krankenhaus/index)
