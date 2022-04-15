@@ -94,11 +94,11 @@ mehr MockUps nicht sinnvoll.
 
 ## Datenmodell
 
-![](./media/Landingpage ER Diagramm.jpg "ER Diagramm")
+![](media/Landingpage ER Diagramm.jpg "ER Diagramm")
 
 ## Abläufe
 
-![](./media/Landingpage Aktivitätsdiagramm.jpg "Aktivitätsdiagramm Diagramm")
+![](media/Landingpage Aktivitätsdiagramm.jpg "Aktivitätsdiagramm Diagramm")
 
 
 ## Schnittstellen
