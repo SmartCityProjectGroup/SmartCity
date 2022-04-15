@@ -92,11 +92,9 @@ wird der User zum Auth-Service weiter geleitet und kann so seinen Account verwal
 Da es nur einen Akteur, den User, geben soll, welcher mit der Landingpage interagiert, sind 
 mehr MockUps nicht sinnvoll.
 
-## Datenmodell 
+## Datenmodell
 
-- Begriffe im Glossar darstellen
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+![](./media/Landingpage ER Diagramm.jpg "ER Diagramm")
 
 ## Abläufe
 
