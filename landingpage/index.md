@@ -98,23 +98,10 @@ mehr MockUps nicht sinnvoll.
 
 ## Abläufe
 
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm mit Swimlanes sind in der Regel hilfreich 
-  für die Darstellung der Interaktion von Akteuren der Use Cases / User Stories
-- Abläufe der Kommunikation von Rechnerknoten (z.B. Client/Server)
-  in einem Sequenz- oder Aktivitätsdiagramm darstellen
-- Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
-  Softwaresystems hilfreich sind. 
+![](./media/Landingpage Aktivitätsdiagramm.jpg "Aktivitätsdiagramm Diagramm")
 
 
 ## Schnittstellen
-
-- Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
-- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
-- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
-- Aufteilen in Commands, Events, Queries
-* Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
 
 ### URL
 
