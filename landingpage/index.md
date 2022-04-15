@@ -143,9 +143,7 @@ Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar.
 
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
 
-### Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
+![](media/architektur_landing_page.jpg)
 
 ### Validierung
 
