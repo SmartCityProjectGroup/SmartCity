@@ -150,126 +150,126 @@ rectangle Administration {
 
 - Ich möchte personenbezogene Services von SmartCity nutzen können
 
-#### Aus der Perspektive eines internen Microservices
 
-### Legende
-```mermaid
-    flowchart TB
-        classDef opt fill:#9bb9eb
-        classDef mvp fill:#f5a6ae
+### Technische Komponenten 
 
-        subgraph Priorität höchste zuerst
-        Mindestanforderung:::mvp --> Endprodukt --> Optional:::opt
+- Programmiersprache für alle Softwareelemente: [Rust](https://www.rust-lang.org/)
+- Frontend
 
-        end
+    -  [Yew](https://github.com/yewstack/yew)
 
-```
+    - *WebGL*
 
----
-### Gesamtsystem
-```mermaid
-    flowchart LR
-        classDef opt fill:#9bb9eb
-        classDef mvp fill:#f5a6ae
+- Backend
 
-        subgraph Backend
-            auth[Authentifizierung]:::mvp
-            permissions[Rechteverwaltung]
-            users[(Nutzer)]:::mvp
-            clients[(Clients)]
-            clientRegist[Clientregistrierung]:::opt
-            sessions[(Sessions)]:::mvp
-            register[Registrierung]:::mvp
-            
-            sessions --> clients
-            sessions --> users
-        
-            auth --> users
-            auth --> sessions
-            register --> users
-        
-            permissions --> sessions
+    - [Actix-Web](https://actix.rs/)
 
-            clientRegist --> clients
-            clientRegist --> auth
-        end
+    - [sqlx](https://github.com/launchbadge/sqlx)
 
-        subgraph Interface
-            Auth:::mvp  --> auth
-            Access --> permissions
-            Validate --> permissions
-        end
+- Datenbank
 
-        subgraph Frontend 
-            pageRegister[Nutzerregistrierungsseite]:::mvp
-            pageLogin[Loginseite]:::mvp 
-            pageUser[Nutzereinstellungen]
-            pageClients[Clienteinstellungen]:::opt
-
-            pageLogin --> auth
-            pageRegister --> register
-            pageUser --> permissions
-            pageClients --> clientRegist
-        end
-```
----
+    - MySQL
 
 ### Elemente
 
 ### Abläufe
 
-
-#### Registrierung 
-
-```mermaid
-sequenceDiagram
-    participant Nutzer
-    participant SmartAuth
-```
-
 #### Autorisierung über Fremdservice
 ?> Adoptiert von [rfc6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
 
-```mermaid
-sequenceDiagram
-    participant App as Service
-    participant Resourcenbesitzer 
-    participant SmartAuth
-    participant Service as Resourcenservice
+```plantuml
+@startditaa
+     +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+@enduml
+```
+Quelle: https://datatracker.ietf.org/doc/html/rfc6749#section-1.2
+
+```plantuml
+@startuml
+    Title Vereinfachte Darstellung des Auth Protokolls
     alt Geringes Vertrauen
-        App->>SmartAuth: Autorisierungsanfrage (A)
-        Note over Nutzer,SmartAuth: Weiterleitung
-        SmartAuth->>Nutzer: Anmeldeseite (B)
-        Nutzer->>SmartAuth: Nutzername/Passwort (C)
+        Client->SmartAuth: Autorisierungsanfrage (A)
+        note left: Weiterleitung
+        SmartAuth->Nutzer: Anmeldeseite (B)
+        Nutzer->SmartAuth: Nutzername/Passwort (C)
     else Hohes Vertrauen
-        App->>SmartAuth: Autorisierungsanfrage mit Identität(A2)
+        Client->SmartAuth: Autorisierungsanfrage mit Identität(A2)
     end
     alt Autorisierung erfolgreich
-        SmartAuth->>App: Autorisierungsschlüssel (D)
-        App->>SmartAuth: Autorisierungsschlüssel (E)
+        SmartAuth->Client: Autorisierungsschlüssel (D)
+        Client->SmartAuth: Autorisierungsschlüssel (E)
         alt Autorisierungsschlüssel gültig
-            SmartAuth->>App: Zugangsschlüssel (F)
+            SmartAuth->Client: Zugangsschlüssel (F)
 
-            App ->>Service: Call + Zugangsschlüssel (G)
-            Service ->>SmartAuth: Zugangsschlüssel (H)
+            Client ->Service: Call + Zugangsschlüssel (G)
+            Service ->SmartAuth: Zugangsschlüssel (H)
             
             alt Zugangsschlüssel gültig
-                SmartAuth ->> Service: Gültigkeitsinformationen (I)
+                SmartAuth -> Service: Gültigkeitsinformationen (I)
             else Schlüssel ungültig
-                SmartAuth ->> Service: Fehlermeldung (I2)
+                SmartAuth -> Service: Fehlermeldung (I2)
             end
 
             opt
-                Service ->> App: Resource (J)
+                Service -> Client: Resource (J)
             end
             else Autorisierung fehlgeschlagen
-                SmartAuth->>App: Fehlermeldung (D2)
+                SmartAuth->Client: Fehlermeldung (D2)
         else 
-            SmartAuth->>App: Fehlermeldung (E2)
+            SmartAuth->Client: Fehlermeldung (E2)
         end
     end 
+@enduml
 ```
 
+- (A): 
+Der Client sendet eine Autorisierungsanfrage an den SmartAuth Server. Je nach Vertrauensstufe, kann die Anfrage auch bereits 
+die Anmeldedaten des Resourcenbesitzers enthalten (A2).
+
+- (B): SmartAuth präsentiert dem Nutzer eine Anmeldeseite. 
+
+- (C): Der Nutzer gibt seine Anmeldedaten über die Anmeldeseite an SmartAuth weiter
+
+- (D): Falls die Autorisierung erfolgreich ist, gibt SmartAuth einen einmaligen, kurzlebigen Autoriserungsschlüssel (<= 10 min) an den Client weiter. Der Autoriserungsschlüssel selbst reicht nicht, um Resourcen anzufordern.
+
+- (E): Der Client sendet den Autorisierungsschlüssel an SmartAuth
+
+- (F): Falls der Autorisierungsschlüssel gültig ist, gibt SmartAuth einen langlebigen Zugangsschlüssel weiter.
+
+- (G): Der Client möchte auf eine geschüzte Resource zugreifen und sendet mit der Anfrage den Zugangsschlüssel
+
+- (H): Der Service fragt eine Überprüfung des Zugangsschlüssels an
+
+- (I): Falls der Zugangsschlüssel gültig ist, erhält der Service Informationen über die assozierten Rechte des Zugangsschlüssels
+
+- (I2): Falls der Zugangsschlüssel ungültig ist, wird eine Fehlermeldung zurückgegeben 
+
+?> Beachte: Da sich die internen Microservices eine Domain teilen, muss nicht jeder dieser Services einen Autorisierungs- und Zugangschlüssel anfordern. Mit der Anmeldung auf der Landingpage erhält der Client einen Zuganggschlüssel in Form eines Cookies. 
+
+### Daten
+!> Nicht 100% final. Es werden jedoch höchstens nur Ergänzungen stattfinden.
+
+```plantuml
+@startuml
+
+@enduml
+```
 #### Begriffe
 
 ---
