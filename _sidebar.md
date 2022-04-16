@@ -12,4 +12,5 @@
 * [**Bürgerbüro**](buergerbuero/index)
 * [**Finanzamt**](finanzamt/index)
 * [**Amt für Integration**](amt_fuer_integration/index)
+* [**Fitnessstudio**](fitnessstudio/index)
 * [**Krankenhaus**](krankenhaus/index)
