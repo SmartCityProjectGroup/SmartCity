@@ -5,8 +5,18 @@
 
 ## Überblick
 
-- Textuelle Beschreibung der Anwendungsdomäne
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+`Textuelle Beschreibung der Anwendungsdomäne`  
+Das Bürgerbüro dient als erste Anlaufstelle wenn ein Bürger sich in der Stadt melden will.  
+Dies kann der Bürger in der SmartCity auch online durchführen.
+Nach Abschluss des Meldevorgangs erhält der Bürger ein Email mit einem Registrierungscode.
+Mit diesem Code kann der Bürger sich dann einen Account in der SmartCity anlegen. 
+Der Account wird für die Nutzung anderer Microservices der SmartCity bebötigt.  
+  
+Desweiteren kann bei dem Bürgerbüro eine Namens-/Adressänderung beantragt werden.
+Diese Änderungen werden den anderen Microservices über Events mitgeteilt. Auch andere Statusänderungen, 
+wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, werden an die anderen Microservices veteilt.  
+  
+`Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)`
 
 
 ## Funktionale Anforderungen
@@ -53,10 +63,10 @@
 
 
 ## Datenmodell 
-
-- Begriffe im Glossar darstellen
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+### ER-Modell
+![ER-Modell](media/er_modell.png)
+### Physisches Datenmodell
+![PDM](media/pdm.png)
 
 ## Abläufe
 
@@ -72,72 +82,42 @@
 
 ## Schnittstellen
 
-- Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
-- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
-- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
-- Aufteilen in Commands, Events, Queries
-* Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
+?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
-**Beispiel:**
 
-### URL
+### API
+!> Noch in Arbeit, Syntax der Resultate können sich noch ändern
 
-http://smart.city/microservices/customer
+**Basis - URL:** http://smart.city/microservices/buergerbuero/api
 
-### Commands
-
-**Synchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createCustomer() | int id | int id |
-| deleteOrder() | int id | int id |
-
-**Asynchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createContract() | int id | int id |
-| changeContract() | int id | - |
+| **Pfad** | **Methode** | **Parameter** | **Resultat** |
+| :------ | :----- | :------ | :------ |
+| /info/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
+| /licenses/{ID} | GET | ID: eindeutige Bürger-ID | Auskunft über alle Lizenzen eines einzelnen Bürger<a href="/buergerbuero/media/api_licenses_info.png" title="Klick mich!">![Bürger](media/api_licenses_info.png)</a> |
+| /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="/buergerbuero/media/api_children.png" title="Klick mich!">![Kinder](media/api_children.png) |
 
 ### Events
+!> Noch in Arbeit, Event-IDs und Event-Payloads können sich noch ändern
 
-**Customer event channel**
+| **Name** | **Beschreibung** | **Payload** |
+| :------ | :----- | :----- |  
+| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="/buergerbuero/media/event_about_us.png" title="Klick mich!">![About us](media/event_about_us.png)</a> |
+| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="/buergerbuero/media/event_citizen_created.png" title="Klick mich!">![Bürger erstellt](media/event_citizen_created.png)</a> |
+| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="/buergerbuero/media/event_marriage.png" title="Klick mich!">![Eheschließung](media/event_marriage.png)</a> |
+| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="/buergerbuero/media/event_name_change.png" title="Klick mich!">![Namensänderung](media/event_name_change.png)</a> |
+| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="/buergerbuero/media/event_address_change.png" title="Klick mich!">![Adressänderung](media/event_address_change.png)</a> |
+| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="/buergerbuero/media/event_citizen_death.png" title="Klick mich!">![Todesmeldung](media/event_citizen_death.png)</a> |
+| Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="/buergerbuero/media/event_license_issued.png" title="Klick mich!">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
+| Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="/buergerbuero/media/event_license_removed.png" title="Klick mich!">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
 
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Customer Authorized | int id |
-| Customer Deleted | int id |
 
-**Contract event channel**
+### Event-Subscriptions
+Events, von anderen Microservices, die das Bürgerbüro auswertet/verarbeitet
 
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Contract Received | int id |
-| Contract Deleted | int id |
-
-### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
-
-### Dependencies
-
-#### RPC
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Authorization Service | authenticateUser() |
-| Hospital Service | blockDate() |
-
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Cinema channel | CancelFilmCreatedEvent |
-| Customer reply channel | CreateCustomerEvent |
+| **Service** | **Event** | **Funktion** |
+| :------ | :----- | :----- | 
+| Amt für Integration |  |  |
+| Amt für Integration |  |  |
 
 
 ## Technische Umsetzung
@@ -186,8 +166,6 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
 
 ### Verwendete Technologien
 
-- Verwendete Technologien (Programmiersprachen, Frameworks, etc.)
-
-* Frontend
-* Backend
-* Datenbank
+* Frontend: React
+* Backend: JavaScript (Node.js/Express.js)
+* Datenbank: MySQL
