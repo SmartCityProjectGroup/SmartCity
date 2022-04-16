@@ -21,37 +21,39 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 ## Funktionale Anforderungen
 
-* Definition der Akteure
-* Use-Case Diagramme
-* Strukturierung der Diagramme in funktionale Gruppen
-* Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
-* Begriffe konsistent in der Spezifikation verwenden  
-* Begriffe im Glossar darstellen
+### Akteure
+**Bürger:** eine Person die sich in dieser Stadt melden will  
+**User:** ein Bürger der sich in der SmartCity registriert hat  
+**Angestellter:** ein Mitarbeiter der Stadt  
+
+### Use-Case Diagramme
+![Funktionale Gruppen](media/use_case_funktionale_gruppen.png)
+![Use-Cases](media/use_case_combined.png)
 
 ## Anforderungen im Detail
 
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
-- Sicherheit: Misuse-Stories formulieren
+**User-Stories: Personendetails verwalten**
 
-**Schablone für User Stories**
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Prioität** |
+| :------ | :----- | :------ | :-------- | :------ | :------ |
+| 1 | Bürger | möchte ich mich im Bürgeramt melden können | ich in dieser Stadt gemeldet bin | Bürger wird gemeldet | Muss |
+| 2 | User | eine Namensänderung beantragen | mein Name im Melderegister korrekt ist | Antrag wird eingereicht | Muss |
+| 3 | User | einen Umzug melden | meine Adresse im Melderegister korrekt ist | Antrag wird eingereicht | Muss |
+| 4 | User | eine Eheschließung beantragen | mit meinem Partner verheiratet bin | Heirat wird beantragt | Muss |
+| 5 | User | eine Scheidung beantragen | nicht mehr mit meinem Partner verheiratet bin | Scheidung wird beantragt | Muss |
+| 6 | Angestellter | ausstehende Anträge sehen | ich diese annehmen/ablehnen kann | Anträge werden angezeigt | Muss |
+| 7 | Angestellter | einen ausstehenden Antrag annehmen/ablehnen | dieser bearbeitet wurde | Antrag wird angenommen/abgelehnt | Muss |
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Wer | Was | Warum | Wann akzeptiert |
+**User-Stories: Genehmigungen einreichen**
 
-**Beispiel 1**
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Prioität** |
+| :------ | :----- | :------ | :-------- | :------ | :------ |
+| 8 | User | Genehmigungen beantragen | diese eingereicht wird | Antrag wird eingereicht | Muss |
+| 9 | User | meine Genehmigungen sehen | ich weiß welche Genehmigungen angenommen wurden | Genehmigungen werden angezeigt | Muss |
+| 10 | Angestellter | ausstehende Genehmigungen sehen | ich diese annehmen/ablehnen kann | Genehmigungen werden angezeigt | Muss |
+| 11 | Angestellter | eine ausstehende Genehmigung annehmen/ablehnen | diese bearbeitet wurde | Genehmigung wird angenommen/abgelehnt | Muss |
 
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Benutzer | bei Fehleingabe die Lösung angezeigt bekommen | ich lernen kann | Lösung wird angezeigt |
 
-**Beispiel**
-
-| **Name**| **In meiner Rolle als**...|   ...**möchte ich**...   | ..., **so dass**... | **Erfüllt, wenn**... | **Priorität**   |
-|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| Lernen  |Benutzer| bei Fehleingabe die Lösung angezeigt bekommen|ich lernen kann| Lösung wird angezeigt | Muss |
 
 ## Graphische Benutzerschnittstelle
 
@@ -81,11 +83,9 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 
 ## Schnittstellen
-
+### API
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
-
-### API
 !> Noch in Arbeit, Syntax der Resultate können sich noch ändern
 
 **Basis - URL:** http://smart.city/microservices/buergerbuero/api
@@ -97,6 +97,8 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 | /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!">![Kinder](media/api_children.png) |
 
 ### Events
+?> Klicke auf die Bilder um sie in voller Größe zu sehen
+
 !> Noch in Arbeit, Event-IDs und Event-Payloads können sich noch ändern
 
 | **Name** | **Beschreibung** | **Payload** |
