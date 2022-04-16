@@ -71,7 +71,9 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 
 ### Use-Case Diagramme
 
-![Use Case Diagramme](media/usecase_all.png)
+![Use Case Diagramme](media/usecase_1.png)
+
+![Use Case Diagramme](media/usecase_2.png)
 
 
 
@@ -180,9 +182,10 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
   Softwaresystems hilfreich sind. 
 --->
 
-| A | B |
-|---|---|
-|![Aktivitätsdiagramm Kitaplatz beantragen](media/activity_kitaplatzbeantragen.png) | ![Aktivitätsdiagramm Busticket beantragen](media/activity_busticket.png)|
+
+![Aktivitätsdiagramm Kitaplatz beantragen](media/activity_kitaplatzbeantragen.png)
+
+![Aktivitätsdiagramm Busticket beantragen](media/activity_busticket.png)
 
 
 ## Schnittstellen
