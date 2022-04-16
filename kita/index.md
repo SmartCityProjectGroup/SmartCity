@@ -51,6 +51,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 ### Konzeptionelles Analyseklassendiagramm
 
 <img src="media/analyseklassendiagramm.png" alt="Analyseklassendiagramm"/>
+![Analyseklassendiagramm](media/analyseklassendiagramm.png)
 
 
 ## Funktionale Anforderungen
