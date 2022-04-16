@@ -92,23 +92,23 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 | **Pfad** | **Methode** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ | :------ |
-| /info/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
-| /licenses/{ID} | GET | ID: eindeutige Bürger-ID | Auskunft über alle Lizenzen eines einzelnen Bürger<a href="/buergerbuero/media/api_licenses_info.png" title="Klick mich!">![Bürger](media/api_licenses_info.png)</a> |
-| /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="/buergerbuero/media/api_children.png" title="Klick mich!">![Kinder](media/api_children.png) |
+| /info/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
+| /licenses/{ID} | GET | ID: eindeutige Bürger-ID | Auskunft über alle Lizenzen eines einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_licenses_info.png" title="Klick mich!">![Bürger](media/api_licenses_info.png)</a> |
+| /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!">![Kinder](media/api_children.png) |
 
 ### Events
 !> Noch in Arbeit, Event-IDs und Event-Payloads können sich noch ändern
 
 | **Name** | **Beschreibung** | **Payload** |
 | :------ | :----- | :----- |  
-| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="/buergerbuero/media/event_about_us.png" title="Klick mich!">![About us](media/event_about_us.png)</a> |
-| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="/buergerbuero/media/event_citizen_created.png" title="Klick mich!">![Bürger erstellt](media/event_citizen_created.png)</a> |
-| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="/buergerbuero/media/event_marriage.png" title="Klick mich!">![Eheschließung](media/event_marriage.png)</a> |
-| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="/buergerbuero/media/event_name_change.png" title="Klick mich!">![Namensänderung](media/event_name_change.png)</a> |
-| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="/buergerbuero/media/event_address_change.png" title="Klick mich!">![Adressänderung](media/event_address_change.png)</a> |
-| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="/buergerbuero/media/event_citizen_death.png" title="Klick mich!">![Todesmeldung](media/event_citizen_death.png)</a> |
-| Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="/buergerbuero/media/event_license_issued.png" title="Klick mich!">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
-| Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="/buergerbuero/media/event_license_removed.png" title="Klick mich!">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
+| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!">![About us](media/event_about_us.png)</a> |
+| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!">![Bürger erstellt](media/event_citizen_created.png)</a> |
+| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!">![Eheschließung](media/event_marriage.png)</a> |
+| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!">![Namensänderung](media/event_name_change.png)</a> |
+| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!">![Adressänderung](media/event_address_change.png)</a> |
+| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!">![Todesmeldung](media/event_citizen_death.png)</a> |
+| Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_issued.png" title="Klick mich!">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
+| Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_removed.png" title="Klick mich!">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
 
 
 ### Event-Subscriptions
