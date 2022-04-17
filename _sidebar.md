@@ -13,3 +13,4 @@
 * [**Amt für Integration**](amt_fuer_integration/index)
 * [**Fitnessstudio**](fitnessstudio/index)
 * [**Kita**](kita/index)
+* [**Stadtbus**](stadtbus/index)
