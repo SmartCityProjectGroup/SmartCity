@@ -280,11 +280,11 @@ Clientschlüssel | Individueller, öffentlicher Schlüssel der einen registriert
 Clientsecret | Individueller, geheimer Schlüssel/Passwort der benötigt wird, um einen Client zu authentifizieren. |
 Autorisierungsschlüssel | Individueller, gehimer sehr kurzlebiger Schlüssel der dafür verwendet werden kann |      
 Zugangsschlüssel |Individueller, geheimer, kurzlebiger Schlüssel der einem Client Zugriff auf geschüzte Resourcen erlaubt
+Auffrichungsschlüssel | Individueller, geheimer, langlebiger Schlüssel mit dem ein Client neue Zugangsschlüssel anfordern kann.
 
 !> Clientsecret bleibt einfachhaltshalber eventuell vollständig unbenutzt. Falls unimplementiert ist "none" immer valide
 
 
-#### JSON
 ?> Siehe auch: https://tools.ietf.org/id/draft-richer-oauth-json-request-00.html
 und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
 
@@ -307,16 +307,24 @@ und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
 
 |    Bezeichnung     |                                                                         Beschreibung                                                                           |   Typ   |
 |--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| response type      | Muss 'code'sein                                                                                                                                                | String  |
-| client id          | Die ClientID                                                                                                                                                   | String  |
-| redirect_uri       | In JSON Version ggf unbenutzt.  Ansonsten: URL zu der der Nutzer weitergeleitet wird, wenn Login beendet wurde (Sowohl bei Fehlschlag als auch bei Erfolg)     |  String |
-| permissions        |  Rechte die angefordert werden sollen                                                                                                                          |  String |
+| response_type      | Muss 'code'sein                                                                                                                                                | String  |
+| client_id          | Die ClientID                                                                                                                                                   | String  |
+| redirect_uri       | In JSON Version ggf anders benutzt.  Ansonsten: URL zu der der Nutzer weitergeleitet wird, wenn Login beendet wurde (Sowohl bei Fehlschlag als auch bei Erfolg)| String |
+| permissions        |  Rechte die angefordert werden sollen                                                                                                                          | String |
 | state              |  Kann alles sein, wird an den Aufrufenden ohne Änderung zurückgeschickt                                                                                        |  -      |
 
 !> Im OAuth2 Spec wird 'permissions' als 'scope' bezeichnet.  
 
 !> Die JSON Version des "authorization_request" ist sehr unsicher und nicht kompatibel mit OAuth Spec, aufgrund von Vereinfachung Teil unserer API.
 
+Als Link: 
+
+```
+    https://authorization-server.com/auth?response_type=code
+    &client_id=client_id
+    &redirect_uri=...
+    ...
+```
 ---
 
 ```plantuml 
@@ -353,6 +361,16 @@ und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
 | grant_type | Muss "authorization_code" sein | String
 | code | Der Autorisierungsschlüssel | String
 | redirect_uri | Muss die selbe URL sein wie im authorization_request | String
+| client_id | Die Client ID | String
+| client_secret | Das Client Passwort | String  
+
+!> Client Secret bleibt an dieser Stelle möglicherweise unbenutzt
+
+Als Link: 
+
+```
+    {redirect_uri}?grant_typpe=authorization_code?code=autorisierungsschlüssel&state=...
+```
 
 
 ```plantuml 
@@ -362,6 +380,7 @@ und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
     {
             "access_token": "",
             "expires_in": "",
+            "refresh_token" :  "", 
             "RESERVED": ""
     }
 }
@@ -371,9 +390,31 @@ und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
 | --- | --- | --- |
 | access_token | Der Zugangsschlüssel | String
 | expires_in | Zeit in Sekunden bis der Zugangsschlüssel ungültig wird| Number 
-| RESERVED |  Wird eventuell in der Zukunft benutzt| String
+| refresh_token | Auffrischungsschlüssel | String
+| RESERVED |  Wird eventuell in der Zukunft benutzt | String
 
-### API
-| Endpunkt | Methode | Parameter | Resultat
-| --- | --- | --- | --- | 
-/auth |POST|   
+```plantuml 
+@startjson
+{
+    "access_token_request" : 
+    {
+        "grant_type" : "refresh_token",
+        "refresh_token" :  "",
+        "client_id" : "",
+        "client_secret" : ""
+    }
+}
+```
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| grant_type | Muss "refresh_token" sein | String
+| refresh_token | Der Auffrischungsschlüssel | String
+| client_id | Die Client ID | String
+| client_secret | Das Client Passwort | String  
+
+!> Später eventuell über [HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+### REST API
+| Endpunkt | Methode | Content-Type | Parameter | Resultat | Anmerkung
+| --- | --- | --- | --- | --- | --- | 
+/auth{authorization_request} |POST|application/x-www-form-urlencoded|authorization_request| Bei Erfolg: 301, Weiterleitung mit authorization_response, sonst 301 mit error response | - |
+/token{access_token_request} |POST|application/x-www-form-urlencoded|access_token_request| Bei Erfolg: 200 OK mit access_token_response, sonst error response | - | 
