@@ -78,55 +78,55 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 -->
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
-<div style="display:grid;grid-template-columns: repeat(2, 1fr);grid-template-rows: repeat(4, 1fr);text-align:center;grid-column-gap: 5px;grid-row-gap: 5px;">
-  <div>
-    Hauptseite des Bürgerbüros<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png">
-    </a>
-  </div>
-  <div>
-    Neuen Bürger im Melderegister eintragen<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png">
-    </a>
-  </div>
-  <div>
-    Übersicht über eigene Anträge<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png">
-    </a>
-  </div>
-  <div>
-    Übersicht über eigene Genehmigungen<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png">
-    </a>
-  </div>
-  <div>
-    Antrag auf Namensänderung<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png">
-    </a>
-  </div>
-  <div>
-    Umzug melden<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png">
-    </a>
-  </div>
-  <div>
-    Eheschließung beantragen<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png">
-    </a>
-  </div>
-  <div>
-    Scheidung beantragen<br>
-    <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png" title="Klick mich!" target="_blank" rel="noopener">
-      <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png">
-    </a>
-  </div>
+<div style="display:grid;grid-template-columns: repeat(4, 1fr);grid-template-rows: repeat(6, min-content);text-align:center;grid-column-gap: 5px;grid-row-gap: 5px;">
+  <div>Hauptseite des Bürgerbüros</div>
+  <div>Neuen Bürger im Melderegister eintragen</div>
+  <div>Übersicht über eigene Anträge</div>
+  <div>Übersicht über eigene Genehmigungen</div>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png">
+  </a>
+  <div>Antrag auf Namensänderung</div>
+  <div>Umzug melden</div>
+  <div>Eheschließung beantragen</div>
+  <div>Scheidung beantragen</div>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png">
+  </a>
+  <div>Angestellter:<br>offene Anträge</div>
+  <div>Angestellter:<br>Antragsdetails</div>
+  <div>Angestellter:<br>offene Gemehmigungen</div>
+  <div>Angestellter:<br>Genehmigungsdetails</div>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png">
+  </a>
 </div>
 
 
