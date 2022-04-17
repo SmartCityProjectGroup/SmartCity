@@ -1,4 +1,4 @@
-# Krankenhaus
+# Forum
 
 **Autor:** Marius Braun
 
@@ -18,7 +18,7 @@
 * Begriffe konsistent in der Spezifikation verwenden  
 * Begriffe im Glossar darstellen
 
-
+[![Use Case- Diagramme](media/Use Case- Diagramme.PNG)]
 
 ## Anforderungen im Detail
 
@@ -122,6 +122,7 @@
 - Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
   Softwaresystems hilfreich sind. 
 
+[![Aktivitätsdiagramm](media/Aktivitätsdiagramm.PNG)]
 
 ## Schnittstellen
 
