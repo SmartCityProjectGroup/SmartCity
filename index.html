@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+<script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  
+  
 <head>
   <meta charset="UTF-8">
   <title>Softwareprojekt</title>
@@ -100,6 +103,9 @@
 <body>
   <div id="app"></div>
   <script>
+    var num = 0;
+    mermaid.initialize({ startOnLoad: false });
+
     window.$docsify = {
       //  relativePath: true,
       //  loadNavbar: true,
@@ -113,12 +119,30 @@
       themeColor: '#1096EE',
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md',
+      
       },
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            if (lang === "mermaid") {
+              return (
+                '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              );
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      },
+      plantuml: {
+        skin: 'default',
+        renderAsObject: false
+      },
+
     }
   </script>
 
   <script src="_assets/js/docsify.min.js"></script>
-
+  <script src="//unpkg.com/docsify-puml/dist/docsify-puml.min.js"></script>
 </body>
 
 </html>
