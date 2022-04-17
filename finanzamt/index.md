@@ -5,18 +5,32 @@
 
 ## Überblick
 
-- Textuelle Beschreibung der Anwendungsdomäne
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+In der heutigen Zeit wird es immer wichtiger, Bürokratie abzubauen und Vorgänge zu optimieren.
+Nur so kann auf lange Zeit nachhaltig Geld eingespart und alle Bereiche der Gesellschaft ökologischer gestaltet werden.
+Gerade in der Finanzwelt gehört das Internet schon lange zu den wichtigsten Begegnungsräumen.
 
+Das soll auch mit dem smarten Finanzamt der Zukunft möglich sein.
+Anträge sollten komplett online vom Abschicken bis zum Abschließen begleitet werden können und sollten dem Bürger umfassend erklärt werden.
+Es sollte sich mit anderen Institutionen vernetzt werden, um z. B. automatisch die Steuerklasse ändern zu können, ohne eine erneute Meldung nötig zu machen.
+
+Zudem sollte nach wie vor die Möglichkeit bestehen Termine für ein Gespräch zu vereinbaren und es sollte kein Account-Zwang bestehen, um niemanden den Zugang zu verwehren.
 
 ## Funktionale Anforderungen
 
-* Definition der Akteure
-* Use-Case Diagramme
-* Strukturierung der Diagramme in funktionale Gruppen
-* Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
-* Begriffe konsistent in der Spezifikation verwenden  
-* Begriffe im Glossar darstellen
+  - Bürger
+    - können alle gewohnten Vorgänge online durchführen
+    - kriegen schnellen Überblick über Aktuelles
+  - Arbeitgeber
+    - können Mitarbeiter anmelden
+    - können Steuern automatisiert abführen
+  - Mitarbeiter
+    - bearbeiten Anträge und sorgen für Richtigkeit
+  - Bürgeramt 
+    - meldet neue Bürger und Änderungen im Familienstand
+  - Newsletter-Dienst
+    - verteilt Meldungen über Events/ Neuigkeiten
+  - Empfänger von Spenden
+    - informieren über Spendeneingang
 
 ## Anforderungen im Detail ##
 
@@ -57,6 +71,11 @@
 |:--------|:--------|:---------------|:---------------|:----------------|
 | 12 | Finanzbeamter | Vorgänge bearbeiten | Diese abgeschlossen werden können | Vorgänge können eingesehen werden |
 | 13 | Finanzbeamter | Stichproben durchführen | Potenziell Betrug erkannt wird | Alle Bürger werden in Übersicht geführt |
+
+## Use-Case-Diagramm
+
+![use-case-diagramm](media/use-case-diagramm.png)
+
 ## Graphische Benutzerschnittstelle
 
 ![mockup-home](media/home.png)
@@ -93,68 +112,22 @@ User Story 7,8,9
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
 
-**Beispiel:**
+### Dependencies
 
-### URL
-
-http://smart.city/microservices/customer
-
-### Commands
-
-**Synchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createCustomer() | int id | int id |
-| deleteOrder() | int id | int id |
-
-**Asynchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createContract() | int id | int id |
-| changeContract() | int id | - |
+| **Service** | **Expected Content** | **Description** | **Action** |
+| :------ | :----- | :----- | :----- |
+| Bürgeramt | 	Bürger-ID<br>Anzahl der Kinder<br>ID des Ehepartners(optional) | Neuer Bürger | Anlegen einer Akte |
+| Bürgeramt | 	Bürger-ID<br>Anzahl der Kinder(optional)<br>ID des Ehepartners(optional, false wenn getrennt) | Änderung Bürger | Änderung der Akte |
+| Alle | Bürger-ID<br>Summe<br>Datum<br>Grund(optional)<br>Verwendungszweck(optional) | Spendeneingang | Vermerken der Spende, Ausstellen eines Spendenbescheids|
 
 ### Events
 
-**Customer event channel**
+| **Service** | **Payload** | **Description** | 
+| :------ | :----- | :----- |
+| Newsletter | 	{<br>event_id: 8000,<br>event_name:"New Newsletter Entry",<br>service_name: finanzamt,<br>title: title,<br>text: text<br>} | Neuer Newsletter-Eintrag |
+| Newsletter | 	{<br>event_id: 8001,<br>event_name:"New Calendar Entry",<br>service_name: finanzamt,<br>title: title,<br>text: text,<br>date: date<br>} | Neuer Kalendereintrag |
 
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Customer Authorized | int id |
-| Customer Deleted | int id |
-
-**Contract event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Contract Received | int id |
-| Contract Deleted | int id |
-
-### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
-
-### Dependencies
-
-#### RPC
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Authorization Service | authenticateUser() |
-| Hospital Service | blockDate() |
-
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Cinema channel | CancelFilmCreatedEvent |
-| Customer reply channel | CreateCustomerEvent |
-
-
+(Sofern nötig werden weitere Informationen ergänzt)
 ## Technische Umsetzung
 
 
@@ -165,14 +138,14 @@ http://smart.city/microservices/customer
 Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
 
 * Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+  * Web-Schicht JavaScript Node.js
+  * Logik-Schicht JavaScript Express.js
+  * Persistenz-Schicht MySQL Datenbank
 
 * Client
-  * View-Schicht
-  * Logik-Schicht
-  * Kommunikation-Schicht
+  * View-Schicht HTML, CSS
+  * Logik-Schicht JavaScript + Vue.js
+  * Kommunikation-Schicht Axios
 
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
 

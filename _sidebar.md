@@ -6,10 +6,11 @@
 
 - ***Microservices***
 
-* [**Parkplatz**](parkplatz/index)
 * [**SmartAuth**](Auth/index)
 * [**Landingpage**](landingpage/index)
 * [**Bürgerbüro**](buergerbuero/index)
 * [**Finanzamt**](finanzamt/index)
 * [**Amt für Integration**](amt_fuer_integration/index)
-* [**Krankenhaus**](krankenhaus/index)
+* [**Fitnessstudio**](fitnessstudio/index)
+* [**Kita**](kita/index)
+* [**Stadtbus**](stadtbus/index)

@@ -11,22 +11,24 @@ Here goes the path to the image if there is one
 
 ## Überblick
 
-Die Landingpage dient als Portal zu allen vorhandenen Microservices. Übersichtliche Kacheln mit </br>
+Die Landingpage dient als Portal zu allen vorhandenen Microservices. Übersichtliche Kacheln mit 
 einem kurzen Informationstext sowie einem Bild, ermöglichen dem User effizient den gesuchten </br>
-Microservice aufzurufen. Außerdem kann sich der User hier einloggen und so </br>
+Microservice aufzurufen. Außerdem kann sich der User hier einloggen und so 
 auch die Mitgliedsfunktionen der anderen Services nutzen.
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+![](media/Analyseklassendiagramm.png)
 
 ## Funktionale Anforderungen
 
-* Definition der Akteure
-  * User - Person die, die Website als Portal zu anderen Services nutzt
-  * Service - Microservice der sich auf der Landingpage registrieren will
-* Strukturierung der Diagramme in funktionale Gruppen
-* Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
-* Begriffe konsistent in der Spezifikation verwenden  
-* Begriffe im Glossar darstellen
+**Glossar**
+
+| **Begriff**     | **Definition/Erklärung**                                                                                         |
+|:----------------|:-----------------------------------------------------------------------------------------------------------------|
+| User            | Menschlicher Benutzer der Landingpage, nutzt diese als Portal zu anderen Microservices                           |
+| (Micro)-Service | Eigenständiges System, welches sich bei der Landingpage registrieren kann, um sich dort dem User zu präsentieren |
+| About Us        | Eine kurze Beschreibung des Services, mit wichtigen Informationen für den User                                   |
+
+<br>
 
 **Use Cases**
 
@@ -65,7 +67,10 @@ auch die Mitgliedsfunktionen der anderen Services nutzen.
 
 ## Graphische Benutzerschnittstelle
 
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm (Nötig?!)
+![](media/Statechart.png)
+
+Entscheidet sich der User dazu, die Langingpage zu besuchen, wird er beim ersten Mal zur "offline"-Page geleitet. Dort kann er sich mithilfe des Auth-Services einloggen oder </br>
+einen der Microservices auswählen und zu diesem navigieren. Loggt er sich ein, wird er zur "online"-Page geleitet und kann dort erneut einen Microservice auswählen.
  
 ### Seitenlayout, wenn der User nicht eingeloggt ist
 
