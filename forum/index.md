@@ -35,6 +35,9 @@
 
 
 ** Informationen anderer Services einsehen (Auflistung)**
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Nutzer | auf der Startseite des Forums aktuelle Nachrichten der anderen Services sehen | ich über aktuelle Vorgänge in unserer Stadt informiert werde| Nachrichten werden chronologisch angezeigt |
 | Nutzer | Nachrichten nach bestimmten Diensten filtern können | ich für mich uninteressante Inhalte ausblenden kann | Filter für jeden Service |
 | Nutzer | schnell erkennen können, worum es sich bei der Nachricht handelt | ich schnell erkennen kann, ob mich die Nachricht interessiert | jede Nachricht hat eine Überschrift und eine Kurzbeschreibung|
@@ -43,10 +46,16 @@
  
 
 ** Informationen anderer Services einsehen (Kalender) ** 
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Nutzer | termingebundene Nachrichten von Services nach Tagen sortiert anschauen können | ich auf einen Blick erkennen kann, wann Termine stattfinden werden| Kalenderansicht, in der Tage mit Termin anklickbar sind, um eine Auflistung der Nachrichten zu sehen | 
 | Service | wichtige Termine in einem Kalender darstellen können | Nutzer an meine Nachrichten erinnert werden | Events, die mit einem Datum geschickt werden, werden im Kalender angezeigt |
 
 **schwarzes Brett**
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Nutzer | eigene Posts mit bestimmten Kategorien verfassen können | ich nach bestimmten Diesntleistungen oder Gegenständen suchen kann oder Fragen und Veranstaltungen mit anderen Nutzern teilen kann | Post mit Kategorie, Überschrift, Kurz-/Langbeschreibung, Kontaktdaten (möglicherweise aus Datenbank) |
 | Nutzer | Posts anderer Nutzer nach bestimmten kategorien filtern können | ich gezielt nach etwas suchen kann oder Dinge, die mich nicht interessieren, ausblenden kann | Checkboxen zum Filtern (Frage,Suche/Biete, Veranstaltungen, ...)
 | Nutzer | Posts nach Wörtern durchsuchen können | ichs chnell finde, was mich interessiert | Suchzeile, die die Überschriften der Posts filtert |
@@ -55,6 +64,9 @@
 
 
 ** Post-Management **
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Nutzer | mir meine verfassten Posts anzeigen lassen können | ich einen Überblick über meine Posts bekommen kann | Liste eigener Posts, sortierbar/filterbar|
 | Nutzer | meine Posts löschen können | ich einen besseren Überblick über meine Posts behalten kann | verfasste Posts können bei Auflistung eigener Posts mit einem Knopf gelöscht werden |
 | Nutzer | meine Posts öffentlich oder privat stellen können | Posts , die beispielsweise nicht mehr von belang sind, anderen Nutzern nicht mehr angezeigt werden | bei eigenen Meldungen Knopf zum privat/öffentlich stellen |
@@ -64,13 +76,22 @@
 
 
 ** interessante Posts zwischenspeichern **
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Nutzer | eine Liste haben, in der ich für mich interessante Nachrichten/Posts zwischenspeichern kann | ich diese später leicht wiederfinden kann | Knopf, mit dem zu Liste hinzugefügt und entfernt werden kann |
 
 
 ** Statistiken **
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Nutzer | ich Informationen darüber erhalten, wie viele Nutzer auf meine Meldung geklick haben | ich möglichst interessante Posts erstellen kann | Anzahl der Aufrufe von Nachrichten/Posts werden angezeigt
 
 ** Administration **
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
 | Administrator | gemeldete Posts einsehen können | diese entweder gelöscht oder für unbegründet gemeldet befunden werden können | Auflistung gemeldeter Posts, Posts werden entweder gelöscht oder wieder angezeigt |
 | Administrator | Posts nicht mehrfach überprüfen müssen | ich weniger Arbeit habe | bereits für unbegründet befundene Posts können nicht wieder gemeldet werden |
 
