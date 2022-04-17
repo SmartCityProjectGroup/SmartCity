@@ -34,7 +34,7 @@
 | Wer | Was | Warum | Wann akzeptiert |
 
 
-** Informationen anderer Services einsehen (Auflistung)**
+**Informationen anderer Services einsehen(Auflistung)**
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
@@ -45,7 +45,7 @@
 | Service | möchte ich dem Forum Nachrichten schicken können | Nutzer über Inhalte/Veranstaltungen meines Dienstes auf dem aktuellen Stand gehalten werden | Services können dem Forum über Events Nachrichten zukommen lassen |
  
 
-** Informationen anderer Services einsehen (Kalender) ** 
+**Informationen anderer Services einsehen (Kalender)** 
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
@@ -63,7 +63,7 @@
 
 
 
-** Post-Management **
+**Post-Management**
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
@@ -75,20 +75,20 @@
 | Nutzer | Posts/Nachrichten ein bild hinzufügen können | der Sachverhalt besser dargestellt wird | bei der Anischt eines Posts wird das Bild angezeigt |
 
 
-** interessante Posts zwischenspeichern **
+**interessante Posts zwischenspeichern**
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
 | Nutzer | eine Liste haben, in der ich für mich interessante Nachrichten/Posts zwischenspeichern kann | ich diese später leicht wiederfinden kann | Knopf, mit dem zu Liste hinzugefügt und entfernt werden kann |
 
 
-** Statistiken **
+**Statistiken**
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
 | Nutzer | ich Informationen darüber erhalten, wie viele Nutzer auf meine Meldung geklick haben | ich möglichst interessante Posts erstellen kann | Anzahl der Aufrufe von Nachrichten/Posts werden angezeigt
 
-** Administration **
+**Administration**
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
