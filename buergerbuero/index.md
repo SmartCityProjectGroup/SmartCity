@@ -161,10 +161,10 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
 -->
+
+<!-- code images created with https://carbon.now.sh -->
 ### API
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
-
-!> Noch in Arbeit, Syntax der Resultate können sich noch ändern
 
 **Basis - URL:** http://smart.city/microservices/buergerbuero/api
 
@@ -177,18 +177,17 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 ### Events
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
-!> Noch in Arbeit, Event-IDs und Event-Payloads können sich noch ändern
-
 | **Name** | **Beschreibung** | **Payload** |
 | :------ | :----- | :----- |  
 | About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!" target="_blank" rel="noopener">![About us](media/event_about_us.png)</a> |
 | Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellt](media/event_citizen_created.png)</a> |
-| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!" target="_blank" rel="noopener">![Eheschließung](media/event_marriage.png)</a> |
 | Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!" target="_blank" rel="noopener">![Namensänderung](media/event_name_change.png)</a> |
 | Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!" target="_blank" rel="noopener">![Adressänderung](media/event_address_change.png)</a> |
-| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!" target="_blank" rel="noopener">![Todesmeldung](media/event_citizen_death.png)</a> |
+| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!" target="_blank" rel="noopener">![Eheschließung](media/event_marriage.png)</a> |
+| Scheidung | wird ausgelöst, wenn zwei Bürger sich scheiden lassen | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_divorce.png" title="Klick mich!" target="_blank" rel="noopener">![Scheidung](media/event_divorce.png)</a> |
 | Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_issued.png" title="Klick mich!" target="_blank" rel="noopener">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
 | Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_removed.png" title="Klick mich!" target="_blank" rel="noopener">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
+| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!" target="_blank" rel="noopener">![Todesmeldung](media/event_citizen_death.png)</a> |
 
 
 ### Event-Subscriptions
@@ -196,31 +195,33 @@ Events, von anderen Microservices, die das Bürgerbüro auswertet/verarbeitet
 
 | **Service** | **Event** | **Funktion** |
 | :------ | :----- | :----- | 
-| Amt für Integration |  |  |
-| Amt für Integration |  |  |
+| Amt für Integration | Register New Refugee | Bürger in der Datenbank speichern |
+| Amt für Integration | Register New Refugee Family | Bürger in der Datenbank speichern |
 
 
 ## Technische Umsetzung
 
 
 ### Softwarearchitektur
-
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
+<!---
+Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
 
 Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
+--->
 
-* Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+* **Server**
+  * Web-Schicht: **JavaScript Node.js**
+  * Logik-Schicht: **JavaScript Express.js**
+  * Persistenz-Schicht: **MySQL Datenbank**
 
-* Client
-  * View-Schicht
-  * Logik-Schicht
-  * Kommunikation-Schicht
+* **Client**
+  * View-Schicht: **React**
+  * Logik-Schicht: **React**
+  * Kommunikation-Schicht: **JavaScript Fetch-API**
 
+<!---
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
-
+--->
 
 
 ### Entwurf
@@ -228,10 +229,48 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
 - Detaillierte UML-Diagramme für relevante Softwarebausteine
 
 ### Fehlerbehandlung 
-
+<!--
 * Mögliche Fehler / Exceptions auflisten
 * Fehlercodes / IDs sind hilfreich
 * Nicht nur Fehler technischer Art ("Datenbankserver nicht erreichbar") definieren, sondern auch fachliche Fehler wie "Kunde nicht gefunden", "Nachricht wurde bereits gelöscht" o.ä. sind relevant. 
+-->
+#### API-Aufrufe
+<table>
+  <thead>
+    <tr style="background-color:lightgrey;">
+      <th>Methode</th> <th>Route</th> <th>Fehlercode</th> <th>Beschriebung</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color:aliceblue;">
+       <td>GET</td><td>/info/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
+    </tr>
+    <tr style="background-color:aliceblue;">
+      <td>GET</td><td>/info/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
+    </tr>
+    <tr style="background-color:aliceblue;">
+      <td>GET</td><td>/info/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
+    </tr>
+    <tr style="background-color:bisque;">
+      <td>GET</td><td>/licenses/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
+    </tr>
+    <tr style="background-color:bisque;">
+      <td>GET</td><td>/licenses/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
+    </tr>
+    <tr style="background-color:bisque;">
+      <td>GET</td><td>/licenses/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
+    </tr>
+    <tr style="background-color:#bbdfbb;">
+      <td>GET</td><td>/children/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
+    </tr>
+    <tr style="background-color:#bbdfbb;">
+      <td>GET</td><td>/children/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
+    </tr>
+    <tr style="background-color:#bbdfbb;">
+      <td>GET</td><td>/children/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Validierung
 
