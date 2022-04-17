@@ -2,7 +2,7 @@
 
 **Autor:** Maximilian Hertzke
 
-# --- Work in progress ---
+!> WIP
 
 ## Überblick
 
@@ -50,7 +50,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 
 ### Konzeptionelles Analyseklassendiagramm
 
-[![Analyseklassendiagramm](media/analyseklassendiagramm.png)](https://raw.githubusercontent.com/MerlinChiodo/SmartCity/main/kita/media/analyseklassendiagramm.png)
+[![Analyseklassendiagramm](media/analyseklassendiagramm.svg)](https://raw.githubusercontent.com/MerlinChiodo/SmartCity/main/kita/media/analyseklassendiagramm.png)
 
 
 ## Funktionale Anforderungen
@@ -71,9 +71,12 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 
 ### Use-Case Diagramme
 
+<!--- 
 ![Use Case Diagramme](media/usecase_1.png)
 
 ![Use Case Diagramme](media/usecase_2.png)
+--->
+[![Use Case Diagramme](media/usecase_all.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/usecase_all.svg)
 
 
 
@@ -155,7 +158,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 - Mockups für unterschiedliche Akteure
 --->
 
-![GUI-Mockups](media/gui_mockups.png)
+[![GUI-Mockups](media/gui_mockups.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/gui_mockups.svg)
 
 
 ## Datenmodell 
@@ -167,7 +170,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
   --->
   
-![ER-Diagramm](media/ERM.png)  
+[![ER-Diagramm](media/ERM.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/ERM.svg)
 
 ## Abläufe
 
@@ -183,14 +186,38 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 --->
 
 
-![Aktivitätsdiagramm Kitaplatz beantragen](media/activity_kitaplatzbeantragen.png)
+[![Aktivitätsdiagramm Kitaplatz beantragen](media/activity_kitaplatzbeantragen.png)](https://merlinchiodo.github.io/SmartCity/kita/media/activity_kitaplatzbeantragen.png)
 
-![Aktivitätsdiagramm Busticket beantragen](media/activity_busticket.png)
+[![Aktivitätsdiagramm Busticket beantragen](media/activity_busticket.png)](https://merlinchiodo.github.io/SmartCity/kita/media/activity_busticket.png)
 
 
 ## Schnittstellen
 
-### Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
+### APIs
+!> WIP: unvollständig
+#### Private
+| **Methode** | **Name** | **Parameter** | **Resultat** |
+| :------ | :----- | :------ | :------ |
+| POST | createApplication() | int id_einrichtung, int id_kind, int id_ezb, date datum, int priority, str status | response status code |
+| GET | getApplications() | int id_ezb | return alle aktuellen Anträge des Users |
+| DELETE | deleteApplication() | int id_antrag, int id | Antrag wird gelöscht |
+| POST | createContract() | int id_einrichtung, int id_kind, int id_ezb, (date beginn), (date ende), int betreuungsstunden | Neuer Vertrag wird angelegt |
+| GET | getContractsUser() | int id_ezb | return alle aktuellen Verträge des Users |
+| GET | getContractsKita() | int id_kita | return alle aktuellen Verträge der Kita |
+| PATCH | terminateContract() | int id_vertrag, date ende | Enddatum des Vetrags wird verändert |
+
+| | | | 
+| PUT | addKitaToWatchlist() | int id_ezb, int id_einrichtung | Kita wird den vorgemerkten Kitas des Users hinzugefügt |
+| PATCH | removeKitaFromWatchlist() | int id_ezb, int id_einrichtung | Kita wird aus den vorgemerkten Kitas des Users entfernt | 
+
+
+
+#### Public
+...
+
+
+
+
 - Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
 - In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
 - Aufteilen in Commands, Events, Queries
@@ -201,7 +228,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 
 ### URL
 
-http://smart.city/microservices/customer
+http://smart.city/microservices/kita
 
 ### Commands
 
