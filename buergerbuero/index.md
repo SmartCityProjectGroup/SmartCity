@@ -5,7 +5,7 @@
 
 ## Überblick
 
-`Textuelle Beschreibung der Anwendungsdomäne`  
+<!--- Textuelle Beschreibung der Anwendungsdomäne --->
 Das Bürgerbüro dient als erste Anlaufstelle wenn ein Bürger sich in der Stadt melden will.  
 Dies kann der Bürger in der SmartCity auch online durchführen.
 Nach Abschluss des Meldevorgangs erhält der Bürger ein Email mit einem Registrierungscode.
@@ -20,7 +20,14 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 
 ## Funktionale Anforderungen
-
+<!--
+  * Definition der Akteure
+  * Use-Case Diagramme
+  * Strukturierung der Diagramme in funktionale Gruppen
+  * Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
+  * Begriffe konsistent in der Spezifikation verwenden  
+  * Begriffe im Glossar darstellen
+-->
 ### Akteure
 **Bürger:** eine Person die sich in dieser Stadt melden will  
 **User:** ein Bürger der sich in der SmartCity registriert hat  
@@ -30,15 +37,21 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 ![Funktionale Gruppen](media/use_case_funktionale_gruppen.png)
 ![Use-Cases](media/use_case_combined.png)
 
-## Anforderungen im Detail
 
+## Anforderungen im Detail
+<!--
+- User Stories mit Akzeptanzkritierien 
+- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
+- Strukturierung der User Stories in funktionale Gruppen
+- Sicherheit: Misuse-Stories formulieren
+-->
 **User-Stories: Personendetails verwalten**
 
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Prioität** |
 | :------ | :----- | :------ | :-------- | :------ | :------ |
 | 1 | Bürger | möchte ich mich im Bürgeramt melden können | ich in dieser Stadt gemeldet bin | Bürger wird gemeldet | Muss |
 | 2 | User | eine Namensänderung beantragen | mein Name im Melderegister korrekt ist | Antrag wird eingereicht | Muss |
-| 3 | User | einen Umzug melden | meine Adresse im Melderegister korrekt ist | Antrag wird eingereicht | Muss |
+| 3 | User | einen Umzug melden | meine Adresse im Melderegister korrekt ist | Daten werden geändert | Muss |
 | 4 | User | eine Eheschließung beantragen | mit meinem Partner verheiratet bin | Heirat wird beantragt | Muss |
 | 5 | User | eine Scheidung beantragen | nicht mehr mit meinem Partner verheiratet bin | Scheidung wird beantragt | Muss |
 | 6 | Angestellter | ausstehende Anträge sehen | ich diese annehmen/ablehnen kann | Anträge werden angezeigt | Muss |
@@ -48,7 +61,7 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Prioität** |
 | :------ | :----- | :------ | :-------- | :------ | :------ |
-| 8 | User | Genehmigungen beantragen | diese eingereicht wird | Antrag wird eingereicht | Muss |
+| 8 | User | Genehmigungen beantragen | diese eingereicht wird | Genehmigung wird eingereicht | Muss |
 | 9 | User | meine Genehmigungen sehen | ich weiß welche Genehmigungen angenommen wurden | Genehmigungen werden angezeigt | Muss |
 | 10 | Angestellter | ausstehende Genehmigungen sehen | ich diese annehmen/ablehnen kann | Genehmigungen werden angezeigt | Muss |
 | 11 | Angestellter | eine ausstehende Genehmigung annehmen/ablehnen | diese bearbeitet wurde | Genehmigung wird angenommen/abgelehnt | Muss |
@@ -56,15 +69,73 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 
 ## Graphische Benutzerschnittstelle
-
+<!--
 - GUI-Mockups passend zu User Stories
 - Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
 - Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
 - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 - Mockups für unterschiedliche Akteure
+-->
+?> Klicke auf die Bilder um sie in voller Größe zu sehen
+
+<div style="display:grid;grid-template-columns: repeat(4, 1fr);grid-template-rows: repeat(6, min-content);text-align:center;grid-column-gap: 5px;grid-row-gap: 5px;">
+  <div>Hauptseite des Bürgerbüros</div>
+  <div>Neuen Bürger im Melderegister eintragen</div>
+  <div>Übersicht über eigene Anträge</div>
+  <div>Übersicht über eigene Genehmigungen</div>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png">
+  </a>
+  <div>Antrag auf Namensänderung</div>
+  <div>Umzug melden</div>
+  <div>Eheschließung beantragen</div>
+  <div>Scheidung beantragen</div>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png">
+  </a>
+  <div>Angestellter:<br>offene Anträge</div>
+  <div>Angestellter:<br>Antragsdetails</div>
+  <div>Angestellter:<br>offene Gemehmigungen</div>
+  <div>Angestellter:<br>Genehmigungsdetails</div>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png">
+  </a>
+  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png">
+  </a>
+</div>
 
 
-## Datenmodell 
+## Datenmodell
+<!--
+- Begriffe im Glossar darstellen
+- Modellierung des physikalischen Datenmodells 
+  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+-->
 ### ER-Modell
 ![ER-Modell](media/er_modell.png)
 ### Physisches Datenmodell
@@ -83,6 +154,13 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 
 ## Schnittstellen
+<!--
+- Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
+- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
+- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
+- Aufteilen in Commands, Events, Queries
+* Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
+-->
 ### API
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
@@ -92,9 +170,9 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 | **Pfad** | **Methode** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ | :------ |
-| /info/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
-| /licenses/{ID} | GET | ID: eindeutige Bürger-ID | Auskunft über alle Lizenzen eines einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_licenses_info.png" title="Klick mich!">![Bürger](media/api_licenses_info.png)</a> |
-| /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!">![Kinder](media/api_children.png) |
+| /info/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
+| /licenses/{ID} | GET | ID: eindeutige Bürger-ID | Auskunft über alle Lizenzen eines einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_licenses_info.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_licenses_info.png)</a> |
+| /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
 
 ### Events
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
@@ -103,14 +181,14 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 
 | **Name** | **Beschreibung** | **Payload** |
 | :------ | :----- | :----- |  
-| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!">![About us](media/event_about_us.png)</a> |
-| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!">![Bürger erstellt](media/event_citizen_created.png)</a> |
-| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!">![Eheschließung](media/event_marriage.png)</a> |
-| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!">![Namensänderung](media/event_name_change.png)</a> |
-| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!">![Adressänderung](media/event_address_change.png)</a> |
-| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!">![Todesmeldung](media/event_citizen_death.png)</a> |
-| Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_issued.png" title="Klick mich!">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
-| Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_removed.png" title="Klick mich!">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
+| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!" target="_blank" rel="noopener">![About us](media/event_about_us.png)</a> |
+| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellt](media/event_citizen_created.png)</a> |
+| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!" target="_blank" rel="noopener">![Eheschließung](media/event_marriage.png)</a> |
+| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!" target="_blank" rel="noopener">![Namensänderung](media/event_name_change.png)</a> |
+| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!" target="_blank" rel="noopener">![Adressänderung](media/event_address_change.png)</a> |
+| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!" target="_blank" rel="noopener">![Todesmeldung](media/event_citizen_death.png)</a> |
+| Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_issued.png" title="Klick mich!" target="_blank" rel="noopener">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
+| Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_removed.png" title="Klick mich!" target="_blank" rel="noopener">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
 
 
 ### Event-Subscriptions

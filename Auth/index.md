@@ -260,20 +260,120 @@ die Anmeldedaten des Resourcenbesitzers enthalten (A2).
 
 - (I2): Falls der Zugangsschlüssel ungültig ist, wird eine Fehlermeldung zurückgegeben 
 
-?> Beachte: Da sich die internen Microservices eine Domain teilen, muss nicht jeder dieser Services einen Autorisierungs- und Zugangschlüssel anfordern. Mit der Anmeldung auf der Landingpage erhält der Client einen Zuganggschlüssel in Form eines Cookies. 
+?> Beachte: Da sich die internen Microservices eine Domain teilen, muss nicht jeder dieser Services einen Autorisierungs- und Zugangschlüssel anfordern. Mit der Anmeldung auf der Landingpage erhält der Nutzer einen Zuganggschlüssel in Form eines Cookies. 
+
+Es gibt also insgesamt drei Möglichkeiten an eine beschüzte Resource zu kommen:
+
+- Autorisierung über globalen, Zugangsschlüssel (nur für interne Services)
+
+- Autorisierung mit Benutzername, Passwort des Nutzers (nur für externe Clients mit sehr hohem Vertrauen)
+
+- Autorisierung über SmartAuth (für alle registrierten Clients)
 
 ### Daten
 !> Nicht 100% final. Es werden jedoch höchstens nur Ergänzungen stattfinden.
 
-```plantuml
-@startuml
+#### IDs und Schlüssel
+| Bezeichnung | Beschreibung |
+| --- | --- |
+Clientschlüssel | Individueller, öffentlicher Schlüssel der einen registrierten Client identifiziert. (Base64 encodiert Clientname +numerische ID) |
+Clientsecret | Individueller, geheimer Schlüssel/Passwort der benötigt wird, um einen Client zu authentifizieren. |
+Autorisierungsschlüssel | Individueller, gehimer sehr kurzlebiger Schlüssel der dafür verwendet werden kann |      
+Zugangsschlüssel |Individueller, geheimer, kurzlebiger Schlüssel der einem Client Zugriff auf geschüzte Resourcen erlaubt
 
-@enduml
+!> Clientsecret bleibt einfachhaltshalber eventuell vollständig unbenutzt. Falls unimplementiert ist "none" immer valide
+
+
+#### JSON
+?> Siehe auch: https://tools.ietf.org/id/draft-richer-oauth-json-request-00.html
+und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
+
+
+```plantuml 
+@startjson
+{
+    "authorization_request": {
+        "response_type" : "'code'",
+        "client_id" : "Clientschlüssel",    
+        "redirect_uri" : "",
+        "permissions" : ["'read'", "'write'"],
+        "state" : "bliblablup"
+    }
+
+}
+@endjson
 ```
-#### Begriffe
+
+
+|    Bezeichnung     |                                                                         Beschreibung                                                                           |   Typ   |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| response type      | Muss 'code'sein                                                                                                                                                | String  |
+| client id          | Die ClientID                                                                                                                                                   | String  |
+| redirect_uri       | In JSON Version ggf unbenutzt.  Ansonsten: URL zu der der Nutzer weitergeleitet wird, wenn Login beendet wurde (Sowohl bei Fehlschlag als auch bei Erfolg)     |  String |
+| permissions        |  Rechte die angefordert werden sollen                                                                                                                          |  String |
+| state              |  Kann alles sein, wird an den Aufrufenden ohne Änderung zurückgeschickt                                                                                        |  -      |
+
+!> Im OAuth2 Spec wird 'permissions' als 'scope' bezeichnet.  
+
+!> Die JSON Version des "authorization_request" ist sehr unsicher und nicht kompatibel mit OAuth Spec, aufgrund von Vereinfachung Teil unserer API.
 
 ---
-### Herausforderungen 
 
-#### Login
----
+```plantuml 
+@startjson
+{
+    "authorization_response" : 
+    {
+        "code" : "code",
+        "state" : "'bliblablup"
+    }
+}
+```
+
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| code | Der Autorisierungscode | String
+| state | Der in der Anfrage mitgelieferte state | String
+
+```plantuml 
+@startjson
+{
+    "access_token_request" : 
+    {
+        "grant_type" : "authorization_code",
+        "code" : "authorization code", 
+        "redirect_uri" :  "",
+        "client_id" : "",
+        "client_secret" : ""
+    }
+}
+```
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| grant_type | Muss "authorization_code" sein | String
+| code | Der Autorisierungsschlüssel | String
+| redirect_uri | Muss die selbe URL sein wie im authorization_request | String
+
+
+```plantuml 
+@startjson
+{
+    "access_token_response" :  
+    {
+            "access_token": "",
+            "expires_in": "",
+            "RESERVED": ""
+    }
+}
+```
+
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| access_token | Der Zugangsschlüssel | String
+| expires_in | Zeit in Sekunden bis der Zugangsschlüssel ungültig wird| Number 
+| RESERVED |  Wird eventuell in der Zukunft benutzt| String
+
+### API
+| Endpunkt | Methode | Parameter | Resultat
+| --- | --- | --- | --- | 
+/auth |POST|   
