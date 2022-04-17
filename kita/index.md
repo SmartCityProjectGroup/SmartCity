@@ -76,7 +76,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 
 ![Use Case Diagramme](media/usecase_2.png)
 --->
-![Use Case Diagramme](media/usecase_all.svg)
+[![Use Case Diagramme](media/usecase_all.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/usecase_all.svg)
 
 
 
@@ -158,7 +158,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 - Mockups für unterschiedliche Akteure
 --->
 
-![GUI-Mockups](media/gui_mockups.svg)
+[![GUI-Mockups](media/gui_mockups.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/gui_mockups.svg)
 
 
 ## Datenmodell 
@@ -170,7 +170,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
   --->
   
-![ER-Diagramm](media/ERM.svg)  
+[![ER-Diagramm](media/ERM.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/ERM.svg)
 
 ## Abläufe
 
@@ -186,9 +186,9 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 --->
 
 
-![Aktivitätsdiagramm Kitaplatz beantragen](media/activity_kitaplatzbeantragen.png)
+[![Aktivitätsdiagramm Kitaplatz beantragen](media/activity_kitaplatzbeantragen.png)](https://merlinchiodo.github.io/SmartCity/kita/media/activity_kitaplatzbeantragen.png)
 
-![Aktivitätsdiagramm Busticket beantragen](media/activity_busticket.png)
+[![Aktivitätsdiagramm Busticket beantragen](media/activity_busticket.png)](https://merlinchiodo.github.io/SmartCity/kita/media/activity_busticket.png)
 
 
 ## Schnittstellen
