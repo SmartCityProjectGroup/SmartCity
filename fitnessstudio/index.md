@@ -13,9 +13,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 - Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
-
 ## Funktionale Anforderungen
-
 ### Akteure
 | **Akteur** | **Definition**  |
 | :-------: | :------- |
@@ -25,8 +23,6 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | Rabattgeber | Institutionen, die ihren "Mitgliedern" Rabatt gewähren, aktuell Flüchtlinge und Mitarbeiter des Stadtbusses |
 | Newsletter | Der Newsletter Microservice welcher Interessierte regelmäßig über Neuigkeiten informiert |
 | Landingpage | Die Startseite der Anwendung |
-
-
 
 ### Use-Case Diagramme
 
