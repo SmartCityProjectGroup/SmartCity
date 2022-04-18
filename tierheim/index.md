@@ -93,13 +93,140 @@ Das Tierheim bietet den Bürgern die Möglichkeit, auf einer Webseite eine Vielz
 
 ## Datenmodell
 
+```plantuml
+@startuml
+!theme plain
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "Tierheim" as e00 {
+*tierheim_name : text
+--
+adresse : text
+kapazität : number
+}
+
+entity "Tier" as e01 {
+  *pet_id : number
+  --
+  *name : text
+  *species : text
+  description : text
+  *volunteer_candidate : bool
+  *adopted : bool
+  *urlaubsbetreuung : bool
+}
+
+entity "Tierprofil" as e10 {
+    *pet_id : number
+    --
+    picture : picture
+    information : text
+    profiletext : text
+}
+
+entity "Freiwilliger" as e02 {
+  *citizen_id : number
+  --
+  *name : text
+}
+
+entity "Pflegestelle" as e03 {
+  *citizen_id : number
+  --
+  *name : name
+  *capacity : number
+}
+
+entity "Vermisst" as e04 {
+    *missing_id : number
+    --
+    Tier_pet_id : number <<FK>>
+    *tier_name : text
+    *vermisst_seit : Date_Time
+    besitzer_id : number
+    besitzer_name : text
+    ort : text
+    beschreibung : text
+}
+
+entity "Gefunden" as e05 {
+    *found_id : number
+    --
+    *gefunden_am : Date_Time
+    *finder_id : number
+    *finder_name : text
+    beschreibung : text
+}
+
+entity "Termine" as e06 {
+    *termin_id : number
+    --
+    art : enum {kurs,besuch,hundespaziergang}
+    *datum : Date_Time
+    ort : text
+    dauer : number
+    beschreibung : text
+    teilnehmeranzahl : number
+}
+
+entity "Mitarbeiter" as e07 {
+    *mitarbeiter_id : number
+    --
+    name : text
+}
+
+entity "Bürger" as e08 {
+    *citizen_id : number
+    --
+    *name : text
+}
+
+entity "Urlaubsbetreuung" as e09{
+    *betreuungs_id : number
+    --
+    begin : Date_Time
+    end : Date_Time
+
+}
+
+
+e00 ||--o{ e01
+e01 }o--o{ e02
+e01 }o--o| e03
+e00 ||--o{ e03
+e04 }o--o| e01
+e04 }o--|| e00
+e05 }o--|| e00
+e06 }o--|| e00
+e06 }o--o{ e07
+e07 }o--|| e00
+e08 }o--o{ e06
+e06 }o--o{ e01
+e01 }o--o| e08
+e09 }o--|| e01
+e01 ||--o| e10
+
+@enduml
+```
+
 ## Abläufe
 
 ## Schnittstellen
 
+### Dependencies
+
+| **Service** | **Expected Content** | **Description** |
+|:---------|:------------------|:----------------|
+| Bürgeramt | Proof Of Competence TRUE/FALSE | Sachkundenachweis für Hundehalter vorhanden oder nicht vorhanden |
+| Fitnessstudio | citizen_id From Volunteers For Walks | Freiwillige für das Partnerprogramm Fitnessstudio/Tierheim |
+
 ### Events
 
-| **Service** | **Payload** | **Beschreibung** |
+| **Service** | **Payload** | **Description** |
 |:---------|:------------------|:----------------|
 | Forum | {<br>event_id: 5001,<br>event_name:"New Pet In Shelter",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Neues Tier im Tierheim |
 | Forum | {<br>event_id: 5002,<br>event_name:"New Missing Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Vermisstes Tier |
@@ -107,7 +234,7 @@ Das Tierheim bietet den Bürgern die Möglichkeit, auf einer Webseite eine Vielz
 | Fitnessstudio | {<br>event_id: 5004,<br>event_name:"New Pet For Walk",<br>service_name: tierheim,<br>pet_name: name,<br>pet_description: text<br>} | Neuer Hund für das Partnerprogramm Fitnessstudio/Tierheim |
 | Fitnessstudio | {<br>event_id: 5005,<br>event_name:"Pet Removed From Program",<br>service_name: tierheim,<br>pet_name: name,<br>pet_description: text<br>} | Hund aus Partnerprogramm Fitnessstudio/Tierheim entfernt|
 | Finanzamt | {<br>event_id: 5006,<br>event_name:"Citizen With New Dog",<br>service_name: tierheim,<br>citizen_id: citizen_id<br>} | Bürger hat neuen Hund adoptiert (Hundesteuer) |
-| Fitnessstudio | {<br>event_id: 5007,<br>event_name:"New Proof Of Competence",<br>service_name: tierheim,<br>citizen_id: citizen_id<br>} | Bürger hat Sachkundenachweis für Hundehalter erhalten |
+| Bürgeramt | {<br>event_id: 5007,<br>event_name:"New Proof Of Competence",<br>service_name: tierheim,<br>citizen_id: citizen_id<br>} | Bürger hat Sachkundenachweis für Hundehalter erhalten |
 
 
 
