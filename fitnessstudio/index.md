@@ -81,10 +81,34 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 ![](media/StartMockUp.png) <!-- home -->
 
 #### Mitgliedschaft verwalten
-[User Story 1](#mitgliedschaft-verwalten-1)
+[User Story 1, 4, 5](#mitgliedschaft-verwalten-1)
 ![](media/AnmeldungFDNMockUp.png) <!-- anmeldung -->
 
+[User Story 2, 4](#mitgliedschaft-verwalten-2)
+![](media/AnmeldungoFDNMockUp.png) <!-- anmeldung -->
 
+[User Story 3, 8, 9](#mitgliedschaft-verwalten-3)
+![](media/mitgliedschaftMockUp.png) <!-- Mitgliedschaft -->
+
+#### Sportaktivitäten verwalten
+[User Story 6, 7](#sportaktivitäten-verwalten-1)
+![](media/kurseMockUp.png) <!-- kurse -->
+
+####Mitarbeiterseite
+[User Story 11](#mitarbeiterseite-1)
+![](media/MitarbeiteranmeldungMockUp.png) <!-- Mitarbeiteranmeldung -->
+
+[User Story 12](#mitarbeiterseite-1)
+![](media/MitgliederverwaltungMockUp.png) <!-- Mitgliederverwaltung -->
+
+[User Story 13](#mitarbeiterseite-1)
+![](media/kursverwaltungMockUp.png) <!-- Kursverwaltung -->
+
+[User Story 12](#mitarbeiterseite-1)
+![](media/eventMockUp.png) <!-- Eventseite -->
+
+[User Story 13](#mitarbeiterseite-1)
+![](media/aboutUsMockUp.png) <!-- About us -->
 
 ## Datenmodell 
 
