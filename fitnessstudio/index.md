@@ -9,7 +9,7 @@ Für maximalen Komfort sorgt die Vernetzung mit den anderen Microservices. So re
 Anmeldung aus, da die restlichen Daten vom Bürgerbüro und Finanzamt geholt werden. Außerdem ist es</br>
 möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzumelden.
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+![](media/Analyseklassendiagramm.png) <!-- Analyseklassendiagramm -->
 
 ## Funktionale Anforderungen
 ### Akteure
