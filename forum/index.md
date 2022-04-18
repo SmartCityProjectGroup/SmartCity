@@ -135,6 +135,8 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - Modellierung des physikalischen Datenmodells 
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
 
+[![ER-Modell](media/ermodel.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/ermodel.PNG)
+
 ## Abläufe
 
 - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
