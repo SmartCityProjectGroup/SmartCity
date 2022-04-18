@@ -31,20 +31,18 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 ### Use-Case Diagramme
 
 ####Mitgliedschaftsverwaltung
+
 ![](media/MitgliedschaftUseCase.png) <!-- use case-Digramm -->
 
 ####Sportaktivitäten
+
 ![](media/SportaktivitätenUseCase.png) <!-- use case-Digramm -->
 
 ####Mitarbeiteraktionen
+
 ![](media/MitarbeiteraktionenUseCase.png) <!-- use case-Digramm -->
 
 ## Anforderungen im Detail
-
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
-- Sicherheit: Misuse-Stories formulieren
 
 
 **Mitgliedschaft verwalten**
@@ -94,11 +92,13 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 ## Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
-- Mockups für unterschiedliche Akteure
+#### Home
+![](media/StartMockUp.png) <!-- home -->
+
+#### Mitgliedschaft verwalten
+[User Story 1](#mitgliedschaft-verwalten-1)
+![](media/AnmeldungFDNMockUp.png) <!-- anmeldung -->
+
 
 
 ## Datenmodell 
