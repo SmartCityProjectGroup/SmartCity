@@ -8,6 +8,20 @@
 - Textuelle Beschreibung der Anwendungsdomäne
 - Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
+Das Forum dient für unsere SmartCity als schwarzes Brett. 
+Hier können die einzelnen Services wichtige Nachrichten oder Werbung mit allen Nutzern unserer SmartCity teilen. 
+So könnte zum Beispiel der KiTa-Service über Neueröffnungen von KiTas oder das Finanzamt über Fristen, an die sich die Bevölkerung erinnern soll, berichten.
+Termingebundene Nachrichten können zusätzlich auch in einem Kalender dargestellt werden.
+Bei besonderem Interesse können Nutzer einzelnen Services auch folgen, um bei neuen Nachrichten eine Email zu bekommen.
+
+Des Weiteren haben auch Nutzer die Möglichkeit, eigene Aushänge in Form von Posts zu verfassen.
+So könnte jemand auf der Suche nach Dienstleistungen (Nachhilfe, Babysitter) oder Gegenständen(Kinderwagen, Plattenspieler) sein oder selbst Dienstleistungen oder Gegenstände hier anbieten.
+Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden. 
+
+
+
+[![Analyseklassendiagramm](media/Analyseklassendiagramm.PNG)]
+ 
 
 ## Funktionale Anforderungen
 
@@ -51,6 +65,14 @@
 | :------ | :----- | :------ | :-------- |
 | Nutzer | termingebundene Nachrichten von Services nach Tagen sortiert anschauen können | ich auf einen Blick erkennen kann, wann Termine stattfinden werden| Kalenderansicht, in der Tage mit Termin anklickbar sind, um eine Auflistung der Nachrichten zu sehen | 
 | Service | wichtige Termine in einem Kalender darstellen können | Nutzer an meine Nachrichten erinnert werden | Events, die mit einem Datum geschickt werden, werden im Kalender angezeigt |
+
+
+**Newsletter**
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
+| Nutzer | den Services folgen können | ich direkt von neuen Nachrichten erfahre | Nachrichten gefolgter Services werden per Email an den Nutzer gschickt |
+| Nutzer | den Services nicht mehr folgen können | ich Nachrichten, die mich nicht mehr interessieren, nicht mehr per Email zugeschickt bekomme | Folgen muss rückgängig gemacht werden können
 
 **schwarzes Brett**
 
