@@ -127,6 +127,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 - Mockups für unterschiedliche Akteure
 
+[![Mockups](media/forum_mockups.svg)]
 
 ## Datenmodell 
 
@@ -275,6 +276,6 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
 
 - Verwendete Technologien (Programmiersprachen, Frameworks, etc.)
 
-* Frontend
-* Backend
-* Datenbank
+* Frontend: Vue.js
+* Backend: Node.js, Express.js
+* Datenbank: MySQL
