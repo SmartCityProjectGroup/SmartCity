@@ -206,7 +206,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 | GET | getContractsKita() | int id_kita | return alle aktuellen Verträge der Kita |
 | PATCH | terminateContract() | int id_vertrag, date ende | Enddatum des Vetrags wird verändert |
 
-| | | | 
+| | | | |
 | PUT | addKitaToWatchlist() | int id_ezb, int id_einrichtung | Kita wird den vorgemerkten Kitas des Users hinzugefügt |
 | PATCH | removeKitaFromWatchlist() | int id_ezb, int id_einrichtung | Kita wird aus den vorgemerkten Kitas des Users entfernt | 
 
