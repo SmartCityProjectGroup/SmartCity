@@ -108,7 +108,8 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
-| Nutzer | ich Informationen darüber erhalten, wie viele Nutzer auf meine Meldung geklick haben | ich möglichst interessante Posts erstellen kann | Anzahl der Aufrufe von Nachrichten/Posts werden angezeigt
+| Nutzer | Informationen darüber erhalten, wie viele Nutzer auf meinen Post geklick haben | ich möglichst interessante Posts erstellen kann | Anzahl der Aufrufe von Nachrichten/Posts werden angezeigt |
+| Service |  Informationen darüber erhalten, wann Nutzer auf meine Nachricht geklickt hat | ich bestimmte Ankündigungen zu günstigen Zeiten machen kann | Graph einsehbar, wann die Nachricht wie oft angeklickt wurde |
 
 **Administration**
 
