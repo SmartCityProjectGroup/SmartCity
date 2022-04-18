@@ -81,7 +81,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 #### Home
 ![](media/StartMockUp.png) <!-- home -->
 
-#### Mitgliedschaft verwalten
+#### Mitgliedschaft
 [User Story 1, 4, 5](#mitgliedschaft-verwalten-1)
 ![](media/AnmeldungFDNMockUp.png) <!-- anmeldung -->
 
@@ -91,11 +91,11 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 [User Story 3, 8, 9](#mitgliedschaft-verwalten-3)
 ![](media/mitgliedschaftMockUp.png) <!-- Mitgliedschaft -->
 
-#### Sportaktivitäten verwalten
+#### Sportaktivitäten
 [User Story 6, 7](#sportaktivitäten-verwalten-1)
 ![](media/kurseMockUp.png) <!-- kurse -->
 
-#### Mitarbeiterseite
+#### Mitarbeiterbereich
 [User Story 11](#mitarbeiterseite-1)
 ![](media/MitarbeiteranmeldungMockUp.png) <!-- Mitarbeiteranmeldung -->
 
@@ -121,14 +121,13 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 ## Abläufe
 
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm mit Swimlanes sind in der Regel hilfreich 
-  für die Darstellung der Interaktion von Akteuren der Use Cases / User Stories
-- Abläufe der Kommunikation von Rechnerknoten (z.B. Client/Server)
-  in einem Sequenz- oder Aktivitätsdiagramm darstellen
-- Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
-  Softwaresystems hilfreich sind. 
+### Mitgliedschaft verwaalten
+
+![](media/AnmeldungAblauf.png) <!-- Anmeldungsablauf -->
+
+### Sportaktionen
+
+![](media/SportaktionenAblauf.png) <!-- Sportaktionenablauf -->
   
 ### Mitarbeiterseite
 
