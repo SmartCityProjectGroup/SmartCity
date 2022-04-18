@@ -9,10 +9,11 @@ Für maximalen Komfort sorgt die Vernetzung mit den anderen Microservices. So re
 Anmeldung aus, da die restlichen Daten vom Bürgerbüro und Finanzamt geholt werden. Außerdem ist es</br>
 möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzumelden.
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
+![](media/Analyseklassendiagramm.png) <!-- Analyseklassendiagramm -->
 
 ## Funktionale Anforderungen
 ### Akteure
+
 | **Akteur** | **Definition**  |
 | :-------: | :------- |
 | User | Nutzer der den Service nutzt und Zugriff auf seine Mitgliedschaft hat |
@@ -24,18 +25,18 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 ### Use-Case Diagramme
 
-####Mitgliedschaftsverwaltung
+#### Mitgliedschaftsverwaltung
 ![](media/MitgliedschaftUseCase.png) <!-- use case-Digramm -->
 
-####Sportaktivitäten
+#### Sportaktivitäten
 ![](media/SportaktivitätenUseCase.png) <!-- use case-Digramm -->
 
-####Mitarbeiteraktionen
+#### Mitarbeiteraktionen
 ![](media/MitarbeiteraktionenUseCase.png) <!-- use case-Digramm -->
 
 ## Anforderungen im Detail
 
-###Mitgliedschaft verwalten
+### Mitgliedschaft verwalten
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 1  |User| nur mit meinem Namen Mitglied werden|ich die Dienste des Studios nutzen kann| Mitglied wird angelegt | Muss |
@@ -44,7 +45,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 4  |User| "Mitgliedschaften" angeben können|ich Sondertarife entscheide| Sondertarif wird hinterlegt | Sollte |
 | 5  |User| möchte ich von meinen Erzeihungsberechtigten angemeldet werden können|ich auch als Nichtgeschäftsfähiger Mitglied werden kann| Mitglied wird angelegt | Sollte |
 
-###Sportaktivitäten verwalten
+### Sportaktivitäten verwalten
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 6  |User| Kurse angezeigt bekommen|ich einen auswählen kann| Kurse werden angezeigt | Sollte |
@@ -52,13 +53,13 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 8  |User| mich für das Tierheimprogramm anmelden|ich bei Verfügbarkeit benachrichtigt werde | Mitglied wird Tierheim gemeldet| Sollte |
 | 9  |User| mich für das Tierheimprogramm abmelden|ich nicht mehr verfügbar bin | Mitglied wird Tierheim gemeldet| Sollte |
 
-###Servicekommunikation
+### Servicekommunikation
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 10  |Tierheim| über bereitwillige Gassigeher informiert werden|ich diesen ein Tier zuweisen kann| Tierheim wird über Person informiert | Sollte |
 | 19  |Gemeinschaft| meinen Mitgliedern Rabatte ermöglichen|diese günstigere Tarife haben| Rabatt wird gewährt | Sollte |
 
-###Mitarbeiterseite
+### Mitarbeiterseite
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 11  |Mitarbeiter| mich anmelden können| ich in einen gesichterten Mitarbeiterbereich geleitet werde| Weiterleitung auf separate Mitarbeiterseite| Sollte |
@@ -67,7 +68,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 14  |Mitarbeiter| besondere Termine bekanntmachen| diese allgemein eingesehen werden können| Event wird verschickt| Sollte |
 | 15  |Mitarbeiter| das about us ändern können| die Landingpage es richtig anzeigt| about us wird aktualisiert| Sollte |
 
-###Missue-Stories
+### Missue-Stories
 | **ID**| **Als**|   **könnte ich**   |  **so dass** | **Fehler** | **Bewertung**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 16  |User| mich mehrfach anmelden|ich mehrere Tarife zahlen muss|	mehrere Tarife von gleicher Person | Schlecht |
@@ -81,10 +82,34 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 ![](media/StartMockUp.png) <!-- home -->
 
 #### Mitgliedschaft verwalten
-[User Story 1](#mitgliedschaft-verwalten-1)
+[User Story 1, 4, 5](#mitgliedschaft-verwalten-1)
 ![](media/AnmeldungFDNMockUp.png) <!-- anmeldung -->
 
+[User Story 2, 4](#mitgliedschaft-verwalten-2)
+![](media/AnmeldungoFDNMockUp.png) <!-- anmeldung -->
 
+[User Story 3, 8, 9](#mitgliedschaft-verwalten-3)
+![](media/mitgliedschaftMockUp.png) <!-- Mitgliedschaft -->
+
+#### Sportaktivitäten verwalten
+[User Story 6, 7](#sportaktivitäten-verwalten-1)
+![](media/kurseMockUp.png) <!-- kurse -->
+
+#### Mitarbeiterseite
+[User Story 11](#mitarbeiterseite-1)
+![](media/MitarbeiteranmeldungMockUp.png) <!-- Mitarbeiteranmeldung -->
+
+[User Story 12](#mitarbeiterseite-1)
+![](media/MitgliederverwaltungMockUp.png) <!-- Mitgliederverwaltung -->
+
+[User Story 13](#mitarbeiterseite-1)
+![](media/kursverwaltungMockUp.png) <!-- Kursverwaltung -->
+
+[User Story 12](#mitarbeiterseite-1)
+![](media/eventMockUp.png) <!-- Eventseite -->
+
+[User Story 13](#mitarbeiterseite-1)
+![](media/aboutUsMockUp.png) <!-- About us -->
 
 ## Datenmodell 
 
@@ -104,7 +129,10 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
   in einem Sequenz- oder Aktivitätsdiagramm darstellen
 - Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
   Softwaresystems hilfreich sind. 
+  
+### Mitarbeiterseite
 
+![](media/MitarbeiterAblauf.png) <!-- Mitarbeiterablauf -->
 
 ## Schnittstellen
 
@@ -113,8 +141,6 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 - In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
-
-**Beispiel:**
 
 ### URL
 
@@ -158,12 +184,6 @@ Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar.
   * Kommunikation-Schicht
 
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
-
-
-
-### Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
 
 ### Fehlerbehandlung 
 
