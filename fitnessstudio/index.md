@@ -45,7 +45,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 ## Anforderungen im Detail
 
 
-**Mitgliedschaft verwalten**
+###Mitgliedschaft verwalten
 
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
@@ -55,7 +55,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 4  |User| "Mitgliedschaften" angeben können|ich Sondertarife entscheide| Sondertarif wird hinterlegt | Sollte |
 | 5  |User| möchte ich von meinen Erzeihungsberechtigten angemeldet werden können|ich auch als Nichtgeschäftsfähiger Mitglied werden kann| Mitglied wird angelegt | Sollte |
 
-**Sportaktivitäten verwalten**
+###Sportaktivitäten verwalten
 
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
@@ -64,14 +64,14 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 8  |User| mich für das Tierheimprogramm anmelden|ich bei Verfügbarkeit benachrichtigt werde | Mitglied wird Tierheim gemeldet| Sollte |
 | 9  |User| mich für das Tierheimprogramm abmelden|ich nicht mehr verfügbar bin | Mitglied wird Tierheim gemeldet| Sollte |
 
-**Servicekommunikation**
+###Servicekommunikation
 
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 10  |Tierheim| über bereitwillige Gassigeher informiert werden|ich diesen ein Tier zuweisen kann| Tierheim wird über Person informiert | Sollte |
 | 19  |Gemeinschaft| meinen Mitgliedern Rabatte ermöglichen|diese günstigere Tarife haben| Rabatt wird gewährt | Sollte |
 
-**Mitarbeiterseite**
+###Mitarbeiterseite
 
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
@@ -81,7 +81,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 14  |Mitarbeiter| besondere Termine bekanntmachen| diese allgemein eingesehen werden können| Event wird verschickt| Sollte |
 | 15  |Mitarbeiter| das about us ändern können| die Landingpage es richtig anzeigt| about us wird aktualisiert| Sollte |
 
-**Missue-Stories**
+###Missue-Stories
 
 | **ID**| **Als**|   **könnte ich**   |  **so dass** | **Fehler** | **Bewertung**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
