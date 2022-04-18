@@ -1,4 +1,4 @@
-# Krankenhaus
+# Forum
 
 **Autor:** Marius Braun
 
@@ -8,6 +8,20 @@
 - Textuelle Beschreibung der Anwendungsdomäne
 - Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
+Das Forum dient für unsere SmartCity als schwarzes Brett. 
+Hier können die einzelnen Services wichtige Nachrichten oder Werbung mit allen Nutzern unserer SmartCity teilen. 
+So könnte zum Beispiel der KiTa-Service über Neueröffnungen von KiTas oder das Finanzamt über Fristen, an die sich die Bevölkerung erinnern soll, berichten.
+Termingebundene Nachrichten können zusätzlich auch in einem Kalender dargestellt werden.
+Bei besonderem Interesse können Nutzer einzelnen Services auch folgen, um bei neuen Nachrichten eine Email zu bekommen.
+
+Des Weiteren haben auch Nutzer die Möglichkeit, eigene Aushänge in Form von Posts zu verfassen.
+So könnte jemand auf der Suche nach Dienstleistungen (Nachhilfe, Babysitter) oder Gegenständen(Kinderwagen, Plattenspieler) sein oder selbst Dienstleistungen oder Gegenstände hier anbieten.
+Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden. 
+
+
+
+[![Analyseklassendiagramm](media/Analyseklassendiagramm.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/Analyseklassendiagramm.PNG)
+ 
 
 ## Funktionale Anforderungen
 
@@ -18,7 +32,7 @@
 * Begriffe konsistent in der Spezifikation verwenden  
 * Begriffe im Glossar darstellen
 
-
+[![Use Case- Diagramme](media/usecasediagramme.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/usecasediagramme.PNG)
 
 ## Anforderungen im Detail
 
@@ -51,6 +65,14 @@
 | :------ | :----- | :------ | :-------- |
 | Nutzer | termingebundene Nachrichten von Services nach Tagen sortiert anschauen können | ich auf einen Blick erkennen kann, wann Termine stattfinden werden| Kalenderansicht, in der Tage mit Termin anklickbar sind, um eine Auflistung der Nachrichten zu sehen | 
 | Service | wichtige Termine in einem Kalender darstellen können | Nutzer an meine Nachrichten erinnert werden | Events, die mit einem Datum geschickt werden, werden im Kalender angezeigt |
+
+
+**Newsletter**
+
+| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
+| :------ | :----- | :------ | :-------- |
+| Nutzer | den Services folgen können | ich direkt von neuen Nachrichten erfahre | Nachrichten gefolgter Services werden per Email an den Nutzer gschickt |
+| Nutzer | den Services nicht mehr folgen können | ich Nachrichten, die mich nicht mehr interessieren, nicht mehr per Email zugeschickt bekomme | Folgen muss rückgängig gemacht werden können
 
 **schwarzes Brett**
 
@@ -86,7 +108,8 @@
 
 | **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
 | :------ | :----- | :------ | :-------- |
-| Nutzer | ich Informationen darüber erhalten, wie viele Nutzer auf meine Meldung geklick haben | ich möglichst interessante Posts erstellen kann | Anzahl der Aufrufe von Nachrichten/Posts werden angezeigt
+| Nutzer | Informationen darüber erhalten, wie viele Nutzer auf meinen Post geklick haben | ich möglichst interessante Posts erstellen kann | Anzahl der Aufrufe von Nachrichten/Posts werden angezeigt |
+| Service |  Informationen darüber erhalten, wann Nutzer auf meine Nachricht geklickt hat | ich bestimmte Ankündigungen zu günstigen Zeiten machen kann | Graph einsehbar, wann die Nachricht wie oft angeklickt wurde |
 
 **Administration**
 
@@ -104,6 +127,7 @@
 - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 - Mockups für unterschiedliche Akteure
 
+[![Mockups](media/forum_mockups.svg)](https://merlinchiodo.github.io/SmartCity/forum/media/forum_mockups.svg)
 
 ## Datenmodell 
 
@@ -122,6 +146,7 @@
 - Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
   Softwaresystems hilfreich sind. 
 
+[![Aktivitätsdiagramm](media/Aktivitätsdiagramm.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/Aktivitätsdiagramm.PNG)
 
 ## Schnittstellen
 
@@ -251,6 +276,6 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
 
 - Verwendete Technologien (Programmiersprachen, Frameworks, etc.)
 
-* Frontend
-* Backend
-* Datenbank
+* Frontend: Vue.js
+* Backend: Node.js, Express.js
+* Datenbank: MySQL

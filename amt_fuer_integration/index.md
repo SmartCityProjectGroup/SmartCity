@@ -153,11 +153,11 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 
 #### Mitarbeiter Home/Logout
 [User Story 24](#verwaltung-1)
-![](media/mockups/desktop/DesktopMitarbeiterLogin.png) <!-- desktop employee home/logout -->
+![](media/mockups/desktop/DesktopMitarbeiterHome.png.png) <!-- desktop employee home/logout -->
 
 #### Mitarbeiter Newsletter
 [User Story 21](#verwaltung-1)
-![](media/mockups/desktop/DesktopMitarbeiterLogin.png) <!-- desktop newsletter -->
+![](media/mockups/desktop/DesktopMitarbeiterPublischNewsletter.png) <!-- desktop newsletter -->
 
 #### Mitarbeiter About Us
 [User Story 22](#verwaltung-1)
@@ -174,9 +174,11 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 ### Mobile
 [User Story 27, 29](#user-interface)
 
-#### Anmeldevorgang
+#### Home
 ![](media/mockups/mobile/MobileHome.png) <!-- mobile -->
 ![](media/mockups/mobile/MobileNav.png) <!-- mobile -->
+
+#### Anmeldevorgang
 ![](media/mockups/mobile/MobileAnmeldung1.png) <!-- mobile -->
 ![](media/mockups/mobile/MobileAnmeldung2.png) <!-- mobile -->
 ![](media/mockups/mobile/MobileAnmeldung3.png) <!-- mobile -->
@@ -198,11 +200,6 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 #### Kita
 ![](media/mockups/mobile/MobileLoggedInnKita1.png) <!-- mobile -->
 ![](media/mockups/mobile/MobileLoggedInKita2.png) <!-- mobile -->
-
-
-
-
-#### Home
 
 ## Datenmodell
 
@@ -337,3 +334,65 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 
 ### Softwarearchitektur
 ![](media/Softwarearchitektur.png) <!-- Softwarearchitektur -->
+
+### Validierung
+| Testart | User Story ID | Validierung |
+| :------ | :--------- | :---------- |
+| End-to-End | [1, 3, 4, 5, 6, 8](#anmeldevorgang-1)  | Ablauf des Anmeldevorgang |
+| End-to-End | [12, 18](#integration-mit-portal-1)    | Ablauf des Vorgangs Kita-Antrags stellen |
+| End-to-End | [13, 17](#integration-mit-portal-1)    | Ablauf des Spendenvorgangs |
+| End-to-End | [15](#integration-mit-portal-1)    | Ablauf Wohnraum bereitstellen |
+| End-to-End | [16](#integration-mit-portal-1)    | Ablauf Login/Logout |
+| End-to-End | [23, 24](#verwaltung-1)    | Ablauf Mitarbeiter Login/Logout |
+| End-to-End | [21](#verwaltung-1)    | Ablauf Mitarbeiter Newsletter publizieren |
+| End-to-End | [22](#verwaltung-1)    | Ablauf Mitarbeiter About Us Page aktualisieren |
+| End-to-End | [25, 26](#verwaltung-1)    | Ablauf Wohnraum verwalten |
+| Integration Testing | [1, 6](#anmeldevorgang-1) | Zuweisung an korrekten Wohnraum |
+| Integration Testing | [11](#integration-mit-portal-1),[2](#anmeldevorgang-1) | Zuweisung des neuen QR-Codes an Wohnraum |
+| Intetration Testing | [17](#integration-mit-portal-1) | Spenden werden korrekt ans Finanzamt weitergeleitet |
+| Intetration Testing | [14](#integration-mit-portal-1) | Datenübermittlung der Spenden mit Zahlungssytem |
+| Integration Testing | [18](#integration-mit-portal-1) | Daten werden korrekt an Kita-Verwaltung weitergeleitet |
+| Integration Testing | [19, 20](#datenabfrage-1)| Status Abfrage korrekt zwischen Service und Client |
+| Integration Testing | [21](#verwaltung-1) | Daten werden korrekt an Newsletter übermittelt |
+| Integration Testing | [22](#verwaltung-1) | Daten werden korrekt an Landing Page übermittelt |
+| Unit Testing | [3](#anmeldevorgang-1) | QR-Code Funktion |
+| Unit Testing | [6](#anmeldevorgang-1) | Unterkunft-Zuweisung Funktion |
+| Unit Testing | [29](#user-interface) | Toggle-Dark-Mode Funktion |
+| Unit Testing | [27, 28](#user-interface) | Media Queries (manuell) |
+| Unit Testing | - | Datenbank: Erstellen, Löschen, Abrufen von Instanzen |
+
+### Fehlerbehandlung
+
+| Fehler | Beschreibung |
+| :----- | :----------- |
+| CreateQRCodeError | QR-Code konnte nicht erstellt werden |
+| QRCodeAssignHousingError | QR-Code konnte nicht einer Unterkunft zugewiesen werden |
+| DonationError | Spendevorgang konnte nicht erfolgreich abgeschlossen werden |
+| CreateHousingError | Unterkunft konnte nicht erstellt werden |
+
+| Fehlercode | Bedeutung |
+| :--------- | :---------|
+| 403        | Keine Authorisierung für die Anfrage |
+| 404        | Seite nicht gefungen |
+| 405        | Methode nicht erlaubt |
+| 500        | Server konnte Anfrage nicht erfüllen |
+
+### Verwendete Technologien
+
+* Programmiersprache: Javascript
+* Frontend: Nextjs (React Framework)
+* Backend: Nextjs
+* Datenbank: MySQL
+* ORM: Prisma
+* Komponenten-Library: Mantine
+* Code-Formatter: Prettier
+* Frameworks für Integrationstests: Cypress oder Playwright (Steht noch nicht fest bei Spezifikationserstellung)
+* Frameworks für Unit-Testing: Jest 
+* weitere Frameworks: Stripe (Zahlungssystem)
+
+## Glossar
+| **Begriff** | **Definition** |
+| :---------- | :------------- |
+| Portal | Ist das SmartCity Portal, welches aus allen Microservices besteht |
+| Service | Amt für Integration |
+| QR-Code | zweidimensionaler Code, der eine Zeichenkette speichert |
