@@ -146,7 +146,7 @@
 | Celine Dridiger | Software Engineer | Microservice 2 [Stadtbus](stadtbus/index) |
 | Maximilian Hertzke | Software Engineer | Microservice 3 [Kita](kita/index) |
 | Marius Braun | Software Engineer | Microservice 4 [Forum](forum/index) |
-| Vivien Traue | Software Engineer | Microservice 5 [Krankenhaus](krankenhaus/index) |
+| Vivien Traue | Software Engineer | Microservice 5 [Tierheim](tierheim/index) |
 | Jonathan Hauter| Software Engineer | Microservice 6 (Auth) [SmartAuth](Auth/index) |
 | Tom Luca Horstmann| Software Engineer | Microservice 7 [Fitnessstudio](fitnessstudio/index) |
 | Mario Blomenkamp | Software Engineer | Microservice 8 [Finanzamt](finanzamt/index) |
