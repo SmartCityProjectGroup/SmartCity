@@ -2,9 +2,7 @@
 
 **Autor:** Tom Luca Horstmann
 
-
 ## Überblick
-
 Die Seite des Fitnessstudios dient dazu, die Mitgliedschaft in dem Fitnessstudio zu vereinfachen.</br>
 So können die Mitgliedschaft komplett online verwaltet und die Aktivitäten online gebucht werden.</br>
 Für maximalen Komfort sorgt die Vernetzung mit den anderen Microservices. So reicht der Name zur</br>
