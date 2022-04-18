@@ -10,13 +10,15 @@ Das Bürgerbüro dient als erste Anlaufstelle wenn ein Bürger sich in der Stadt
 Dies kann der Bürger in der SmartCity auch online durchführen.
 Nach Abschluss des Meldevorgangs erhält der Bürger ein Email mit einem Registrierungscode.
 Mit diesem Code kann der Bürger sich dann einen Account in der SmartCity anlegen. 
-Der Account wird für die Nutzung anderer Microservices der SmartCity bebötigt.  
+Der Account wird für die Nutzung anderer Microservices der SmartCity benötigt.  
   
 Desweiteren kann bei dem Bürgerbüro eine Namens-/Adressänderung beantragt werden.
 Diese Änderungen werden den anderen Microservices über Events mitgeteilt. Auch andere Statusänderungen, 
-wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, werden an die anderen Microservices veteilt.  
+wie Eheschließung, Scheidung oder Todesmeldungen, werden an die anderen Microservices veteilt.  
+Zusätzlich können die Bürger über das Bürgerbüro verschiedene Genehmigungen, wie z.B. eine Baugenehmigung, beantragen. 
   
-`Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)`
+<!--Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)-->
+![Analyseklassendiagramm](media/Analyseklassendiagramm.svg)
 
 
 ## Funktionale Anforderungen
@@ -232,10 +234,6 @@ Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar.
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
 --->
 
-
-### Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
 
 ### Fehlerbehandlung 
 <!--
