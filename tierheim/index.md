@@ -21,6 +21,10 @@ Das Tierheim bietet den Bürgern die Möglichkeit, auf einer Webseite eine Vielz
 | Forum | Über das Forum werden die Bürger über verschiedene Ereignisse informiert |
 | Fitnessstudio | Mit dem Fitnessstudio existiert eine Kooperation, um bewegungsintensive Hunde mit engagierten Läufern zusammenzubringen |
 
+### Use-Case-Diagramm
+
+![Use-Case-Diagramm](media/UseCase.png)
+
 ## Anforderungen im Detail
 
 ### User Stories
@@ -78,6 +82,13 @@ Das Tierheim bietet den Bürgern die Möglichkeit, auf einer Webseite eine Vielz
 | 37 | Mitarbeiter | ein vermisstes Tier aus der Liste löschen | das vermisste Tier nicht mehr in der Liste angezeigt wird | Das Tier wird nicht mehr angezeigt | Muss |
 | 38 | Mitarbeiter | ein gefundenes Tier aus der Liste löschen | das gefundene Tier nicht mehr in der Liste angezeigt wird | Das gefundene Tier wird nicht mehr angezeigt | Muss |
 
+### Missuse-Stories
+
+| **ID**| **Als**|   **könnte ich**   |  **so dass** | **Fehler** | **Bewertung**   |
+|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
+| 39 | User | einen Kurs für Hundebesitzer mehr als einmal buchen | von einer Person mehrere Plätze belegt werden | ein Kurs wird als voll angezeigt, wenn er noch freie Plätze hat | sollte vermieden werden |
+| 40 | User | ein vermisstes Tier als gefunden melden, obwohl es noch nicht gefunden wurde | ein Tier nicht mehr als vermisst angezeigt wird, obwohl es weiterhin vermisst wird | Realität wird falsch abgebildet | schwierig zu vermeiden, sollte aber von Tierbesitzer bestätigt oder abgestritten werden können |
+
 ## Grafische Benutzerschnittstelle
 
 ## Datenmodell
@@ -87,6 +98,16 @@ Das Tierheim bietet den Bürgern die Möglichkeit, auf einer Webseite eine Vielz
 ## Schnittstellen
 
 ### Events
+
+| **Service** | **Payload** | **Beschreibung** |
+|:---------|:------------------|:----------------|
+| Forum | {<br>event_id: 5001,<br>event_name: "New Pet In Shelter",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Neues Tier im Tierheim |
+| Forum | {<br>event_id: 5002,<br>event_name: "New Missing Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Vermisstes Tier |
+| Forum | {<br>event_id: 5003,<br>event_name: "New Found Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Gefundenes Tier |
+| Fitnessstudio | {<br>event_id: 5004,<br>event_name: "New Pet For Walk",<br>service_name: tierheim,<br>pet_name: "name",<br>text: text<br>} | Neuer Hund für das Partnerprogramm Fitnessstudio/Tierheim |
+
+
+
 
 Bürgerbüro
     Sachkundenachweis erhalten
@@ -99,12 +120,13 @@ Forum
     Neues vermisstes Tier
     Neues gefundenes Tier
     Neues Tier im Tierheim
-    
 
 
 ## Technische Umsetzung
 
 ### Verwendete Technologien
 
-- Frontend und Backend: Rust (Yew)
+- Programmiersprache: Rust
+- Frontend: Yew
+- Backend: actix-web
 - Datenbank: MySQL
