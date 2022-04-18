@@ -263,6 +263,9 @@ stop
 |11| Client| interne (Mitarbeiter)Accounts erstellen können | ich Mitarbeiter die keine Bürger sind verwalten kann | Mitarbeiteraccount wird erstellt|  Muss
 |12| Client| mit SmartAuth einen Mitarbeiterlogin auf meiner Seite einbauen | sich Mitarbeiter bei meinem Service anmelden können | Mitarbeiter kann sich einloggen | Muss 
 
+### GUI - Mockups
+![](resourcen/anmeldeseite.png)
+
 ### Technische Komponenten 
 
 - Programmiersprache für alle Softwareelemente: [Rust](https://www.rust-lang.org/)
