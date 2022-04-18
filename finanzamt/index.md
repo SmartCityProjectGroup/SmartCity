@@ -92,6 +92,8 @@ User Story 7,8,9
 - Modellierung des physikalischen Datenmodells 
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
 
+![ER-Diagramm](media/finanzamt-erd.png)
+
 ## Abläufe
 
 - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
