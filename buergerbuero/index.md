@@ -142,7 +142,7 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
 ![PDM](media/pdm.png)
 
 ## Abläufe
-
+<!--
 - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
 - Aktivitätsdiagramme für relevante Use Cases
 - Aktivitätsdiagramm mit Swimlanes sind in der Regel hilfreich 
@@ -151,7 +151,16 @@ wie Beendigung eines Arbeitsverhältnisses, Eheschließung oder Todesmeldungen, 
   in einem Sequenz- oder Aktivitätsdiagramm darstellen
 - Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
   Softwaresystems hilfreich sind. 
-
+-->
+### Bürger
+Ablauf für Bürger die sich in der Stadt melden, und anschließend für die SmartCity registrieren  
+![Ablauf Bürger](media/ablauf_buerger.png ':size=300x450')
+### Anträge
+Ablauf für das Stellen und bearbeiten von Anträgen  
+![Ablauf Anträge](media/ablauf_antraege.png ':size=590x360')
+### Genehmigungen
+Ablauf für das Beantragen und bearbeiten von Genehmigungen  
+![Ablauf Genehmigungen](media/ablauf_genehmigungen.png ':size=395x372')
 
 ## Schnittstellen
 <!--

@@ -4,7 +4,7 @@
 
 ---
 
-**Meeting 1 - Kennenlernen** 05.04.2022
+### Meeting 1 - Kennenlernen *05.04.2022*
 
 Rollenverteilung (siehe [**Projektorganisation**](_einleitung/projektorganisation)), erste Ideensammlung.
 
@@ -41,7 +41,7 @@ Nächstes Meeting 12.04.2022
 
 ---
 
-**Meeting 2 - Ideenfindung** 12.04.2022
+### Meeting 2 - Ideenfindung *12.04.2022*
 
 Anwesende: Alle
 
@@ -128,4 +128,4 @@ Nächste Woche Vorstellung der Spezifikation und Sprintplanning mit Zielen aus d
 
 ---
 
-**Meeting 3 - Sprintplanning 1** DI 19.04
+### Meeting 3 - Sprintplanning 1 *DI 19.04*
