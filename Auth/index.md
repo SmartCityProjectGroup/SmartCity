@@ -19,7 +19,7 @@ können. Jeder Nutzer besitzt zu diesem Zweck ein *Account* welches durch mindes
 Damit ein Nutzer nicht für mehrere Services mehrere *Accounts* verwaltet und nicht jeder Microservice selbst eine eigene Authentifizierungslösung bereitstellen muss, existiert für das gesamte Smart City Ökosystem ein allgemeiner Authentifizierungs- und Autorisierungs Service (SmartAuth)
 mit dem sowohl interne als auch externe, private Anbieter kommunizieren können um Resourcen über mehrere Microservices hinweg anzufordern.
 
-?> SmartAuth ist _stark inspiriert_ von der [OAuth2 Spezifikation](https://oauth.net/2/) soll jedoch nicht den gesamten Standard implementieren
+?> Teile von SmartAuth sind _stark inspiriert_ von der [OAuth2 Spezifikation](https://oauth.net/2/) sollen jedoch nicht den gesamten Standard implementieren
 
 ---
 
@@ -29,7 +29,9 @@ Der Kalenderservice muss also, im Namen eines SmartCity Nutzers, Informationen a
 Aus Sicherheits- und Datenschutzgründen soll die App aber nicht mit den SmartCity Anmeldeinformationen des Nutzers in Kontakt kommen oder alle möglichen Daten ansehen und bearbeiten dürfen. 
 Stattdessen kann die App bestimmte Rechte bei SmartAuth erfragen. Der Nutzer wird zu SmartAuth weitergeleitet und gibt seine Anmeldeinformation auf einer Anmeldeseite weiter. Dort darf der Nutzter der Anfrage der App zustimmen und sich mit Passwort und Benutzername authentifizieren.
 
-Die App sieht dabei keine Anmeldedaten, sie erhält nach der Zustimmung des Anwenders nur einen kurzlebigen Authentifizierungscode, der dafür genutzt werden kann, Resourcen bei SmartCity Services anzufordern.
+Die App sieht dabei keine Anmeldedaten, sie erhält nach der Zustimmung des Anwenders nur einen kurzlebigen Authentifizierungscode, der dafür genutzt werden kann, Resourcen im Namen des Nutzers bei SmartCity Services anzufordern.
+
+> Siehe auch: [SSO](https://de.wikipedia.org/wiki/Single_Sign-on)
 
 Der Nutzer kann Rechte die er an Anwendungen autorisiert hat auch wieder entziehen und einschränken.
 Microservices entscheiden selbst, welche Rechte für Zugriff auf welche APIs/Resourcen notwendig sind.
@@ -51,6 +53,7 @@ Ein einmaliges Einloggen reicht, um alle SmartCity Services nutzen zu können.
 
 | Bezeichnung | Beschreibung |
 | --- | --- |
+| Bürger | Mensch der im Bürgerbüro als Bürger gespeichert wurde |
 | Resource | Geschützte Daten oder APIs die nur Besitzer eines Accounts verwenden darf | 
 | Nutzer | Benutzer eines oder mehrerer SmartCity Services. Kann ein registrierter Bürger sein | 
 | Resourcenbesitzer | Besitzer eines Accounts, gehört Resourcen | 
@@ -60,11 +63,10 @@ Ein einmaliges Einloggen reicht, um alle SmartCity Services nutzen zu können.
 | Session | Überbegriff für Zugangsschlüsselkombinationen die zwischen Client und SmartAuth ausgetauscht werden um Zugriff auf geschüzte Resourcen zu ermöglichen |
 | Authentisierung | Erbringen von Identitätsnachwis seitens des Nutzers (hier durch Passwort, Benutzername)
 | Authentifizierung | Überprüfen des Identitätsnachweis (durch SmartAuth) |
-| Autorisierung | Gewähren bestimmter Rechte |                         
+| Autorisierung | Gewähren bestimmter Rechte |         
+| Interner Account | Spezieller Accounttyp der von einem Client erstellt und verwaltet wird und nur innerhalb eines Services verwendet werden kann |        
 
-### Use-Case 
-
----
+### Use-Cases 
 
 ```plantuml
 @startuml
@@ -100,6 +102,7 @@ rectangle Accountverwaltung {
 :Client: as Client
 Resourcenbesitzer <|-- Client
 
+
 rectangle Interface {
     left to right direction
     Client --> (Secrets anfordern)
@@ -112,6 +115,12 @@ rectangle Interface {
     Client --> (Auf geschützte Resourcen zugreifen)
 }
 
+rectangle Verwaltung {
+    Client --> (Internen Account erstellen)
+    Client --> (Internen Account entfernen)
+}
+
+
 :Administrator: as Admin
 Resourcenbesitzer <|-- Admin
 
@@ -122,34 +131,137 @@ rectangle Administration {
 
 @enduml
 ```
+```plantuml
+@startuml
+    title Aktivität: Erstellen eines Accounts
+    start
+    partition Initialisierung {
+        :Neuer Bürger wird gemeldet; 
+        note right: Information von Bürgerbüro 
+        if (Bürger volljährig) then (Ja)
+            :Generiere\nindividuellen Registrierungscode; 
+            if (Bürger hat Email-Adresse angegeben) then (Ja)
+                :Versende Email mit Registrierungscode;
+            else (Nein)
+                :Speichere Registrierungscode; 
+                note right
+                    Noch nicht klar entschieden:
+                        * wird per Post verschickt
+                        * wird gespeichert und verschickt wenn Email vorliegt
+                        * wird an Familienmitglied geschickt
+                        * muss manuell angefragt werden
+                end note
+            endif 
+        else (Nein)
+            stop
+        endif
+    }
+    partition Registrierung {
+        split
+            :Bürger besucht Registrierungsseite\nÜber die Landing Page;
+            :Bürger gibt Registrierungscode in Maske ein;
+            if (Code gültig) then (Ja)
+                : Weiterleitung zu Registrierungsseite;
+            else (Nein)
+                : Fehlermeldung;
+                kill
+            endif
+        split again
+            :Bürger nutzt Registrierungslink;
+        end split
+        :Bürger gibt Benutzername & Passwort ein;
+        if (Daten gültig) then (Ja)
+            : Registriere neuen Nutzer;
+            stop
+        else (Nein) 
+            : Fehlermeldung;
+            stop
+        endif
+    }
+@enduml
+```
+---
+```plantuml
+@startuml
+title Aktivität: Nutzerlogin A
+    partition Nutzerinput {
+        :Benutzer besucht Landing-Page;
+        :Benutzer wählt Login Option;
+        :Benutzer wird zur Anmeldeseite weitergeleitet;
+        :Benutzer gibt Benutzername & Passwort ein; 
+
+        :Benutzer bestätigt Auswahl;
+    }
+    partition Authentifizierung {
+        :SmartAuth überprüft Gültigkeit\nvon Benutzername & Passwort;
+        if(Gültig) then (Ja)
+            :Erstelle Session; 
+        else(Nein)
+            :Zeige Fehlermeldung;
+            stop
+        endif
+    }
+    :Speichere Identitätsnachweis\nim Browser des Nutzer;
+    :Zeige Bestätigung;
+    :Leite zum Benutzerbereich\nder Landing-Page weiter;
+@enduml
+```
+
+```plantuml
+@startuml
+title Aktivität: Autorisierung über Fremdservice
+    partition Fremdservice {
+        :Benutzer bestätigt SmartCity Integration; 
+        :Fremdservice schickt Anfrage an SmartAuth;
+        :Fremdservice bittet um Rechte;
+        if(Client darf Rechte erfragen) then (Ja) 
+            :Benutzer wird zu\nSmartAuth Anmeldeseite weitergeleitet;
+        else (Nein)
+            :Gebe Fehlermeldung zurück;
+            stop
+        endif
+    }
+
+    partition Authentifizierung {
+        :Benutzer gibt Benutzername & Passwort ein; 
+        label lab
+        :SmartAuth überprüft Gültigkeit\nvon Benutzername & Passwort;
+        if(Gültig) then (Ja)
+            :Benutzer bestätigt Auswahl;
+            :SmartAuth zeigt Seite, die\nangefragte Berechtigungen auflistet;
+            if(Benutzer stimmt zu) then (Ja)
+                :Benutzer wird zu Fremdservice weitergeleitet;
+                :Fremdservice erhält Authentifizierungsschlüssel;
+            else (Nein)
+                :Gebe Fehlermeldung zurück;
+                stop
+            endif
+        else (Nein)
+            :Gebe Fehlermeldung zurück;
+            stop
+        endif
+    }
+stop
+@enduml
+
+```
+
 
 ### User-Stories
-#### Aus der Perspektive eines Nutzers
-
-- Ich möchte ein Account erstellen können
-
-- Ich möchte mich mit meinem Account anmelden können
-
-- Ich möchte personenbezogene Services nutzen können 
-
-- Ich möchte mich nur einmal einloggen müssen um alle Services nutzen zu können
-
-- Ich möchte mein SmartCity Account mit anderen Apps verbinden können
-
-    - *Ich möchte diese Verbindungen wieder entfernen können*
-
-- Ich möchte mein Account bearbeiten können
-
-    - *Ich möchte meine Email-Adresse/Benutzernamen verändern können*
-
-#### Aus der Perspektive eines Clients
-
-- *Ich möchte meine App bei SmartAuth registrieren*
-
-- Ich möchte Rechte bei SmartAuth anfragen können 
-
-- Ich möchte personenbezogene Services von SmartCity nutzen können
-
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Prioität** |
+| :------ | :----- | :------ | :-------- | :------ | :------ |
+|1 | Bürger | ich einen Account erstellen können  | Ich SmartCity Services nutzen kann | Account wird erstellt | Muss
+|2 | Nutzer | personenbezogene Services nutzen können | Ich auf meine Daten zugreifen kann | Authentifizierung | Muss
+|3 | Nutzer | mich nur einmal einloggen müssen | mein Erlebnis nicht unterbrochen wird |  Speichern globaler Session | Muss
+|4 | Nutzer | mein SmartCity Accounts mit anderen Apps verbinden können | ? | Autorisierung | Muss
+|5 | Nutzer | verbundene Apps entfernen können | Apps nicht mehr auf meine Daten zugreifen können | Vergebene Schlüssel werden invalidiert | Kann 
+|6 | Nutzer | mein Account bearbeiten können | Ich meine Email-Adresse/Benutzername/Passwort verändern kann | Passwort/Benutzername/Email wird geändert | Muss
+|7| Nutzer | Mein Passwort zurücksetzen können| Ich meine Email-Adresse/Benutzername verändern kann | Passwort/Benutzername wird geändert | Muss
+|8| Client| Meine App bei SmartAuth registieren| Ich Rechte bei SmartAuth anfragen kann | Neuer Client wird aufgenommen | Muss
+|9| Client| mein Account bearbeiten können| Ich meine ClientID/Passwort verändern kann | ClientID/Passwort wird verändert | Kann
+|10| Client| rechte bei SmartAuth anfragen können | ich personenbezogene Services im Namen eines Nutzers nutzen kann | Muss
+|11| Client| interne (Mitarbeiter)Accounts erstellen können | ich Mitarbeiter die keine Bürger sind verwalten kann | Mitarbeiteraccount wird erstellt|  Muss
+|12| Client| mit SmartAuth einen Mitarbeiterlogin auf meiner Seite einbauen | sich Mitarbeiter bei meinem Service anmelden können | Mitarbeiter kann sich einloggen | Muss 
 
 ### Technische Komponenten 
 
@@ -177,32 +289,11 @@ rectangle Administration {
 #### Autorisierung über Fremdservice
 ?> Adoptiert von [rfc6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
 
-```plantuml
-@startditaa
-     +--------+                               +---------------+
-     |        |--(A)- Authorization Request ->|   Resource    |
-     |        |                               |     Owner     |
-     |        |<-(B)-- Authorization Grant ---|               |
-     |        |                               +---------------+
-     |        |
-     |        |                               +---------------+
-     |        |--(C)-- Authorization Grant -->| Authorization |
-     | Client |                               |     Server    |
-     |        |<-(D)----- Access Token -------|               |
-     |        |                               +---------------+
-     |        |
-     |        |                               +---------------+
-     |        |--(E)----- Access Token ------>|    Resource   |
-     |        |                               |     Server    |
-     |        |<-(F)--- Protected Resource ---|               |
-     +--------+                               +---------------+
-@enduml
-```
-Quelle: https://datatracker.ietf.org/doc/html/rfc6749#section-1.2
 
 ```plantuml
 @startuml
     Title Vereinfachte Darstellung des Auth Protokolls
+    autonumber
     alt Geringes Vertrauen
         Client->SmartAuth: Autorisierungsanfrage (A)
         note left: Weiterleitung
@@ -215,7 +306,7 @@ Quelle: https://datatracker.ietf.org/doc/html/rfc6749#section-1.2
         SmartAuth->Client: Autorisierungsschlüssel (D)
         Client->SmartAuth: Autorisierungsschlüssel (E)
         alt Autorisierungsschlüssel gültig
-            SmartAuth->Client: Zugangsschlüssel (F)
+            SmartAuth->Client: Zugangsschlüssel + Auffrischungsschlüssel (F)
 
             Client ->Service: Call + Zugangsschlüssel (G)
             Service ->SmartAuth: Zugangsschlüssel (H)
@@ -237,6 +328,8 @@ Quelle: https://datatracker.ietf.org/doc/html/rfc6749#section-1.2
     end 
 @enduml
 ```
+
+
 
 - (A): 
 Der Client sendet eine Autorisierungsanfrage an den SmartAuth Server. Je nach Vertrauensstufe, kann die Anfrage auch bereits 
@@ -270,6 +363,33 @@ Es gibt also insgesamt drei Möglichkeiten an eine beschüzte Resource zu kommen
 
 - Autorisierung über SmartAuth (für alle registrierten Clients)
 
+---
+Quelle: https://datatracker.ietf.org/doc/html/rfc6749#section-1.5
+
+```plantuml
+@startuml
+Title Auffrischung von Zugangsschlüsseln
+autonumber
+participant Client
+participant SmartAuth
+participant Service
+Client->Service: Call + Zugangsschlüssel
+Service->SmartAuth: Zugangsschlüssel
+SmartAuth ->X Service: Fehlermeldung
+Service->X Client: Fehlermeldung
+Client->SmartAuth: Auffrischungsschlüssel
+
+alt Auffrischungsschlüssel gültig
+    SmartAuth -> Client: Zugangsschlüssel + Auffrischungsschlüssel
+    Client ->Service: Call + Zugangsschlüssel (G)
+else Auffrischungsschlüssel ungültig 
+    SmartAuth -> Client: Fehlermeldung
+    note right: Neue Autorisierungsanfrage ist nötig
+end
+
+
+```
+
 ### Daten
 !> Nicht 100% final. Es werden jedoch höchstens nur Ergänzungen stattfinden.
 
@@ -288,45 +408,49 @@ Auffrichungsschlüssel | Individueller, geheimer, langlebiger Schlüssel mit dem
 ?> Siehe auch: https://tools.ietf.org/id/draft-richer-oauth-json-request-00.html
 und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)
 
-
+#### Autorisierungsanfrage
 ```plantuml 
 @startjson
 {
     "authorization_request": {
         "response_type" : "'code'",
         "client_id" : "Clientschlüssel",    
+        "client_secret" : "",
         "redirect_uri" : "",
         "permissions" : ["'read'", "'write'"],
-        "state" : "bliblablup"
+        "state" : "bliblablup",
+        "requires_internal" : false,
+        "owner_secret" : "" 
     }
 
 }
 @endjson
 ```
 
-
-|    Bezeichnung     |                                                                         Beschreibung                                                                           |   Typ   |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
-| response_type      | Muss 'code'sein                                                                                                                                                | String  |
-| client_id          | Die ClientID                                                                                                                                                   | String  |
-| redirect_uri       | In JSON Version ggf anders benutzt.  Ansonsten: URL zu der der Nutzer weitergeleitet wird, wenn Login beendet wurde (Sowohl bei Fehlschlag als auch bei Erfolg)| String |
-| permissions        |  Rechte die angefordert werden sollen                                                                                                                          | String |
-| state              |  Kann alles sein, wird an den Aufrufenden ohne Änderung zurückgeschickt                                                                                        |  -      |
-
-!> Im OAuth2 Spec wird 'permissions' als 'scope' bezeichnet.  
-
-!> Die JSON Version des "authorization_request" ist sehr unsicher und nicht kompatibel mit OAuth Spec, aufgrund von Vereinfachung Teil unserer API.
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| response_type | Muss 'code' oder 'client-code' sein| String
+| client_id | Die ClientID | String
+| client_secret | Das Clientpasswort | String
+| redirect_uri | URL zu der der Nutzer weitergeleitet wird, wenn Login beendet wurde (Sowohl bei Fehlschlag als auch bei Erfolg) | String
+| permissions | Rechte die angefordert werden sollen. | List  
+| state |  Kann alles sein, wird an den Aufrufenden ohne Änderung zurückgeschickt | String
+| requires_internal | Falls true: Nur interne Accounts werden aktzeptiert | Boolean 
+| owner_secret | Optional: Benutzername + Passwort, nur falls hohes Vertrauen oder interner Account | 
 
 Als Link: 
 
 ```
-    https://authorization-server.com/auth?response_type=code
+    {smartAuth}/auth?response_type=code
     &client_id=client_id
     &redirect_uri=...
     ...
 ```
+?> Format von "owner_secret" noch nicht festgelegt
+
 ---
 
+#### Autorisierungsanfrage Antwort
 ```plantuml 
 @startjson
 {
@@ -343,6 +467,15 @@ Als Link:
 | code | Der Autorisierungscode | String
 | state | Der in der Anfrage mitgelieferte state | String
 
+Als Link: 
+
+```
+  {redirect_uri}/?code=...
+  &state=... 
+    ...
+```
+
+#### Zugangssschlüsselanfrage
 ```plantuml 
 @startjson
 {
@@ -369,10 +502,10 @@ Als Link:
 Als Link: 
 
 ```
-    {redirect_uri}?grant_typpe=authorization_code?code=autorisierungsschlüssel&state=...
+    {smartAuth}/token?grant_type=authorization_code?code=autorisierungsschlüssel&state=...
 ```
 
-
+#### Zugangsschlüsselanfrage Antwort
 ```plantuml 
 @startjson
 {
@@ -393,6 +526,7 @@ Als Link:
 | refresh_token | Auffrischungsschlüssel | String
 | RESERVED |  Wird eventuell in der Zukunft benutzt | String
 
+#### Auffrischung
 ```plantuml 
 @startjson
 {
@@ -413,8 +547,54 @@ Als Link:
 | client_secret | Das Client Passwort | String  
 
 !> Später eventuell über [HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+
+#### Verifyanfrage
+
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| verify_type | Muss "access_token" sein | String
+| access_token | Der Zuggangsschlüssel | String
+
+#### Verifyantwort
+
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| user_id | Eine individuelle NutzerID | String
+| permissions | Die erteilten Rechte | String
+| user_name | Nutzername, "REDACTED" falls Rechte zum Einsehen fehlen | String
+| user_mail | Nutzer Emial, "REDACTED" falls Rechte zum Einsehen fehlen | String
+
+#### Clientschlüsselanfrage
+> Siehe: https://datatracker.ietf.org/doc/html/rfc6749#section-4.4 
+
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| grant_type | Muss "client_code" sein | String
+| redirect_uri | Weiterleitung wie bei allen anderen Anfragen | String
+| client_id | Die Client ID | String
+| client_secret | Das Client Passwort | String  
+
+####  Clientverifyanfrage
+| Bezeichnung | Beschreibung | Typ
+| --- | --- | --- |
+| verify_type | Muss "client_token" sein | String
+
+#### Clientverifyantwort
+!> Noch nicht spezifiziert
+
+### Error
+#### Codes 
+> Siehe: https://datatracker.ietf.org/doc/html/rfc6749#section-5.2
+
+### Rechte
+!> Kann sich stark ändern
+
+Liste von Strings, getrennt mit Leerzeichen
+STUB
+
 ### REST API
 | Endpunkt | Methode | Content-Type | Parameter | Resultat | Anmerkung
 | --- | --- | --- | --- | --- | --- | 
 /auth{authorization_request} |POST|application/x-www-form-urlencoded|authorization_request| Bei Erfolg: 301, Weiterleitung mit authorization_response, sonst 301 mit error response | - |
 /token{access_token_request} |POST|application/x-www-form-urlencoded|access_token_request| Bei Erfolg: 200 OK mit access_token_response, sonst error response | - | 
+/verify| POST | application/json | Verifyanfrage | Bei Erfolg: 200 OK mit Verifyantwort
