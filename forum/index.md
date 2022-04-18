@@ -20,7 +20,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 
 
 
-[![Analyseklassendiagramm](media/Analyseklassendiagramm.PNG)]
+[![Analyseklassendiagramm](media/Analyseklassendiagramm.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/Analyseklassendiagramm.PNG)
  
 
 ## Funktionale Anforderungen
@@ -32,7 +32,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 * Begriffe konsistent in der Spezifikation verwenden  
 * Begriffe im Glossar darstellen
 
-[![Use Case- Diagramme](media/Use Case- Diagramme.PNG)]
+[![Use Case- Diagramme](media/usecasediagramme.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/usecasediagramme.PNG)
 
 ## Anforderungen im Detail
 
@@ -127,7 +127,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 - Mockups für unterschiedliche Akteure
 
-[![Mockups](media/forum_mockups.svg)]
+[![Mockups](media/forum_mockups.svg)](https://merlinchiodo.github.io/SmartCity/forum/media/forum_mockups.svg)
 
 ## Datenmodell 
 
@@ -146,7 +146,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
   Softwaresystems hilfreich sind. 
 
-[![Aktivitätsdiagramm](media/Aktivitätsdiagramm.PNG)]
+[![Aktivitätsdiagramm](media/Aktivitätsdiagramm.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/Aktivitätsdiagramm.PNG)
 
 ## Schnittstellen
 
