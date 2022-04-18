@@ -16,15 +16,28 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 ## Funktionale Anforderungen
 
-* Definition der Akteure
-* Use-Case Diagramme
-* Strukturierung der Diagramme in funktionale Gruppen
-* Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
-* Begriffe konsistent in der Spezifikation verwenden  
-* Begriffe im Glossar darstellen
+### Akteure
+| **Akteur** | **Definition**  |
+| :-------: | :------- |
+| User | Nutzer der den Service nutzt und Zugriff auf seine Mitgliedschaft hat |
+| Mitarbeiter | Mitarbeiter des Fitnessstudios, hat administrative Rechte auf einer gesonderten Mitarbeiterseite |
+| Tierheim | Das Tierheim besitzt eine Kooperation durch die ihr bereitwillige Gassigeher mitgeteilt werden |
+| Rabattgeber | Institutionen, die ihren "Mitgliedern" Rabatt gewähren, aktuell Flüchtlinge und Mitarbeiter des Stadtbusses |
+| Newsletter | Der Newsletter Microservice welcher Interessierte regelmäßig über Neuigkeiten informiert |
+| Landingpage | Die Startseite der Anwendung |
 
 
-![](media/gymUseCase.png) <!-- use case-Digramm -->
+
+### Use-Case Diagramme
+
+####Mitgliedschaftsverwaltung
+![](media/MitgliedschaftUseCase.png) <!-- use case-Digramm -->
+
+####Sportaktivitäten
+![](media/SportaktivitätenUseCase.png) <!-- use case-Digramm -->
+
+####Mitarbeiteraktionen
+![](media/MitarbeiteraktionenUseCase.png) <!-- use case-Digramm -->
 
 ## Anforderungen im Detail
 
@@ -58,6 +71,7 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 10  |Tierheim| über bereitwillige Gassigeher informiert werden|ich diesen ein Tier zuweisen kann| Tierheim wird über Person informiert | Sollte |
+| 19  |Gemeinschaft| meinen Mitgliedern Rabatte ermöglichen|diese günstigere Tarife haben| Rabatt wird gewährt | Sollte |
 
 **Mitarbeiterseite**
 
