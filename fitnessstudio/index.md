@@ -31,22 +31,17 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 ### Use-Case Diagramme
 
 ####Mitgliedschaftsverwaltung
-
 ![](media/MitgliedschaftUseCase.png) <!-- use case-Digramm -->
 
 ####Sportaktivitäten
-
 ![](media/SportaktivitätenUseCase.png) <!-- use case-Digramm -->
 
 ####Mitarbeiteraktionen
-
 ![](media/MitarbeiteraktionenUseCase.png) <!-- use case-Digramm -->
 
 ## Anforderungen im Detail
 
-
 ###Mitgliedschaft verwalten
-
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 1  |User| nur mit meinem Namen Mitglied werden|ich die Dienste des Studios nutzen kann| Mitglied wird angelegt | Muss |
@@ -56,7 +51,6 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 5  |User| möchte ich von meinen Erzeihungsberechtigten angemeldet werden können|ich auch als Nichtgeschäftsfähiger Mitglied werden kann| Mitglied wird angelegt | Sollte |
 
 ###Sportaktivitäten verwalten
-
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 6  |User| Kurse angezeigt bekommen|ich einen auswählen kann| Kurse werden angezeigt | Sollte |
@@ -65,14 +59,12 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 9  |User| mich für das Tierheimprogramm abmelden|ich nicht mehr verfügbar bin | Mitglied wird Tierheim gemeldet| Sollte |
 
 ###Servicekommunikation
-
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 10  |Tierheim| über bereitwillige Gassigeher informiert werden|ich diesen ein Tier zuweisen kann| Tierheim wird über Person informiert | Sollte |
 | 19  |Gemeinschaft| meinen Mitgliedern Rabatte ermöglichen|diese günstigere Tarife haben| Rabatt wird gewährt | Sollte |
 
 ###Mitarbeiterseite
-
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 11  |Mitarbeiter| mich anmelden können| ich in einen gesichterten Mitarbeiterbereich geleitet werde| Weiterleitung auf separate Mitarbeiterseite| Sollte |
@@ -82,7 +74,6 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 | 15  |Mitarbeiter| das about us ändern können| die Landingpage es richtig anzeigt| about us wird aktualisiert| Sollte |
 
 ###Missue-Stories
-
 | **ID**| **Als**|   **könnte ich**   |  **so dass** | **Fehler** | **Bewertung**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 16  |User| mich mehrfach anmelden|ich mehrere Tarife zahlen muss|	mehrere Tarife von gleicher Person | Schlecht |
