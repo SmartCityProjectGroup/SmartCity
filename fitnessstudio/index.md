@@ -121,15 +121,15 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 ## Abläufe
 
-### Mitgliedschaft verwaalten
+### Mitgliedschaft
 
 ![](media/AnmeldungAblauf.png) <!-- Anmeldungsablauf -->
 
 ### Sportaktionen
 
-![](media/SportaktionenAblauf.png) <!-- Sportaktionenablauf -->
+![](media/SportaktionAblauf.png) <!-- Sportaktionenablauf -->
   
-### Mitarbeiterseite
+### Mitarbeiterbereich
 
 ![](media/MitarbeiterAblauf.png) <!-- Mitarbeiterablauf -->
 
