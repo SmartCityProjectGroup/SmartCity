@@ -101,25 +101,14 @@ Das Tierheim bietet den Bürgern die Möglichkeit, auf einer Webseite eine Vielz
 
 | **Service** | **Payload** | **Beschreibung** |
 |:---------|:------------------|:----------------|
-| Forum | {<br>event_id: 5001,<br>event_name: "New Pet In Shelter",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Neues Tier im Tierheim |
-| Forum | {<br>event_id: 5002,<br>event_name: "New Missing Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Vermisstes Tier |
-| Forum | {<br>event_id: 5003,<br>event_name: "New Found Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Gefundenes Tier |
-| Fitnessstudio | {<br>event_id: 5004,<br>event_name: "New Pet For Walk",<br>service_name: tierheim,<br>pet_name: "name",<br>text: text<br>} | Neuer Hund für das Partnerprogramm Fitnessstudio/Tierheim |
+| Forum | {<br>event_id: 5001,<br>event_name:"New Pet In Shelter",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Neues Tier im Tierheim |
+| Forum | {<br>event_id: 5002,<br>event_name:"New Missing Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Vermisstes Tier |
+| Forum | {<br>event_id: 5003,<br>event_name:"New Found Pet",<br>service_name: tierheim,<br>title: title,<br>text: text<br>} | Gefundenes Tier |
+| Fitnessstudio | {<br>event_id: 5004,<br>event_name:"New Pet For Walk",<br>service_name: tierheim,<br>pet_name: name,<br>pet_description: text<br>} | Neuer Hund für das Partnerprogramm Fitnessstudio/Tierheim |
+| Fitnessstudio | {<br>event_id: 5005,<br>event_name:"Pet Removed From Program",<br>service_name: tierheim,<br>pet_name: name,<br>pet_description: text<br>} | Hund aus Partnerprogramm Fitnessstudio/Tierheim entfernt|
+| Finanzamt | {<br>event_id: 5006,<br>event_name:"Citizen With New Dog",<br>service_name: tierheim,<br>citizen_id: citizen_id<br>} | Bürger hat neuen Hund adoptiert (Hundesteuer) |
+| Fitnessstudio | {<br>event_id: 5007,<br>event_name:"New Proof Of Competence",<br>service_name: tierheim,<br>citizen_id: citizen_id<br>} | Bürger hat Sachkundenachweis für Hundehalter erhalten |
 
-
-
-
-Bürgerbüro
-    Sachkundenachweis erhalten
-Finanzamt
-    neuer Hund Hundesteuer
-Fitnessstudio
-    neuer Hund für Partnerprogramm
-    Hund aus Partnerprogramm entfernt
-Forum 
-    Neues vermisstes Tier
-    Neues gefundenes Tier
-    Neues Tier im Tierheim
 
 
 ## Technische Umsetzung
