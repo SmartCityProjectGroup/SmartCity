@@ -9,17 +9,19 @@ window.$docsify = {
 # SmartAuth 🔑
 
 **Autor:** Jonathan Hauter
-
+![](resourcen/logo.png)
 ## Einführung 
+?> Teile von SmartAuth sind _stark inspiriert_ von der [OAuth2 Spezifikation](https://oauth.net/2/). Man kann zu großen Teilen ergänzend auch der [Grundspezifikation](https://datatracker.ietf.org/doc/html/rfc6749) folgen. Besonders abweichende Elemente werden als solche gekennzeichnet.
+
 Viele Smart City Services verwalten sensible, personenbezogene Daten.
 
 Logischerweise sollte nicht jeder Nutzer alle Daten zu allen Personen einsehen und bearbeiten können, sondern nur auf ihre eigenen Zugriff erhalten.
 Dazu ist es erforderlich, dass Anwender ihre Identität sicher bestätigen
-können. Jeder Nutzer besitzt zu diesem Zweck ein *Account* welches durch mindestens einem Passwort und einem Benutzernamen geschützt ist.
+können. Jeder Nutzer besitzt zu diesem Zweck einen *Account*, welches mindestens durch ein Passwort und einem Benutzernamen geschützt ist.
 Damit ein Nutzer nicht für mehrere Services mehrere *Accounts* verwaltet und nicht jeder Microservice selbst eine eigene Authentifizierungslösung bereitstellen muss, existiert für das gesamte Smart City Ökosystem ein allgemeiner Authentifizierungs- und Autorisierungs Service (SmartAuth)
 mit dem sowohl interne als auch externe, private Anbieter kommunizieren können um Resourcen über mehrere Microservices hinweg anzufordern.
 
-?> Teile von SmartAuth sind _stark inspiriert_ von der [OAuth2 Spezifikation](https://oauth.net/2/) sollen jedoch nicht den gesamten Standard implementieren
+Gemeldete Bürger erhalten einen Registrierungscode per Email. Ohne Registrierungscode kann kein Bürgeraccount erstellt werden.
 
 ---
 
@@ -29,23 +31,29 @@ Der Kalenderservice muss also, im Namen eines SmartCity Nutzers, Informationen a
 Aus Sicherheits- und Datenschutzgründen soll die App aber nicht mit den SmartCity Anmeldeinformationen des Nutzers in Kontakt kommen oder alle möglichen Daten ansehen und bearbeiten dürfen. 
 Stattdessen kann die App bestimmte Rechte bei SmartAuth erfragen. Der Nutzer wird zu SmartAuth weitergeleitet und gibt seine Anmeldeinformation auf einer Anmeldeseite weiter. Dort darf der Nutzter der Anfrage der App zustimmen und sich mit Passwort und Benutzername authentifizieren.
 
-Die App sieht dabei keine Anmeldedaten, sie erhält nach der Zustimmung des Anwenders nur einen kurzlebigen Authentifizierungscode, der dafür genutzt werden kann, Resourcen im Namen des Nutzers bei SmartCity Services anzufordern.
+Die App sieht dabei keine Anmeldedaten des Nutzers, sie erhält nach der Zustimmung des Anwenders nur einen kurzlebigen Authentifizierungscode, der dafür genutzt werden kann, bestimmte Resourcen im Namen des Nutzers bei SmartCity Services anzufordern.
+Der Nutzer kann Rechte die er an Anwendungen autorisiert hat auch wieder entziehen und einschränken.
+
+Eine Bankapp dagegen könnte jedoch auch von sehr sensitiven Daten profitieren um beispielsweise mit dem Finanzamt zu kommunizieren. Rechte können auf individueller Basis von Administratoren an Anwendungen verteilt werden.
+Microservices entscheiden selbst, welche Rechte für Zugriff auf welche APIs/Resourcen notwendig sind.
 
 > Siehe auch: [SSO](https://de.wikipedia.org/wiki/Single_Sign-on)
 
-Der Nutzer kann Rechte die er an Anwendungen autorisiert hat auch wieder entziehen und einschränken.
-Microservices entscheiden selbst, welche Rechte für Zugriff auf welche APIs/Resourcen notwendig sind.
 
 ---
-
 Anwendungen die über SmartAuth auf geschützte Resourcen zugreifen können, müssen sich selbst registrieren und erhalten
 einen individuellen Identifikationsausweis der bei einer Autorisierungsanfrage angegeben werden muss.
-Administratoren können bestimmen, welche Anwendungen welche Rechte anfordern dürfen.
+SmartAuth Administratoren können bestimmen, welche Anwendungen welche Rechte anfordern dürfen.
+Optional kann eine registrierte Anwendung auch selbst interne Accounts erstellen und verwalten die bspw für Mitarbeiter genutzt werden können.
+Interne Accounts und Bürgeraccounts sind vollständig voneinander getrennt.
 
 ---
 
 Microservices die einen integralen Bestandteil zur SmartCity darstellen, müssen keinen Authentifizierungscode anfordern.
 Ein einmaliges Einloggen reicht, um alle SmartCity Services nutzen zu können.
+
+--- 
+
 
 ## Überblick
 
@@ -266,7 +274,7 @@ stop
 ### GUI - Mockups
 ![](resourcen/anmeldeseite.png)
 
-### Technische Komponenten 
+## Technische Komponenten 
 
 - Programmiersprache für alle Softwareelemente: [Rust](https://www.rust-lang.org/)
 - Frontend
@@ -285,13 +293,23 @@ stop
 
     - MySQL
 
-### Elemente
+## Elemente
 
 ### Abläufe
 
 #### Autorisierung über Fremdservice
-?> Adoptiert von [rfc6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
+?> Adaptiert von [rfc6749](https://datatracker.ietf.org/doc/html/rfc6749#section-4.1)
 
+##### IDs und Schlüssel
+| Bezeichnung | Beschreibung |
+| --- | --- |
+Clientschlüssel | Individueller, öffentlicher Schlüssel der einen registrierten Client identifiziert. (Base64 encodiert Clientname +numerische ID) |
+Clientsecret | Individueller, geheimer Schlüssel/Passwort der benötigt wird, um einen Client zu authentifizieren. |
+Autorisierungsschlüssel | Individueller, gehimer sehr kurzlebiger Schlüssel der dafür verwendet werden kann einen Zugangsschlüssel und Auffrischungsschlüssel |      
+Zugangsschlüssel |Individueller, geheimer, kurzlebiger Schlüssel der einem Client Zugriff auf geschüzte Resourcen erlaubt
+Auffrischungsschlüssel | Individueller, geheimer, langlebiger Schlüssel mit dem ein Client neue Zugangsschlüssel anfordern kann.
+
+!> Clientsecret bleibt einfachhaltshalber eventuell vollständig unbenutzt. Falls unimplementiert ist "none" immer valide
 
 ```plantuml
 @startuml
@@ -335,18 +353,18 @@ stop
 
 
 - (A): 
-Der Client sendet eine Autorisierungsanfrage an den SmartAuth Server. Je nach Vertrauensstufe, kann die Anfrage auch bereits 
-die Anmeldedaten des Resourcenbesitzers enthalten (A2).
+Der Client sendet eine *Autorisierungsanfrage* an den SmartAuth Server. Je nach Vertrauensstufe, kann die Anfrage auch bereits 
+die Anmeldedaten des Resourcenbesitzers enthalten (A2). 
 
-- (B): SmartAuth präsentiert dem Nutzer eine Anmeldeseite. 
+- (B): Der Nutzer wird mittels einer 301 Antwort an die Anmeldeseite von SmartAuth weitergeleitet. 
 
-- (C): Der Nutzer gibt seine Anmeldedaten über die Anmeldeseite an SmartAuth weiter
+- (C): Der Nutzer gibt seine Anmeldedaten über die Anmeldeseite an SmartAuth weiter und wird dann zurück an die Anwendung des Clients geleitet.
 
-- (D): Falls die Autorisierung erfolgreich ist, gibt SmartAuth einen einmaligen, kurzlebigen Autoriserungsschlüssel (<= 10 min) an den Client weiter. Der Autoriserungsschlüssel selbst reicht nicht, um Resourcen anzufordern.
+- (D): Falls die Autorisierung erfolgreich ist, gibt SmartAuth einen einmaligen, kurzlebigen Autoriserungsschlüssel (<= 10 min) an den Client weiter. 
 
-- (E): Der Client sendet den Autorisierungsschlüssel an SmartAuth
+- (E): Der Client sendet den Autorisierungsschlüssel an SmartAuth.
 
-- (F): Falls der Autorisierungsschlüssel gültig ist, gibt SmartAuth einen langlebigen Zugangsschlüssel weiter.
+- (F): Falls der Autorisierungsschlüssel gültig ist, gibt SmartAuth einen Zugangsschlüssel und Auffrischungsschlüssel weiter.
 
 - (G): Der Client möchte auf eine geschüzte Resource zugreifen und sendet mit der Anfrage den Zugangsschlüssel
 
@@ -367,7 +385,7 @@ Es gibt also insgesamt drei Möglichkeiten an eine beschüzte Resource zu kommen
 - Autorisierung über SmartAuth (für alle registrierten Clients)
 
 ---
-Quelle: https://datatracker.ietf.org/doc/html/rfc6749#section-1.5
+> Siehe auch: https://datatracker.ietf.org/doc/html/rfc6749#section-1.5
 
 ```plantuml
 @startuml
@@ -389,24 +407,27 @@ else Auffrischungsschlüssel ungültig
     SmartAuth -> Client: Fehlermeldung
     note right: Neue Autorisierungsanfrage ist nötig
 end
-
-
 ```
+Ohne Auffrischungsschlüssel wäre es sehr einfach für Angreifer Zugangsschlüssel zu stehlen und so Nutzer nachzuahmen.
+SmartAuth invalidiert Zuganggschlüssel regelmäßig. Falls ein Zugganschlüssel nicht mehr funktioniert, muss ein Client einen neuen mittels 
+eines Auffrischungsschlüssel anfordern (s.o).
+Bei einer Anfrage muss:
+
+- Sich der Client mittels Client ID und Client Passwort authentifizieren
+- ggf ein neuer Auffrischungsschlüssel seitens des Clients gespeichert werden
+
+---
+
+Für die meisten Services sind nur die Punkte G bis I relevant um nach außen zeigende REST-APIs abzusichern oder zu überprüfen, welcher Nutzer gerade 
+den Serivce verwendet.
+
+!> Beispiele und bessere Dokumentation kommen noch! 
+
+Eine Microservice API sollte daher wenn möglich *keine* Bürger-ID als Parameter aktzeptieren. Verlangt einen Zugangsschlüssel und erfragt dann selbst,
+welcher Nutzer dazu gehört und welche Rechte der fragenden Anwendung erteilt wurde.
 
 ### Daten
-!> Nicht 100% final. Es werden jedoch höchstens nur Ergänzungen stattfinden.
-
-#### IDs und Schlüssel
-| Bezeichnung | Beschreibung |
-| --- | --- |
-Clientschlüssel | Individueller, öffentlicher Schlüssel der einen registrierten Client identifiziert. (Base64 encodiert Clientname +numerische ID) |
-Clientsecret | Individueller, geheimer Schlüssel/Passwort der benötigt wird, um einen Client zu authentifizieren. |
-Autorisierungsschlüssel | Individueller, gehimer sehr kurzlebiger Schlüssel der dafür verwendet werden kann |      
-Zugangsschlüssel |Individueller, geheimer, kurzlebiger Schlüssel der einem Client Zugriff auf geschüzte Resourcen erlaubt
-Auffrichungsschlüssel | Individueller, geheimer, langlebiger Schlüssel mit dem ein Client neue Zugangsschlüssel anfordern kann.
-
-!> Clientsecret bleibt einfachhaltshalber eventuell vollständig unbenutzt. Falls unimplementiert ist "none" immer valide
-
+!> Nicht 100% final. Es werden jedoch vermutlich höchstens nur Ergänzungen stattfinden.
 
 ?> Siehe auch: https://tools.ietf.org/id/draft-richer-oauth-json-request-00.html
 und https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.1 (4.1.1 -4.1.4)

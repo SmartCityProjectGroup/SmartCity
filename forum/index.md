@@ -5,8 +5,6 @@
 
 ## Überblick
 
-- Textuelle Beschreibung der Anwendungsdomäne
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
 Das Forum dient für unsere SmartCity als schwarzes Brett. 
 Hier können die einzelnen Services wichtige Nachrichten oder Werbung mit allen Nutzern unserer SmartCity teilen. 
@@ -19,33 +17,40 @@ So könnte jemand auf der Suche nach Dienstleistungen (Nachhilfe, Babysitter) od
 Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden. 
 
 
+### Konzeptionelles Analyseklassendiagramm
 
 [![Analyseklassendiagramm](media/Analyseklassendiagramm.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/Analyseklassendiagramm.PNG)
  
 
 ## Funktionale Anforderungen
 
+<!--- 
 * Definition der Akteure
 * Use-Case Diagramme
 * Strukturierung der Diagramme in funktionale Gruppen
 * Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
 * Begriffe konsistent in der Spezifikation verwenden  
 * Begriffe im Glossar darstellen
+--->
+
+### Definition der Akteure
+
+**Nutzer:** Person, die den Service und seine Inhalte nutzt
+**Administrator:** Person, die gemeldete posts bearbeitet
+** Event-Bus:** leitet die Nachrichten anderer Services an das Forum weiter
+
+### Use-Case Diagramme
 
 [![Use Case- Diagramme](media/usecasediagramme.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/usecasediagramme.PNG)
 
 ## Anforderungen im Detail
 
+<!--- 
 - User Stories mit Akzeptanzkritierien 
 - Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
 - Strukturierung der User Stories in funktionale Gruppen
 - Sicherheit: Misuse-Stories formulieren
-
-**Schablone für User Stories**
-
-| **Als** | **möchte ich** | **so dass** | **Akzeptanz** |
-| :------ | :----- | :------ | :-------- |
-| Wer | Was | Warum | Wann akzeptiert |
+--->
 
 
 **Informationen anderer Services einsehen(Auflistung)**
@@ -127,18 +132,25 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
 - Mockups für unterschiedliche Akteure
 
+### GUI-Mockups
+
 [![Mockups](media/forum_mockups.svg)](https://merlinchiodo.github.io/SmartCity/forum/media/forum_mockups.svg)
 
 ## Datenmodell 
 
+### ER-Diagramm
+
+<!---
 - Begriffe im Glossar darstellen
 - Modellierung des physikalischen Datenmodells 
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
+  --->
 
 [![ER-Modell](media/ermodel.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/ermodel.PNG)
 
 ## Abläufe
 
+<!---
 - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
 - Aktivitätsdiagramme für relevante Use Cases
 - Aktivitätsdiagramm mit Swimlanes sind in der Regel hilfreich 
@@ -147,6 +159,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
   in einem Sequenz- oder Aktivitätsdiagramm darstellen
 - Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
   Softwaresystems hilfreich sind. 
+--->
 
 [![Aktivitätsdiagramm](media/Aktivitätsdiagramm.PNG)](https://merlinchiodo.github.io/SmartCity/forum/media/Aktivitätsdiagramm.PNG)
 
@@ -196,15 +209,16 @@ http://smart.city/microservices/customer
 | Contract Received | int id |
 | Contract Deleted | int id |
 
-{
-"event_id": ....,
-"event_name": "....",
-"title": "....",
-"text_short": "....",
-"text_long": "....",
-"picture" : "...."
-"date": "" (der Tag, bei dem das Event im Kalender angezeigt werden soll, ansonsten weglassen),
-}
+**required Data**
+
+- event_id
+- event_name
+- title
+- text_short
+- text_long
+- picture 
+- date (der Tag, bei dem das Event im Kalender angezeigt werden soll, ansonsten weglassen)
+
 
 ### Queries
 
