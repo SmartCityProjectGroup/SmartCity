@@ -186,8 +186,9 @@ http://smart.city/microservices/customer
 | Tierheim | 	{<br>event_id: 7002,<br>event_name:"New Volunteer for walk",<br>service_name: fitnessstudio,<br>personal_number: number} | Neuer Kalendereintrag |
 
 **Landingpage event channel** 
-| :------ | :----- | :----- |
+
 | **Service** | **Payload** | **Description** | 
+| :------ | :----- | :----- |
 | Landingpage | 	{<br>event_id: 7003,<br>event_name:"New About us",<br>service_name: fitnessstudio,<br>text: text} | Neues about us |
 
 ### Dependencies
