@@ -122,7 +122,8 @@ Das Diagramm ist statisch und nicht dynamisch und stellt daher keine Abläufe da
 
 ### Betriebsbedingungen
 
-- Vorgaben des Kunden (z.B. Web Browser / Betriebssystem Versionen, Programmiersprache)
+Das dies ein eigenständiges Produkt ist und jeder Service von Grund auf neu implementiert wird, gibt es keinen direkten Kunden.
+Daher ist jeder Service frei in der Auswahl des Betriebssystems, sowie der verwendeten Software/Bibliotheken/Sprachen usw. . 
 
 ### Qualitätsmerkmale
 

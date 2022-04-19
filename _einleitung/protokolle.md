@@ -129,3 +129,81 @@ Nächste Woche Vorstellung der Spezifikation und Sprintplanning mit Zielen aus d
 ---
 
 **Meeting 3 - Sprintplanning 1** DI 19.04
+
+Meeting startet pünktlich, alle Teammitglieder sind anwesend.
+
+Wir fangen an mit einer, von Hr. Brunsmann angeführten, Präsentation der einzelnen Spezifikationen.
+Nachdem jeder Service seine Spezifikation vorgestellt hat, geht Jonathan nochmals genauer auf SmartAuth und den Umgang
+mit Events und API dieses Services ein. Auch Tristan stellt nochmals alle Events und API Funktionen des Bürgerbüros vor.
+
+Statt einer ID wird in Zukunft nur ein Schlüssel des SmartAuth verwendet, um die Identität des Bürgers zu schützen. 
+Für Testzwecke stellt das Bürgerbüro noch eine API mit BürgerID zur Verfügung.
+
+Adrian prüft noch ob in Zukunft ein JSON-Format-Prüfer genutzt werden soll, um Events auf Korrektheit und Vollständigkeit
+zu prüfen. Ergebnis dazu, nächstes Meeting. Außerdem prüft Adrian ob eine Fehler-Event-Queue nötig/sinnvoll ist.
+
+Bei Tests sollen wir uns laut Hr. Brunsmann eher auf integrations Testfälle als auf funktionale Testfälle konzentrieren.
+
+Janik räumt die Woche über die Projektdokumentation auf und löscht unnötige/falsche Einträge und Seiten.
+
+Jeder prüft nochmal bei seinen Klassendiagrammen ob die Aggregationsraute an der richtigen Stelle abgebildet ist.
+Die Raute muss am Ganzen der Teil-Ganzes-Beziehung stehen.
+
+Nachdem diese Dinge geklärt sind, erklärt Adrian nochmals das theoretische Verfahren mit RabbitMQ. Weitere Infos dazu 
+können in dem [Tutorial](https://www.rabbitmq.com/tutorials/tutorial-two-python.html) nachgelesen werden. 
+Außerdem kümmert sich Adrian um eine Visualisierung für die Spezifikation.
+
+Es wird entschieden, dass das Bürgerbüro *erstmal* keine Weiteren Events/API-Routes zur Verfügung stellen muss.
+
+Paul kümmert sich um einen Mailserver, Docker und einen Datenbankserver.
+
+Das MVP sieht vor, dass Interfaces/Events implementiert, aber noch nicht funktional sind.
+Um das MVP bis zur Deadline implementieren können, müssen alle Interfaces/Events bis zur 20.KW implementiert sein. Dazu
+startet ab Heute dem 19.04 der erste Sprint. Jeder Service wählt einige Userstories aus seiner Spezifikation aus. Wichtig ist,
+dass alle einen ähnlichen Umfang haben und jeder auch in der Lage ist, die festgesetzten Ziele zu erreichen.
+Folgende Einteilung wurde festgelegt und ist auch in den einzelnen Repos unter "Projekt" auf einem Kanbanboard zu sehen.
+Bitte folgt dem Scrumstandart und verschiebt die Karten entsprechend ihres aktuellen Status.
+
+SmartAuth:
+
+    * Userstories 1,2 und 3
+
+Landingpage:
+
+    * Registrierung der einzelnen Services und entsprechende Weiterleitung des Users
+
+Bürgerbüro:
+
+    * Userstories 1,2 und 3
+
+Finanzamt:
+
+    * Userstories 3,4,11,13,7,8
+
+Amt für Integration:
+
+    * Userstories 1,6,12,13,17,18,19,20,21,22
+
+Fitnessstudio:
+
+    * Userstories 2,3,8,9,6,7
+
+Kita:
+
+    * Servicekooperation, Userstory 1, Zweiterabschnitt 1 und 2
+
+Stadtbus:
+
+    * Userstories 1,3,5,7
+
+Forum:
+
+    * Tabelle 1
+
+Tierheim:
+
+    * Userstories 1,2,6,7,8,9,12,13,14,15
+
+---
+
+**Meeting 4 - Daily Scrum** DI 26.04
