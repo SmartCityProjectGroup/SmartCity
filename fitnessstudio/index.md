@@ -112,12 +112,8 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 ![](media/aboutUsMockUp.png) <!-- About us -->
 
 ## Datenmodell 
-
-- Begriffe im Glossar darstellen
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
   
-![](media/gymER.png) <!-- ER-Digramm -->
+![](media/gymERUpdate.png) <!-- ER-Digramm -->
 
 ## Abläufe
 
@@ -145,22 +141,70 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 http://smart.city/microservices/customer
 
-### Commands
+### Private Schnittstellen
+#### Commands 
+
+**Asynchronous**
+
+| **Name** | **Parameter** | **Resultat** |
+| :------ | :----- | :------ |
+| createMember() | MemberData d | member m |
+| createMember() | int citizen_id | member m |
+| createCourse() | CourseData d | course c |
+| createEmployee() | int citizen_id | employee e |
+| changeMember() | MemberData d | member m |
+| changeMember() | int citizen_id | member m |
+| changeCourse() | CourseData d | course c |
+| changeEmployee() | int citizen_id | employee e |
+| deleteMember() | MemberData d | member m |
+| deleteMember() | int citizen_id | member m |
+| deleteCourse() | CourseData d | course c |
+| deleteEmployee() | int citizen_id | employee e |
 
 
-### Events
+#### Queries
+
+| **Name** | **Parameter** | **Resultat** |
+| :------ | :----- | :------ |
+| getMember() | MemberData d | member m |
+| getMember() | MemberData d | member m |
+| getCourse() | CourseData d | course c |
+| getEmployee() | EmployeeData d | employee e |
+| getMembers() |  | member[] members |
+| getCourses() |  | course[] courses |
+| getEmployees() |  | employee[] e |
+
+### Öffentliche Schnittstellen
+
+#### Events
+
+**Newsletter event channel** 
 
 | **Service** | **Payload** | **Description** | 
 | :------ | :----- | :----- |
 | Newsletter | 	{<br>event_id: 7000,<br>event_name:"New Newsletter Entry",<br>service_name: fitnessstudio,<br>title: title,<br>text: text<br>} | Neuer Newsletter-Eintrag/Werbung |
 | Newsletter | 	{<br>event_id: 7001,<br>event_name:"New Calendar Entry",<br>service_name: fitnessstudio,<br>title: title,<br>text: text,<br>date: date<br>} | Neuer Kalendereintrag |
+
+**Tierheim event channel** 
+
+| **Service** | **Payload** | **Description** | 
+
 | Tierheim | 	{<br>event_id: 7002,<br>event_name:"New Volunteer for walk",<br>service_name: fitnessstudio,<br>personal_number: number} | Neuer Kalendereintrag |
+
+**Landingpage event channel** 
+
+| **Service** | **Payload** | **Description** | 
+
 | Landingpage | 	{<br>event_id: 7003,<br>event_name:"New About us",<br>service_name: fitnessstudio,<br>text: text} | Neues about us |
 
-### Queries
-
-
 ### Dependencies
+
+#### RPC (REST)
+
+| **Service** | **Funktion** |
+| :------ | :----- | 
+| SmartAuth | authenticateUser() |
+| SmartAuth | authenticateEmployee() |
 
 
 ## Technische Umsetzung
@@ -168,21 +212,15 @@ http://smart.city/microservices/customer
 
 ### Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
-
-Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
-
 * Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+  * Web-Schicht Node.js
+  * Logik-Schicht Node.js
+  * Persistenz-Schicht MySQL-Datenbank
 
 * Client
-  * View-Schicht
-  * Logik-Schicht
+  * View-Schicht Vue.js
+  * Logik-Schicht Vue.js
   * Kommunikation-Schicht
-
-Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
 
 ### Fehlerbehandlung 
 
