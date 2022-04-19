@@ -2,163 +2,203 @@
 
 **Autor:** Tom Luca Horstmann
 
-
 ## Überblick
-
 Die Seite des Fitnessstudios dient dazu, die Mitgliedschaft in dem Fitnessstudio zu vereinfachen.</br>
 So können die Mitgliedschaft komplett online verwaltet und die Aktivitäten online gebucht werden.</br>
 Für maximalen Komfort sorgt die Vernetzung mit den anderen Microservices. So reicht der Name zur</br>
 Anmeldung aus, da die restlichen Daten vom Bürgerbüro und Finanzamt geholt werden. Außerdem ist es</br>
 möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzumelden.
 
-- Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
-
+![](media/Analyseklassendiagramm.png) <!-- Analyseklassendiagramm -->
 
 ## Funktionale Anforderungen
+### Akteure
 
-* Definition der Akteure
-* Use-Case Diagramme
-* Strukturierung der Diagramme in funktionale Gruppen
-* Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
-* Begriffe konsistent in der Spezifikation verwenden  
-* Begriffe im Glossar darstellen
+| **Akteur** | **Definition**  |
+| :-------: | :------- |
+| User | Nutzer der den Service nutzt und Zugriff auf seine Mitgliedschaft hat |
+| Mitarbeiter | Mitarbeiter des Fitnessstudios, hat administrative Rechte auf einer gesonderten Mitarbeiterseite |
+| Tierheim | Das Tierheim besitzt eine Kooperation durch die ihr bereitwillige Gassigeher mitgeteilt werden |
+| Rabattgeber | Institutionen, die ihren "Mitgliedern" Rabatt gewähren, aktuell Flüchtlinge und Mitarbeiter des Stadtbusses |
+| Newsletter | Der Newsletter Microservice welcher Interessierte regelmäßig über Neuigkeiten informiert |
+| Landingpage | Die Startseite der Anwendung |
+
+### Use-Case Diagramme
+
+#### Mitgliedschaftsverwaltung
+![](media/MitgliedschaftUseCase.png) <!-- use case-Digramm -->
+
+#### Sportaktivitäten
+![](media/SportaktivitätenUseCase.png) <!-- use case-Digramm -->
+
+#### Mitarbeiteraktionen
+![](media/MitarbeiteraktionenUseCase.png) <!-- use case-Digramm -->
 
 ## Anforderungen im Detail
 
-- User Stories mit Akzeptanzkritierien 
-- Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
-- Strukturierung der User Stories in funktionale Gruppen
-- Sicherheit: Misuse-Stories formulieren
-
-
-**Mitgliedschaft verwalten**
-
+### Mitgliedschaft verwalten
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
 | 1  |User| nur mit meinem Namen Mitglied werden|ich die Dienste des Studios nutzen kann| Mitglied wird angelegt | Muss |
-| 2  |User| meine Mitgliedschaft verwalten können|ich meine Mitgliedschaft ändern kann| Mitgliedschaft wird passend geämndert | Muss |
-| 3  |User| "Mitgliedschaften" angeben können|ich Sondertarife entscheide| Sondertarif wird hinterlegt | Sollte |
-| 3  |User| möchte ich von meinen Erzeihungsberechtigten angemeldet werden können|ich auch als Nichtgeschäftsfähiger Mitglied werden kann| Mitglied wird angelegt | Sollte |
+| 2  |User| mich ohne Fremddatennutzung anmelden können|ich die Dienste des Studios nutzen kann| Mitglied wird angelegt | Muss |
+| 3  |User| meine Mitgliedschaft verwalten können|ich meine Mitgliedschaft ändern kann| Mitgliedschaft wird passend geändert | Muss |
+| 4  |User| "Mitgliedschaften" angeben können|ich Sondertarife entscheide| Sondertarif wird hinterlegt | Sollte |
+| 5  |User| möchte ich von meinen Erzeihungsberechtigten angemeldet werden können|ich auch als Nichtgeschäftsfähiger Mitglied werden kann| Mitglied wird angelegt | Sollte |
 
-**Sportaktivitäten verwalten**
-
+### Sportaktivitäten verwalten
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| 4  |User| Kurse angezeigt bekommen|ich einen auswählen kann| Kurse werden angezeigt | Sollte |
-| 5  |User| Kurse buchen können|ich an diesen teilnehmen kann| Mitglied wird im Kurs gespeichert | Sollte |
-| 6  |User| mich für das Tierheimprogramm anmelden|ich bei Verfügbarkeit benachrichtigt werde | Mitglied wird | Sollte |
+| 6  |User| Kurse angezeigt bekommen|ich einen auswählen kann| Kurse werden angezeigt | Sollte |
+| 7  |User| Kurse buchen können|ich an diesen teilnehmen kann| Mitglied wird im Kurs gespeichert | Sollte |
+| 8  |User| mich für das Tierheimprogramm anmelden|ich bei Verfügbarkeit benachrichtigt werde | Mitglied wird Tierheim gemeldet| Sollte |
+| 9  |User| mich für das Tierheimprogramm abmelden|ich nicht mehr verfügbar bin | Mitglied wird Tierheim gemeldet| Sollte |
 
-**Servicekommunikation**
-
+### Servicekommunikation
 | **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| 4  |Tierheim| über bereitwillige Gassigeher informiert werden|ich diesen ein Tier zuweisen kann| Tierheim wird über Person informiert | Sollte |
+| 10  |Tierheim| über bereitwillige Gassigeher informiert werden|ich diesen ein Tier zuweisen kann| Tierheim wird über Person informiert | Sollte |
+| 19  |Gemeinschaft| meinen Mitgliedern Rabatte ermöglichen|diese günstigere Tarife haben| Rabatt wird gewährt | Sollte |
 
-**Missue-Stories**
+### Mitarbeiterseite
+| **ID**| **Als**|   **möchte ich**   |  **so dass** | **Akzeptanz** | **Priorität**   |
+|:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
+| 11  |Mitarbeiter| mich anmelden können| ich in einen gesichterten Mitarbeiterbereich geleitet werde| Weiterleitung auf separate Mitarbeiterseite| Sollte |
+| 12  |Mitarbeiter| Mitglieder verwalten können| ich deren Daten ändern kann| Daten werden geändert| Sollte |
+| 13  |Mitarbeiter| Kurse verwalten können| ich deren Daten ändern kann| Daten werden geändert| Sollte |
+| 14  |Mitarbeiter| besondere Termine bekanntmachen| diese allgemein eingesehen werden können| Event wird verschickt| Sollte |
+| 15  |Mitarbeiter| das about us ändern können| die Landingpage es richtig anzeigt| about us wird aktualisiert| Sollte |
 
+### Missue-Stories
 | **ID**| **Als**|   **könnte ich**   |  **so dass** | **Fehler** | **Bewertung**   |
 |:-----|:----------:|:-------------------|:-------------|:---------|:----------------|
-| x  |User| mich mehrfach anmelden|ich mehrere Tarife zahlen muss|	mehrere Tarife von gleicher Person | Schlecht |
-| x  |User| mich mehrfach für einen Kurs anmelden| Plätze freibleiben| gleiche Person mehrmals in einem Kurs | Schlecht |
+| 16  |User| mich mehrfach anmelden|ich mehrere Tarife zahlen muss|	mehrere Tarife von gleicher Person | Schlecht |
+| 17  |User| mich mehrfach für einen Kurs anmelden| Plätze freibleiben| gleiche Person mehrmals in einem Kurs | Schlecht |
+| 18  |Mitarbeiter| Benutzerdaten falsch abändern| Fehler im System entstehen| Daten stimmen nicht mit der Realität überein | Schlecht |
 
 
 ## Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
-- Mockups für unterschiedliche Akteure
+#### Home
+![](media/StartMockUp.png) <!-- home -->
 
+#### Mitgliedschaft
+[User Story 1, 4, 5](#mitgliedschaft-verwalten-1)
+![](media/AnmeldungFDNMockUp.png) <!-- anmeldung -->
+
+[User Story 2, 4](#mitgliedschaft-verwalten-2)
+![](media/AnmeldungoFDNMockUp.png) <!-- anmeldung -->
+
+[User Story 3, 8, 9](#mitgliedschaft-verwalten-3)
+![](media/mitgliedschaftMockUp.png) <!-- Mitgliedschaft -->
+
+#### Sportaktivitäten
+[User Story 6, 7](#sportaktivitäten-verwalten-1)
+![](media/kurseMockUp.png) <!-- kurse -->
+
+#### Mitarbeiterbereich
+[User Story 11](#mitarbeiterseite-1)
+![](media/MitarbeiteranmeldungMockUp.png) <!-- Mitarbeiteranmeldung -->
+
+[User Story 12](#mitarbeiterseite-1)
+![](media/MitgliederverwaltungMockUp.png) <!-- Mitgliederverwaltung -->
+
+[User Story 13](#mitarbeiterseite-1)
+![](media/kursverwaltungMockUp.png) <!-- Kursverwaltung -->
+
+[User Story 12](#mitarbeiterseite-1)
+![](media/eventMockUp.png) <!-- Eventseite -->
+
+[User Story 13](#mitarbeiterseite-1)
+![](media/aboutUsMockUp.png) <!-- About us -->
 
 ## Datenmodell 
-
-- Begriffe im Glossar darstellen
-- Modellierung des physikalischen Datenmodells 
-  - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
   
-![](media/gymER.png) <!-- ER-Digramm -->
+![](media/gymERUpdate.png) <!-- ER-Digramm -->
 
 ## Abläufe
 
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm mit Swimlanes sind in der Regel hilfreich 
-  für die Darstellung der Interaktion von Akteuren der Use Cases / User Stories
-- Abläufe der Kommunikation von Rechnerknoten (z.B. Client/Server)
-  in einem Sequenz- oder Aktivitätsdiagramm darstellen
-- Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
-  Softwaresystems hilfreich sind. 
+### Mitgliedschaft
 
+![](media/AnmeldungAblauf.png) <!-- Anmeldungsablauf -->
+
+### Sportaktionen
+
+![](media/SportaktionAblauf.png) <!-- Sportaktionenablauf -->
+  
+### Mitarbeiterbereich
+
+![](media/MitarbeiterAblauf.png) <!-- Mitarbeiterablauf -->
 
 ## Schnittstellen
-
-- Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
-- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
-- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
-- Aufteilen in Commands, Events, Queries
-* Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
-
-**Beispiel:**
 
 ### URL
 
 http://smart.city/microservices/customer
 
-### Commands
-
-**Synchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createCustomer() | int id | int id |
-| deleteOrder() | int id | int id |
+### Private Schnittstellen
+#### Commands 
 
 **Asynchronous**
 
 | **Name** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ |
-| createContract() | int id | int id |
-| changeContract() | int id | - |
+| createMember() | MemberData d | member m |
+| createMember() | int citizen_id | member m |
+| createCourse() | CourseData d | course c |
+| createEmployee() | int citizen_id | employee e |
+| changeMember() | MemberData d | member m |
+| changeMember() | int citizen_id | member m |
+| changeCourse() | CourseData d | course c |
+| changeEmployee() | int citizen_id | employee e |
+| deleteMember() | MemberData d | member m |
+| deleteMember() | int citizen_id | member m |
+| deleteCourse() | CourseData d | course c |
+| deleteEmployee() | int citizen_id | employee e |
 
-### Events
 
-**Customer event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Customer Authorized | int id |
-| Customer Deleted | int id |
-
-**Contract event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Contract Received | int id |
-| Contract Deleted | int id |
-
-### Queries
+#### Queries
 
 | **Name** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
+| getMember() | MemberData d | member m |
+| getMember() | MemberData d | member m |
+| getCourse() | CourseData d | course c |
+| getEmployee() | EmployeeData d | employee e |
+| getMembers() |  | member[] members |
+| getCourses() |  | course[] courses |
+| getEmployees() |  | employee[] e |
+
+### Öffentliche Schnittstellen
+
+#### Events
+
+**Newsletter event channel** 
+
+| **Service** | **Payload** | **Description** | 
+| :------ | :----- | :----- |
+| Newsletter | 	{<br>event_id: 7000,<br>event_name:"New Newsletter Entry",<br>service_name: fitnessstudio,<br>title: title,<br>text: text<br>} | Neuer Newsletter-Eintrag/Werbung |
+| Newsletter | 	{<br>event_id: 7001,<br>event_name:"New Calendar Entry",<br>service_name: fitnessstudio,<br>title: title,<br>text: text,<br>date: date<br>} | Neuer Kalendereintrag |
+
+**Tierheim event channel** 
+
+| **Service** | **Payload** | **Description** | 
+| :------ | :----- | :----- |
+| Tierheim | 	{<br>event_id: 7002,<br>event_name:"New Volunteer for walk",<br>service_name: fitnessstudio,<br>personal_number: number} | Neuer Kalendereintrag |
+
+**Landingpage event channel** 
+
+| **Service** | **Payload** | **Description** | 
+| :------ | :----- | :----- |
+| Landingpage | 	{<br>event_id: 7003,<br>event_name:"New About us",<br>service_name: fitnessstudio,<br>text: text} | Neues about us |
 
 ### Dependencies
 
-#### RPC
+#### RPC (REST)
 
 | **Service** | **Funktion** |
 | :------ | :----- | 
-| Authorization Service | authenticateUser() |
-| Hospital Service | blockDate() |
-
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Cinema channel | CancelFilmCreatedEvent |
-| Customer reply channel | CreateCustomerEvent |
+| SmartAuth | authenticateUser() |
+| SmartAuth | authenticateEmployee() |
 
 
 ## Technische Umsetzung
@@ -166,27 +206,15 @@ http://smart.city/microservices/customer
 
 ### Softwarearchitektur
 
-- Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
-
-Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
-
 * Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+  * Web-Schicht Node.js
+  * Logik-Schicht Node.js
+  * Persistenz-Schicht MySQL-Datenbank
 
 * Client
-  * View-Schicht
-  * Logik-Schicht
+  * View-Schicht Vue.js
+  * Logik-Schicht Vue.js
   * Kommunikation-Schicht
-
-Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
-
-
-
-### Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
 
 ### Fehlerbehandlung 
 

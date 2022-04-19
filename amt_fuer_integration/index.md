@@ -22,11 +22,231 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 
 ![](media/Analyseklassendiagramm.png) <!-- Analyseklassendiagramm -->
 
+## Funktionale Anforderungen
+### Akteure
+| **Akteur** | **Definition**  |
+| :-------: | :------- |
+| User | jeder Nutzer der den Service nutzt, also den digitalen Auftritt des Amt für Integration aufruft |
+| Mitarbeiter | Angestellter beim Amt für Integration |
+| Bürger | gemeldete Person in unserer Stadt |
+| Flüchtling | Geflüchtete Person mit Auftenhaltsgenehmigung/Fiktionsbescheinigung, die in unserer Stadt integriert wird |
+| Kita-Verwaltung | verwaltet alle Kitas in der Stadt |
+| Stadtbus | öffentliches Verkehrssystem in der Stadt |
+| Fitnessstudio | - |
+| Bürgerbüro | Amt das sich primär um die Meldung von Bürgern kümmert |
+
+### Use-Case Diagramme
+
+#### Verwaltung
+![](media/usecase/Verwaltung.png) <!-- Use Case Verwaltung -->
+
+#### Anmeldevorgang
+![](media/usecase/Anmeldevorgang.png) <!-- Use Case Anmeldevorgang -->
+
+#### Integration mit Portal
+![](media/usecase/Integration_mit_Portal.png) <!-- Use Case Integration mit Portal -->
+
+#### Datenabfrage
+![](media/usecase/Datenabfrage.png) <!-- Use Case Datenabfrage -->
+
+## Anforderungen im Detail
+### Anmeldevorgang
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
+| :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
+| 1  | Flüchtling | mich Anmelden | um gemeldet zu sein und Zugang zum Portal zu bekommen | Relevante Meldedaten werden ans Bürgerbüro weitergeleitet + Anmeldefunktion bereitgestellt | Must |
+| 2  | Flüchtling | Informationen zum Kontakt mit dem Amt für Integration finden | ich Hilfe auch vor Ort oder per Telefon bekomme | Informationen werden im Service angezeigt | Must |
+| 3  | Flüchtling | einen QR-Code ausgestellt bekommen | diesen Nutzen kann | QR-Code bereitgestellt | Must |
+| 4  | Flüchtling | meinen QR-Code downloaden | ich ihn auf meinen Geräten speichern kann | QR-Code steht zum Download bereit | Must |
+| 5  | Flüchtling | meinen QR-Code drucken | ich ihn habe (falls ich kein mobiles Endgerät besitze) | QR-Code steht zum Drucken bereit | Must |
+| 6  | Flüchtling | eine Unterkunft bekommen | ich dort leben kann | Flüchtling bekommt Unterkunft zugewiesen | Must |
+| 7  | Flüchtling | mich mit meinem QR-Code ausweisen können | öffentliche Verkehrsmittel oder Freitzeitangebote zu nutzen | Wert des QR-Code ist ein individueller Code der zur Abfrage genutzt werden kann | Must |
+| 8  | Flüchtling | mit meinem QR-Code die Unterkunft öffnen | ich Zugang zur Unterkunft habe | QR-Code-Wert bei der Unterkunft hinterlegt | Must |
+| 9  | Flüchtling | nicht mit meinem QR-Code andere Unterkünfte öffnen | ich sie berauben kann | QR-Code nur einer Unterkunft zugwiesen | Must |
+
+### Integration mit Portal
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
+| :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
+| 10 | Flüchtling | meinen QR-Code aufrufen können | ihn jederzeit wieder downloaden oder drucken kann | QR-Code steht zum Drucken bereit | Must |
+| 11 | Flüchtling | neuen QR-Code beantragen | falls ich den alten verloren habe | QR-Code steht zum Drucken/Download bereit | Could |
+| 12 | Flüchtling | die Unterbringung meines Kindes in der Kita beantragen | mein Kind in die Kita gehen kann | Betantragung im Service möglich | Must |
+| 13 | Bürger | Geld spenden | um Flüchtlinge zu unterstüzten | Spenden-Funktionalität bereitgstellt | Must |
+| 14 | Bürger | nicht, das meine Zahlungsdaten öffentlich gemacht werden | die Daten missbraucht werden können | Externer Anbieter mit exellenter Sicherheit durch jahrelanger Erfahrung | Must |
+| 15 | Bürger | Wohnraum bereitstellen | um Flüchtlinge zu helfen | Formular zum Eintragen von zur Verfügung gestellten Wohnraum | Should |
+| 16 | Bürger | im Portal einloggen | ich Geld spenden oder Wohnraum bereitstellen kann | Link zum Portal | Must |
+| 17 | Finanzamt | Informationen zu Spende eines Bürger bekommen | dies steuerlich gelten machen kann und Spendenquittungen ausstellen kann | entsprechendes Event wird getriggert beim Eingang einer neuen Spenden und Informationen werden ausgetauscht | Must |
+| 18 | Kita-Verwaltung | Benachritgung über Bewerbung eines Kita-Platzes bekommen | ich dieses bearbeiten kann | Event wird bereitgesteltl | Must |
+
+### Datenabfrage
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
+| :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
+| 19 | Fitnesstudio | den Flüchtlingsstatus abfragen | diese kostenlos mein Angebot nutzen können | Abfrage ist über Events bereitgestellt | Must |
+| 20 | Busunternehmen | den Flüchtlingsstatus abfragen | diese kostenlos mein Angebot nutzen können | Abfrage ist über Events bereitgestellt | Must |
+
+### Verwaltung
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
+| :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
+| 21 | Mitarbeiter | Informationen an den Newsletter schicken | Bürger informiert werden können | Event  | Must |
+| 22 | Mitarbeiter | Informationen auf der Landing-Page updaten | um ggf. Änderungen vorzunehmen | Event | Must |
+| 23 | Mitarbeiter | mich im Mitarbeiterbereich einloggen | um meine Aufgaben zu erledigen | Login für Mitarbeiter | Must |
+| 24 | Mitarbeiter | mich im Mitarbeiterbereich ausloggen | keinen unbefugten Zugriff gibt | Logout für Mitarbeiter | Must |
+| 25 | Mitarbeiter | Wohnraum einsehen | ich diesen bearbeiten kann | Wohnraumauflistung im Mitarbeiterbereich mit Bearbeitungsfunktion | Could |
+| 26 | Mitarbeiter | neuen Wohnraum hinzufügen | ich neuen Wohnraum in Datenbank aufnehmen kann | Wohnraum kann hinzugefügt werden | Could |
+
+### User Interface
+| **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
+| :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
+| 27 | User | den Service vom PC aufrufen können | ich eine gute User Expericence habe | Responsive Design | Must |
+| 28 | User | den Service vom mobilen Endgerät aufrufen können | ich eine gute User Expericence habe | Responsive Design | Must |
+| 29 | User | Dark oder White-Mode einstellen | ich eine gute User Expericence habe | Dark-Mode toggle, am Start auf Systempräferenz eingestellt | Must |
+
+## Graphische Benutzerschnittstelle
+
+### Desktop
+[User Story 27, 29](#user-interface)
+#### Home
+[User Story 2](#anmeldevorgang-1)
+![](media/mockups/desktop/Desktop_Home.png) <!-- desktop home -->
+
+#### Anmeldevorgang
+[User Story 1](#anmeldevorgang-1)
+![](media/mockups/desktop/DesktopAnmeldung1.png) <!-- desktop anmeldung -->
+
+[User Story 1](#anmeldevorgang-1)
+![](media/mockups/desktop/DesktopAnmeldung2.png) <!-- desktop anmeldung -->
+
+[User Story 1, 3](#anmeldevorgang-1)
+![](media/mockups/desktop/DesktopAnmeldung3.png) <!-- desktop anmeldung -->
+
+[User Story 1, 3, 4, 5](#anmeldevorgang-1)
+![](media/mockups/desktop/DesktopAnmeldung5.png) <!-- desktop anmeldung -->
+
+[User Story 1, 2](#anmeldevorgang-1)
+![](media/mockups/desktop/DesktopAnmeldung4.png) <!-- desktop anmeldung -->
+
+#### New QR Code - LoggedIn
+[User Story 10, 11](#integration-mit-portal-1)
+![](media/mockups/desktop/DesktopLoggedInNewQR-Code.png) <!-- desktop new qr-code -->
+
+#### Kita - LoggedIn
+[User Story 12](#integration-mit-portal-1)
+![](media/mockups/desktop/DesktopLoggedInKita1.png) <!-- desktop kita -->
+![](media/mockups/desktop/DesktopLoggedInKita2.png) <!-- desktop kita -->
+
+#### Spenden - LoggedIn
+[User Story 13](#integration-mit-portal-1)
+![](media/mockups/desktop/DesktopLoggedInDonation1.png) <!-- desktop donation -->
+![](media/mockups/desktop/DesktopLoggedInDonation2.png) <!-- desktop donation -->
+![](media/mockups/desktop/DesktopLoggedInDonation3.png) <!-- desktop donation -->
+
+#### Wohnraum - LoggedIn
+[User Story 15](#integration-mit-portal-1)
+![](media/mockups/desktop/DesktopLoggedInHousing1.png) <!-- desktop housing -->
+![](media/mockups/desktop/DektopLoggedInHousing2.png) <!-- desktop housing -->
+
+#### Login/Logout
+[User Story 16](#integration-mit-portal-1)
+![](media/mockups/desktop/Logout.png) <!-- desktop logout -->
+
+#### Mitarbeiter Login
+[User Story 23](#verwaltung-1)
+![](media/mockups/desktop/DesktopMitarbeiterLogin.png) <!-- desktop employee login -->
+
+#### Mitarbeiter Home/Logout
+[User Story 24](#verwaltung-1)
+![](media/mockups/desktop/DesktopMitarbeiterHome.png.png) <!-- desktop employee home/logout -->
+
+#### Mitarbeiter Newsletter
+[User Story 21](#verwaltung-1)
+![](media/mockups/desktop/DesktopMitarbeiterPublischNewsletter.png) <!-- desktop newsletter -->
+
+#### Mitarbeiter About Us
+[User Story 22](#verwaltung-1)
+![](media/mockups/desktop/DesktopMitarbeiterEditAboutUs.png) <!-- desktop about us -->
+
+#### Mitarbeiter Wohnraum einsehen
+[User Story 25](#verwaltung-1)
+![](media/mockups/desktop/DesktopMitarbeiterHousing1.png) <!-- desktop housing -->
+
+#### Mitarbeiter Wohnraum hinzufügen
+[User Story 26](#verwaltung-1)
+![](media/mockups/desktop/DesktopHousing2.png) <!-- desktop housing -->
+
+### Mobile
+[User Story 27, 29](#user-interface)
+
+#### Home
+![](media/mockups/mobile/MobileHome.png) <!-- mobile -->
+![](media/mockups/mobile/MobileNav.png) <!-- mobile -->
+
+#### Anmeldevorgang
+![](media/mockups/mobile/MobileAnmeldung1.png) <!-- mobile -->
+![](media/mockups/mobile/MobileAnmeldung2.png) <!-- mobile -->
+![](media/mockups/mobile/MobileAnmeldung3.png) <!-- mobile -->
+![](media/mockups/mobile/MobileAnmeldung4.png) <!-- mobile -->
+
+#### LoggedIn
+![](media/mockups/mobile/MobileLoggedIn.png) <!-- mobile -->
+![](media/mockups/mobile/MobileLoggedInNav.png) <!-- mobile -->
+
+#### Spenden
+![](media/mockups/mobile/MobileLoggedInDonation.png) <!-- mobile -->
+![](media/mockups/mobile/MobileLoggedInDonation2.png) <!-- mobile -->
+![](media/mockups/mobile/MobileLoggedInDonation3.png) <!-- mobile -->
+
+#### Wohnraum
+![](media/mockups/mobile/MobileLoggedInHousing1.png) <!-- mobile -->
+![](media/mockups/mobile/MobileLoggedInHousing2.png) <!-- mobile -->
+
+#### Kita
+![](media/mockups/mobile/MobileLoggedInnKita1.png) <!-- mobile -->
+![](media/mockups/mobile/MobileLoggedInKita2.png) <!-- mobile -->
+
+## Datenmodell
+
+### ER-Modell
+![](media/datamodel/ER.png) <!-- data model ER -->
+
+### Physischen Datenmodell
+![](media/datamodel/PDM.png) <!-- data model PDM -->
+
+## Abläufe
+
+### Informationen veröffentlichen
+![](media/uml_activity/InfoLandingPage.png) <!-- uml-activity information landing page -->
+![](media/uml_activity/InfoNewsletter.png) <!-- uml-activity infomation newsletter -->
+
+### Anmeldung Mitarbeiterseite
+![](media/uml_activity/Login_Mitarbeiter.png) <!-- uml-activity employee login -->
+
+### Wohnraum verwalten
+![](media/uml_activity/Wohnraum_verwalten.png) <!-- uml-activity Wohnraum verwalten -->
+
+### Anmelden digital beim Amt
+![](media/uml_activity/AnmeldungF.png) <!-- uml-activity Anmelden digital beim Amt -->
+
+### Wohnraum bereitstellen
+![](media/uml_activity/Wohnraum.png) <!-- uml-activity Wohnraum bereitstellen -->
+
+### Spenden
+![](media/uml_activity/Donation.png) <!-- uml-activity Spenden -->
+
+### Anmeldung im Portal
+![](media/uml_activity/AnmeldungP.png) <!-- uml-activity Anmeldung im Portal -->
+
+### Kita-Platz beantragen
+![](media/uml_activity/Antrag_Kita.png) <!-- uml-activity Kita-Platz beantragen -->
+
+### neuen QR-Code erstellen
+![](media/uml_activity/neuerQR.png) <!-- uml-activity neuer QR-Code erstellen -->
+
+### Abfrage Flüchtlingsstatus
+![](media/uml_activity/Datenabfrage.png) <!-- uml-activity Abfrage Flüchtlingsstatus -->
+
 ## Schnittstellen
 
 ### URL
 
-http://smart.city/microservices/customer <!--- TODO replace >
+http://smart.city/microservices/integration <!--- TODO replace --->
 
 ### Private Schnittstellen
 #### Commands 
@@ -38,6 +258,7 @@ http://smart.city/microservices/customer <!--- TODO replace >
 | createRefugee() | RefugeeData d | Refugee r |
 | assignHousing() | Refugee \[\] list | Boolean b |
 | createHousing() | HousingData d | Housing h |
+| createQRCode()  | Refugee r | QRCode c |
 
 
 #### Queries
@@ -74,7 +295,7 @@ http://smart.city/microservices/customer <!--- TODO replace >
 
 | **Name** | **Payload** | 
 | :------ | :----- | 
-| private.finanzamt | {<br>"event_id": 9000,<br>"event_name": "Notify Incoming Donation",<br>"amount": 50.45,<br>"id_citizien": 932849834<br>} |
+| private.finanzamt | {<br>"event_id": 9000,<br>"event_name": "Notify Incoming Donation",<br>"amount": 50.45,<br>"citizen_id": 932849834<br>} |
 
 **Newsletter event channel**
 
@@ -86,17 +307,17 @@ http://smart.city/microservices/customer <!--- TODO replace >
 
 | **Name** | **Payload** | 
 | :------ | :----- | 
-| public.landingpage | {<br>"event_id": 9000,<br>event_name: "Update About Us",<br>"service_name": "integration", "date": DD.MM.YYYY,<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1",<br>} |
+| public.landingpage | {<br>"event_id": 9000,<br>"event_name": "Update About Us",<br>"service_name": "integration", "date": DD.MM.YYYY,<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1",<br>} |
 
 #### Queries
 
-| **Name** | **URL** | **Parameter** | **Response Example** | **Response Type** |
-| :------ | :----- | :------ | :------ | :------ |
-| Refugee status  | /refugee/:hash/status | String hash | { "status": true } | json |
+| **Name** | **Method** | **URL** | **Parameter** | **Response Example** | **Response Type** |
+| :------ | :----- | :------ | :------ | :------ | :------ |
+| Refugee status  | GET | api/refugee/:hash/status | String hash | { "status": true } | json |
 
 ### Dependencies
 
-#### RPC
+#### RPC (REST)
 
 | **Service** | **Funktion** |
 | :------ | :----- | 
@@ -108,3 +329,70 @@ http://smart.city/microservices/customer <!--- TODO replace >
 | **Service** | **Funktion** |
 | :------ | :----- | 
 | - | - |
+
+## Technische Umsetzung
+
+### Softwarearchitektur
+![](media/Softwarearchitektur.png) <!-- Softwarearchitektur -->
+
+### Validierung
+| Testart | User Story ID | Validierung |
+| :------ | :--------- | :---------- |
+| End-to-End | [1, 3, 4, 5, 6, 8](#anmeldevorgang-1)  | Ablauf des Anmeldevorgang |
+| End-to-End | [12, 18](#integration-mit-portal-1)    | Ablauf des Vorgangs Kita-Antrags stellen |
+| End-to-End | [13, 17](#integration-mit-portal-1)    | Ablauf des Spendenvorgangs |
+| End-to-End | [15](#integration-mit-portal-1)    | Ablauf Wohnraum bereitstellen |
+| End-to-End | [16](#integration-mit-portal-1)    | Ablauf Login/Logout |
+| End-to-End | [23, 24](#verwaltung-1)    | Ablauf Mitarbeiter Login/Logout |
+| End-to-End | [21](#verwaltung-1)    | Ablauf Mitarbeiter Newsletter publizieren |
+| End-to-End | [22](#verwaltung-1)    | Ablauf Mitarbeiter About Us Page aktualisieren |
+| End-to-End | [25, 26](#verwaltung-1)    | Ablauf Wohnraum verwalten |
+| Integration Testing | [1, 6](#anmeldevorgang-1) | Zuweisung an korrekten Wohnraum |
+| Integration Testing | [11](#integration-mit-portal-1),[2](#anmeldevorgang-1) | Zuweisung des neuen QR-Codes an Wohnraum |
+| Intetration Testing | [17](#integration-mit-portal-1) | Spenden werden korrekt ans Finanzamt weitergeleitet |
+| Intetration Testing | [14](#integration-mit-portal-1) | Datenübermittlung der Spenden mit Zahlungssytem |
+| Integration Testing | [18](#integration-mit-portal-1) | Daten werden korrekt an Kita-Verwaltung weitergeleitet |
+| Integration Testing | [19, 20](#datenabfrage-1)| Status Abfrage korrekt zwischen Service und Client |
+| Integration Testing | [21](#verwaltung-1) | Daten werden korrekt an Newsletter übermittelt |
+| Integration Testing | [22](#verwaltung-1) | Daten werden korrekt an Landing Page übermittelt |
+| Unit Testing | [3](#anmeldevorgang-1) | QR-Code Funktion |
+| Unit Testing | [6](#anmeldevorgang-1) | Unterkunft-Zuweisung Funktion |
+| Unit Testing | [29](#user-interface) | Toggle-Dark-Mode Funktion |
+| Unit Testing | [27, 28](#user-interface) | Media Queries (manuell) |
+| Unit Testing | - | Datenbank: Erstellen, Löschen, Abrufen von Instanzen |
+
+### Fehlerbehandlung
+
+| Fehler | Beschreibung |
+| :----- | :----------- |
+| CreateQRCodeError | QR-Code konnte nicht erstellt werden |
+| QRCodeAssignHousingError | QR-Code konnte nicht einer Unterkunft zugewiesen werden |
+| DonationError | Spendevorgang konnte nicht erfolgreich abgeschlossen werden |
+| CreateHousingError | Unterkunft konnte nicht erstellt werden |
+
+| Fehlercode | Bedeutung |
+| :--------- | :---------|
+| 403        | Keine Authorisierung für die Anfrage |
+| 404        | Seite nicht gefungen |
+| 405        | Methode nicht erlaubt |
+| 500        | Server konnte Anfrage nicht erfüllen |
+
+### Verwendete Technologien
+
+* Programmiersprache: Javascript
+* Frontend: Nextjs (React Framework)
+* Backend: Nextjs
+* Datenbank: MySQL
+* ORM: Prisma
+* Komponenten-Library: Mantine
+* Code-Formatter: Prettier
+* Frameworks für Integrationstests: Cypress oder Playwright (Steht noch nicht fest bei Spezifikationserstellung)
+* Frameworks für Unit-Testing: Jest 
+* weitere Frameworks: Stripe (Zahlungssystem)
+
+## Glossar
+| **Begriff** | **Definition** |
+| :---------- | :------------- |
+| Portal | Ist das SmartCity Portal, welches aus allen Microservices besteht |
+| Service | Amt für Integration |
+| QR-Code | zweidimensionaler Code, der eine Zeichenkette speichert |

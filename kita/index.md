@@ -6,47 +6,24 @@
 
 ## Überblick
 
-### Textuelle Beschreibung der Anwendungsdomäne (z.T. veraltet)
+### Textuelle Beschreibung der Anwendungsdomäne
 
 Der Kita-Microservice dient als Portal für User der SmartCity, die Betreuung für ihre Kinder suchen. 
-- langfristiger Kitaplatz 
-- Tages-/Ferienbetreuung (ggf. in anderer Einrichtung)
 
-Dazu können User eine Liste von in der SmartCity registrierten Kitas abrufen, die nach verschiedenen Kriterien durchsuchbar und filterbar ist:
-- Umkreis (gut: Straßen mit Map-Einbindung, sonst: Stadtteil)
-- Alter d. Kindes
-- pädagogischer Schwerpunkt
+Jede im SmartCity-Verbund registrierte Kita erhält auf dem Kita-Service eine Seite zur Selbstdarstellung, die Mitarbeiter\*innen der Kita selbst mit Informationen und Bildern bespielen können.
+User können eine Liste aller in der SmartCity registrierten Kitas abrufen, die nach Kriterien wie Umkreis, Betreuungsangebot und Träger durchsuchbar bzw. filterbar ist. So lassen sich auch Kitas mit besonderen Betreuungsangeboten finden.
+Diese Funktion ist als öffentliche Website auch von Besucher\*innen ohne SmartCity-Account nutzbar.
 
-User können im nächsten Schritt eines ihrer Kinder bei bis zu drei (?) Kitas auf die Warteliste setzen. Dabei können die zur Aufnahme eines Kindes benötigte Dokumente hinterlegt werden, sodass sie im Falle einer Aufnahme direkt der richtigen Kita vorliegen. *(Von Kitas unabhängig verwaltet? Gefahr von Dateninkonsistenz. Problem bei Verwaltung im Service: Einpflegen von Kindern außerhalb des SmartCity-Services)* Die Kita kann nach Abschluss ihres internen Aufnahmeverfahrens eine Anmeldung akzeptieren oder ablehnen.
+Im nächsten Schritt können User eines ihrer Kinder bei bis zu drei Kitas auf die Warteliste setzen. Dabei können die zur Erstellung eines Betreuungsvertrages benötigten Dokumente bereits im Voraus hinterlegt und der bearbeitenden Kita zugänglich gemacht werden. Die Kita kann nach Abschluss ihres internen Aufnahmeverfahrens einen Antrag akzeptieren, ablehnen oder Kontakt zum/zur Antragsteller\*in aufnehmen.
 
-Zusätzlich können Kitas vorgemerkt werden, um Updates zu erhalten (z.B. Warteliste ist gerade kurz, freie Plätze, andere News der Kita)
+Zusätzlich können Kitas vorgemerkt werden, um die Auswahl einzugrenzen oder um ggf. Updates von diesen Kitas per E-Mail zu erhalten.
 
-EB von Kindern mit Mitgliedschaft in einer Kita können Vorgänge direkt im Kita-Service anstoßen:
-- Abmeldung
-- Nachricht senden
-- Abwesenheit wegen Arztbesuch
-- regelmäßige Freistellung (Vereinsmitgliedschaft, Reiten, ...)
-- Notfallmeldung mit Relevanz für Kita-Geschäft (z.B. ansteckende Krankheit) (--> anonymisiertes Event an Gesundheitsamt)
+Kunden einer Kita können bestimmte Vorgänge direkt im SmartCity-Portal erledigen, beispielsweise die Abwesenheit eines ihrer Kinder melden oder aus anderen Gründen mit der Kita Kontakt aufnehmen. Beim dabei können ebenfalls Dokumente angehängt werden, die später, dem entsprechenden Kind zugeordnet, von befugten Mitarbeiter\*innen der Kita eingesehen werden können.
 
+Neben dem Anmeldevorgang per Warteliste können Erziehungsberechtigte in einem separaten Vorgang akuten Betreuungsbedarf anmelden. Privilegierte Ämter wie das Amt für Integration können Anträge auf Betreuungsbedarf mit erhöhter Priorität stellen, die anschließend vom zentralen Kita-Service auf geeignete Kitas verteilt werden.
 
-Dabei wird eine entsprechend kategorisierte E-Mail an die zuständige(n) Mitarbeiter\*innen der betroffenen Kita gesendet, der restliche Vorgang erfolgt außerhalb des Kita-Services. Beim Senden der Erstnachricht kann ein Anhang im PDF-Format hinzugefügt werden.
-Evtl.: Auf der Admin-Seite können allerdings eingegangene Erstnachrichten nachverfolgt werden.
+Darüber hinaus erhält jede registrierte Kita ein Verwaltungstool, mit denen eine Reihe von Aufgaben im Kita-Service erledigt werden kann. So lassen sich Warteliste und Betreuungsverträge verwalten sowie administrative Daten einsehen. In Zusammenarbeit mit den Bus- bzw. Tierheim-Services lassen sich Gruppentickets beantragen oder Tierbesuche organisieren, ebenfalls können aktuelle Nachrichten im Forum-Service veröffentlicht werden.
 
-Neben dem Anmeldevorgang per Warteliste können EB akuten Betreuungsbedarf anmelden (separater Vorgang). Amt für Integration oder andere privilegierte Ämter können Anträge auf Betreuungsbedarf mit erhöhter Priorität stellen, die vom Kita-Service auf geeignete Kitas verteilt werden.
-
-Jede registrierte Kita erhält auf dem Service eine standardisierte Möglichkeit zur Selbstdarstellung (Kurzprofil der Kita in der Liste + Detailansicht). Kita-Admin-Kontos können Bild(er) und Beschreibungstext hinzufügen bzw. editieren, die entsprechend auf deren Detailansicht angezeigt werden. Dieser wird auch bei der Stichwortsuche mit einbezogen, sodass User z.B. Kitas mit besonderen Angeboten finden können.
-
-Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhängig von der User-Datenbank sind. Funktionen auf der Admin-Seite:
-- Warteliste verwalten
-- Kitaplätze verwalten
-- Kita-Kunden (und ihre Kinder), die keine SmartCity-User sind, verwalten
-- Selbstdarstellung verwalten
-- Hinterlegen von Email-Adressen & Tel. für nichtautomatisierten Kontakt
-- Hinterlegen eigener Webpräsenz der Kita
-- Einsehen und Ändern administrativer Daten: Kapizität, freie Plätze, auslaufende Mitgliedschaften...
-- Hinzufügen von Kindern, deren EB nicht an SmartCity teilnehmen (Anmeldung vor Ort...)
-- Busticket für Gruppen anfragen
-- Beiträge für Newsletter/Schwarzes Brett verfassen
 
 ### Konzeptionelles Analyseklassendiagramm
 
@@ -198,6 +175,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 #### Private
 | **Methode** | **Name** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ | :------ |
+Datensätze anlegen
 | POST | createApplication() | int id_einrichtung, int id_kind, int id_ezb, date datum, int priority, str status | response status code |
 | GET | getApplications() | int id_ezb | return alle aktuellen Anträge des Users |
 | DELETE | deleteApplication() | int id_antrag, int id | Antrag wird gelöscht |
@@ -205,8 +183,7 @@ Zu jeder registrierten Kita gehören ein oder mehrere Admin-Kontos, die unabhän
 | GET | getContractsUser() | int id_ezb | return alle aktuellen Verträge des Users |
 | GET | getContractsKita() | int id_kita | return alle aktuellen Verträge der Kita |
 | PATCH | terminateContract() | int id_vertrag, date ende | Enddatum des Vetrags wird verändert |
-
-| | | | 
+Watchlist
 | PUT | addKitaToWatchlist() | int id_ezb, int id_einrichtung | Kita wird den vorgemerkten Kitas des Users hinzugefügt |
 | PATCH | removeKitaFromWatchlist() | int id_ezb, int id_einrichtung | Kita wird aus den vorgemerkten Kitas des Users entfernt | 
 
@@ -285,13 +262,14 @@ http://smart.city/microservices/kita
 | Cinema channel | CancelFilmCreatedEvent |
 | Customer reply channel | CreateCustomerEvent |
 
-<!---
+#### Abhängigkeiten zu anderen Services in Textform
 - Bürgerbüro: vermutlich starke Abhängigkeit, benötige sicheren Zugriff auf persönliche Daten aus der Datenbank des Bürgerbüros
-- Bus-Service: schwache Abhängigkeit, benötige Beantragung von Gruppentickets durch Verwaltungsmitarbeiter\*innen
 - Amt für Integration: schwache Abhängigkeit, biete Beantragung von Kita-Plätzen mit Unterstützung durch das AfI (z.B. Geflüchtete) mit erhöhter Priorität
-- Newsletter: schwache Abhängigkeit, biete Inhalte für Newsletter & Schwarzes Brett
+- Bus-Service: schwache Abhängigkeit, benötige Beantragung von Gruppentickets durch Verwaltungsmitarbeiter\*innen
+- Tierheim: schwache Abhängigkeit, benötige Terminvereinbarung für einen Tierbesuch
+- Forum: schwache Abhängigkeit, biete Inhalte für Newsletter & Schwarzes Brett
 
-
+<!---
 Aus Meeting:
 - Jonathan erhält von mir Zugangsschlüssel mit sehr hohen Rechten (darf immer Userdaten abfragen etc.)
 - Userdaten: ich speichere bei SmartCity-Mitgliedern nur die user_id und frage alles andere beim BB ab
@@ -344,8 +322,6 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
   so dass erkennbar ist, ob Sie alle Use Cases getestet haben.
 
 ### Verwendete Technologien
-
-- Verwendete Technologien (Programmiersprachen, Frameworks, etc.)
 
 * Frontend: Vue.js
 * Backend: Express.js + Node.js, Multer

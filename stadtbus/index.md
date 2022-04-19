@@ -8,19 +8,20 @@
 ### Textuelle Beschreibung der Anwendungsdomäne:
 
   Die voranschreitende Digitalisierung, die sich mehr und mehr durch unseren Alltag zieht, macht auch vor den öffentlichen Vekehrsmitteln keinen Halt. Deshalb soll dieser Microservice der zentrale digitale Anhaltspunkt für den Busverkehr werden und durch die nutzerfreundliche und transparente Anwendung mehr Menschen dazu anregen die Möglichkeiten des ÖPNV zu nutzen. Ziel ist es dadurch nicht nur ein komfortables, sondern auch ein nachhaltigeres Reisen zu ermöglichen.
+  
   Dabei sollen Informationen, wie z.B. die aktuellen Positionen und Verspätungen der einzelnen Busse im Stadtgebiet, offen und für jeden zugänglich sein. Des Weiteren, bietet der Stadtbus beim Erwerb der Bustickets eine kontaktlose und schnelle Bezahlung und verschiedene Vergünstigungen an (FamilienTarif für große Familien und kostenlose Busfahrten für Geflüchtete).
     
 ### Konzeptionelles Analyseklassendiagramm (logische Darstellung der Konzepte der Anwendungsdomäne)
 
+![Analyseklassendiagramm](media/konzeptionellesAnalyseklassendiagramm.jpg)
 
 ## Funktionale Anforderungen
 
-* Definition der Akteure
-* Use-Case Diagramme
-* Strukturierung der Diagramme in funktionale Gruppen
-* Akteure sowie andere Begriffe der implementierten Fachdomäne definieren 
-* Begriffe konsistent in der Spezifikation verwenden  
-* Begriffe im Glossar darstellen
+- Kunde/Busreisender: Benutzer, der nicht unbedingt in der SmartCity angemeldet sein muss, um die Dienste in Anspruch zu nehmen
+- externe Zahlungsdienst: wickelt die Bezahlung der Tickets extern ab
+- Authentifizierungs-Service: durch diesen Dienst kann sich der Nutzer eindeutig identifizieren und Informationen über sich (für z.B. die Anmeldung) freigeben
+- Stadtbus Mitarbeiter
+- andere Microservices: Services können verschiedene Anfragen an den Stadtbus schicken (z.B für Sonderrabatte bei Kita-Ausflügen)
 
 ![UseCase](media/UseCase.png)
 
@@ -29,7 +30,6 @@
 - User Stories mit Akzeptanzkritierien 
 - Optional: Name (oder ID) und Priorität ("Must", "Should", "Could", "Won't")
 - Strukturierung der User Stories in funktionale Gruppen
-- Sicherheit: Misuse-Stories formulieren
 
 
 |**ID**| **Name**| **In meiner Rolle als**...|   ...**möchte ich**...   | ..., **so dass**... | **Erfüllt, wenn**... | **Priorität**   |
@@ -49,91 +49,84 @@ Informationseinsicht
 |10| allgemeine Informationen | Benutzer | jederzeit aktuelle Meldungen und Störungen/Ausfälle einsehen können | sich der Benutzer auf diese einstellen kann (und ggf. das Ticket erstattet bekommen kann) und diese beim Kauf der Karten berücksichtigen kann | unter dem Tab "Infos & Meldungen" diese anzeigen (filtern nach Datum, Linie) | Must |
 |11| Infos und Meldungen bearbeiten | Mitarbeiter | Beiträge im Tab "Infos und Meldungen" hinzufügen und löschen | die Informationen auf der Seite aktuell zu halten | extra Seite für Mitarbieter, die nur für diese zu erreichen ist | Must |
 Feedback
-|12| Feedback | Benutzer | Feedback zu meiner Fahrt geben | Mitarbeiter diese auswerten können und den Busverkehr optimieren können | Email mit dem Ticket enthält zusätzlich Möglichkeit für Feedback zur Fahrt (Link zu Feedback-Formular) | Could/Won't |
-
+|12| Feedback | Benutzer | Feedback zu meiner Fahrt geben | ich aktiv zur Verbesserung des Busverkehrs beitragen kann | Email mit dem Ticket enthält zusätzlich Möglichkeit für Feedback zur Fahrt (Link zu Feedback-Formular) | Could/Won't |
+Statistiken
+|13| Statistiken einsehen | Mitarbeiter | Statistiken und Feedback der Reisenden einsehen | Mitarbeiter diese auswerten können und den Busverkehr optimieren können | extra Seite für Mitarbieter, die nur für diese zu erreichen ist| Could |
 
 
 ## Graphische Benutzerschnittstelle
 
-- GUI-Mockups passend zu User Stories
-- Screens mit Überschrift kennzeichnen, die im Inhaltsverzeichnis zu sehen ist
-- Unter den Screens darstellen (bzw. verlinken), welche User Stories mit dem Screen abgehandelt werden
-- Modellierung der Navigation zwischen den Screens der GUI-Mockups als Zustandsdiagramm
-- Mockups für unterschiedliche Akteure
-
+![MockUp_ticketauswahl](media/MockUpsStadtbus.svg)
+![Mockup_tickets](media/MockUpsStadtbus2.svg)
+![Mockup_mitarbeiter](media/MockUpsStadtbus3.svg)
 
 ## Datenmodell 
 
-- Begriffe im Glossar darstellen
 - Modellierung des physikalischen Datenmodells 
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
-
+![ERM](media/er%20busmicroservice.png)
 
 ## Abläufe
-
-- Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
-- Aktivitätsdiagramme für relevante Use Cases
-- Aktivitätsdiagramm mit Swimlanes sind in der Regel hilfreich 
-  für die Darstellung der Interaktion von Akteuren der Use Cases / User Stories
-- Abläufe der Kommunikation von Rechnerknoten (z.B. Client/Server)
-  in einem Sequenz- oder Aktivitätsdiagramm darstellen
-- Modellieren Sie des weiteren die Diagramme, die für das (eigene) Verständnis des
-  Softwaresystems hilfreich sind. 
 
   ![Aktivitätsdiagramm_busticket](media/Aktivitätsdiagramm.jpg)
   ![Aktivitätsdiagramm_infos](media/Aktivitätsdiagramm2.jpg)
 
-
 ## Schnittstellen
-
-- Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
-- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
-- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
-- Aufteilen in Commands, Events, Queries
-* Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
-
-
-**Beispiel:**
 
 ### URL
 
-http://smart.city/microservices/customer
+http://smart.city/microservices/stadtbus
+
+### private API
+
+| **Method** | **Name** | **Parameter** | **Resultat** |
+|:---| :------ | :----- | :------ |
+|POST| createInfoPost | {<br>"titel": " ",<br>"kurzbeschreibung": " ",<br>"text": " ",<br>"priorität": " ",<br>"tag": " ",<br>"date": "00.00.0000"<br>}| Neuer Post wird veröffentlicht |
+|DELETE| removeInfoPost | meldung_id | angegebener Post wird gelöscht |
+|GET| getInfoPost | meldung_id | angegebener Post wird returned
+|POST| addTicket | {<br> "busreisende_id" : " ",<br>"ticket_art: " ",<br> "geltungstag": "00.00.0000",<br> "preis": " ", <br>} | verkauftes Ticket wird hinzugefügt |
+|POST| submitFeedback | {<br>"fahrt_id" : " ", <br>"nachricht": " ", <br> "bewertung": " ", <br> "verspätung": " "<br>} | Feedback wird eingereicht |
+|GET| getSoldTicketsPerRoute | int route_id | Tickets [] list
+|GET| getFeedbackPerRoute | int route_id | Feedback [] list 
 
 
+### Events
 
+**Forum event channel**
 
-## Technische Umsetzung
-
+| **Name** | **Payload** | 
+| :------ | :----- | 
+| Newsletter | {<br>"event_id": 2000,<br>"event_name": "New Newsletter Post",<br> "service_name": "stadtbus",<br>"title": " ",<br>"text": " "<br>} |
+| Calendar | {<br>"event_id": 2001,<br>"event_name": "New Calendar Post",<br> "service_name": "stadtbus",<br>"title": " ",<br>"text": " ",<br>"date": " "<br>} |
 
 ### Softwarearchitektur
 
 - Darstellung von Softwarebausteinen (Module, Schichten, Komponenten)
 
-Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
 
 * Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+  * Web-Schicht: Node.js
+  * Logik-Schicht: Express.js
+  * Persistenz-Schicht: MySQL Datenbank
 
 * Client
-  * View-Schicht
-  * Logik-Schicht
+  * View-Schicht: React.js
+  * Logik-Schicht: React.js
   * Kommunikation-Schicht
 
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
 
-
-
-### Entwurf
-
-- Detaillierte UML-Diagramme für relevante Softwarebausteine
 
 ### Fehlerbehandlung 
 
 * Mögliche Fehler / Exceptions auflisten
 * Fehlercodes / IDs sind hilfreich
 * Nicht nur Fehler technischer Art ("Datenbankserver nicht erreichbar") definieren, sondern auch fachliche Fehler wie "Kunde nicht gefunden", "Nachricht wurde bereits gelöscht" o.ä. sind relevant. 
+
+| Fehler | Beschreibung |
+| :----- | :----------- |
+|WebSocketError| Verbindung zu WebSocket getrennt|
+
 
 ### Validierung
 
