@@ -131,12 +131,6 @@ möglich verschiedene Sondertarife zu buchen, und sich für Kooperationen anzume
 
 ## Schnittstellen
 
-- Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
-- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
-- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
-- Aufteilen in Commands, Events, Queries
-* Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
-
 ### URL
 
 http://smart.city/microservices/customer
@@ -188,13 +182,12 @@ http://smart.city/microservices/customer
 **Tierheim event channel** 
 
 | **Service** | **Payload** | **Description** | 
-
+| :------ | :----- | :----- |
 | Tierheim | 	{<br>event_id: 7002,<br>event_name:"New Volunteer for walk",<br>service_name: fitnessstudio,<br>personal_number: number} | Neuer Kalendereintrag |
 
 **Landingpage event channel** 
-
+| :------ | :----- | :----- |
 | **Service** | **Payload** | **Description** | 
-
 | Landingpage | 	{<br>event_id: 7003,<br>event_name:"New About us",<br>service_name: fitnessstudio,<br>text: text} | Neues about us |
 
 ### Dependencies
