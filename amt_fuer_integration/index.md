@@ -271,49 +271,21 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 ### Öffentliche Schnittstellen
 
 #### Events
-**Integration event channel**
 
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| public.integration | - |
-| private.integration | - |
-
-**Bürgerbüro event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| private.bürgerbüro | {<br>"event_id": 9000,<br>"event_name":"Register New Refugee",<br>"service_name": "integration",<br>"refugee": {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;}<br> } |
-| private.bürgerbüro | {<br>"event_id": 9001,<br>"event_name":"Register New Refugee Familie",<br>"service_name": "integration",<br>"parents": \[ {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;},<br>&emsp;{<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;} \],<br>"children": \[ {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;},<br>&emsp;{<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;} \],<br> } |
-
-**Kita-Application event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| private.kita | {<br>"event_id": 9000,<br>"event_name":"Refugee Kita Application",<br>"service_name": "integration",<br>"care_time": 35,<br>"child": { "id_citizien": 928349823 },<br>"parent": \[{ "id_citizien": 928349823 }, { "id_citizien": 928349823 }, \]<br>} |
-
-**Finanzamt event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| private.finanzamt | {<br>"event_id": 9000,<br>"event_name": "Notify Incoming Donation",<br>"amount": 50.45,<br>"citizen_id": 932849834<br>} |
-
-**Newsletter event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| public.newsletter | {<br>"event_id": 9000,<br>"event_name": "New Newsletter Post",<br>"title": "xyz",<br>"text_short": "foo",<br>"text_long": "foo bar long",<br>"date": DD.MM.YYYY (optional),<br>} |
-
-**Landing Page event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| public.landingpage | {<br>"event_id": 9000,<br>"event_name": "Update About Us",<br>"service_name": "integration", "date": DD.MM.YYYY,<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1",<br>} |
+|**Service** | **Key** | **Payload** | 
+| :------ | :------ | :----- | 
+| Bürgerbüro | private.ingetration | {<br>"event_id": 9000,<br>"event_name":"Register New Refugee",<br>"service_name": "integration",<br>"refugee": {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;}<br> } |
+| Bürgerbüro | private.bürgerbüro | {<br>"event_id": 9001,<br>"event_name":"Register New Refugee Familie",<br>"service_name": "integration",<br>"parents": \[ {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;},<br>&emsp;{<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;} \],<br>"children": \[ {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;},<br>&emsp;{<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;} \],<br> } |
+| Kita-Verwaltung | private.integration | {<br>"event_id": 9002,<br>"event_name":"Refugee Kita Application",<br>"service_name": "integration",<br>"care_time": 35,<br>"child": { "id_citizien": 928349823 },<br>"parent": \[{ "id_citizien": 928349823 }, { "id_citizien": 928349823 }, \]<br>} |
+| Finanzamt | private.integration | {<br>"event_id": 9003,<br>"event_name": "Notify Incoming Donation",<br>"amount": 50.45,<br>"citizen_id": 932849834<br>} |
+| Newsletter| public.integration | {<br>"event_id": 9004,<br>"event_name": "New Newsletter Post",<br>"title": "xyz",<br>"text_short": "foo",<br>"text_long": "foo bar long",<br>"date": DD.MM.YYYY (optional),<br>} |
+| Landing Page | public.integration | {<br>"event_id": 9005,<br>"event_name": "Update About Us",<br>"service_name": "integration", "date": DD.MM.YYYY,<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1",<br>} |
 
 #### Queries
 
 | **Name** | **Method** | **URL** | **Parameter** | **Response Example** | **Response Type** |
 | :------ | :----- | :------ | :------ | :------ | :------ |
-| Refugee status  | GET | api/refugee/:hash/status | String hash | { "status": true } | json |
+| Refugee status  | GET | api/refugee/:hash | String hash | { "status": true } | json |
 
 ### Dependencies
 
@@ -323,12 +295,6 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | :------ | :----- | 
 | SmartAuth | authenticateUser() |
 | SmartAuth | authenticateEmployee() |
-
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| - | - |
 
 ## Technische Umsetzung
 
