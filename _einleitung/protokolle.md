@@ -214,11 +214,11 @@ Wir fangen an mit einem Überblick. Was wurde bisher erledigt? Was lief gut/schl
 noch erledigt werden?
 
 Jannis - Amt für Integration:
-- RabittMQ Schnittstelle wurde implementiert, es gab jedoch noch Probleme mit der Verbindung zu RabbitMQ selbst.
+- RabbitMQ Schnittstelle wurde implementiert, es gab jedoch noch Probleme mit der Verbindung zu RabbitMQ selbst.
 - Die ersten externen Interfaces (Interfaces die von anderen Services genutzt werden sollen) wurden erstellt
 - Einige Frontend-Seiten wurden bereits designed und implementiert
 - Bis nächste Woche:
-  - Schnittstelle für RabittMQ auch an RabittMQ selbst anbinden
+  - Schnittstelle für RabbitMQ auch an RabbitMQ selbst anbinden
   - Private Schnittstellen für User/Mitarbeiter implementieren
 
 Marius - Newsletter:
@@ -250,7 +250,7 @@ Celine - Stadtbus:
 - Einarbeitung in React
 - Bis nächste Woche
   - Schnittstellen implementierung 
-  - RabittMQ Interfaces erstellen und verbinden
+  - RabbitMQ Interfaces erstellen und verbinden
 
 Vivien - Tierheim:
 - Einarbeitung in Rust
