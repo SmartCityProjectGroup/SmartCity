@@ -207,3 +207,87 @@ Tierheim:
 ---
 
 **Meeting 4 - Daily Scrum** DI 26.04
+
+Anwesend: 2 Online, Rest vor Ort
+
+Wir fangen an mit einem Überblick. Was wurde bisher erledigt? Was lief gut/schlecht? Was soll bis zum nächsten Meeting 
+noch erledigt werden?
+
+Jannis - Amt für Integration:
+- RabittMQ Schnittstelle wurde implementiert, es gab jedoch noch Probleme mit der Verbindung zu RabbitMQ selbst.
+- Die ersten externen Interfaces (Interfaces die von anderen Services genutzt werden sollen) wurden erstellt
+- Einige Frontend-Seiten wurden bereits designed und implementiert
+- Bis nächste Woche:
+  - Schnittstelle für RabittMQ auch an RabittMQ selbst anbinden
+  - Private Schnittstellen für User/Mitarbeiter implementieren
+
+Marius - Newsletter:
+- Einarbeitung in Vue
+- Erste Schritte in Prisma, leider war der Datenbankserver regelmäßig offline, was die Arbeit erschwerte
+- Bis nächste Woche:
+  - Userstories aus den Sprintzielen implementieren
+
+Max - Kita:
+- Einarbeitung in Express und Prisma
+- Erstes Datenbankschema erstellt, auch hier Probleme mit der Datenbankserververfügbarkeit
+- Bis nächste Woche
+  - Private Methoden im Backend erstellen
+
+Tristan - Bürgeramt:
+- Einarbeitung in React, dabei ist die Frage aufgekommen, wie mit 2 Servern (Front-/Backend) für einen Services umgegangen werden soll
+- Erste Ordnerstrukturen
+- Bis nächste Woche:
+  - Interfaces zur Meldung des Bürgers, sowie das dazugehörige Event implementieren
+
+Tom - Fitnessstudio:
+- Einarbeitung in Front-/Backend Frameworks, dauerte leider länger als erwartet.
+- Bis nächste Woche:
+  - Verschobene Arbeit aufholen und restliche Sprintziele erarbeiten
+
+Celine - Stadtbus:
+- Backend aufgesetzt
+- Prismaschema für Datenbank erstellt, auch hier wieder Serverprobleme
+- Einarbeitung in React
+- Bis nächste Woche
+  - Schnittstellen implementierung 
+  - RabittMQ Interfaces erstellen und verbinden
+
+Vivien - Tierheim:
+- Einarbeitung in Rust
+- Bis nächste Woche:
+  - Schnittstellen und Sprintziel implementierung
+
+Jonathan - SmartAuth:
+- Einarbeitung in Rust
+- Erste Schnittstellen implementierung
+- Prismaschema, auch hier wieder Datenbankprobleme
+- Bis nächste Woche:
+  - Weitere Schnittstellen
+  - Dokumentation erweitern, damit andere Services da weiter arbeiten können
+
+Paul - CI/CD und Server
+- Githubactions bezüglich CD sind fertig und können genutzt werden
+- Rudimentäre Dockerfiles sind fertig, müssen aber in zusammenarbeit mit den Services spezialisiert werden
+- Datenbankserver aufgesetzt, dieser macht aber momentan noch Probleme, die noch gelöst werden müssen
+- Watchtower zur verwaltung von Containern eingerichtet. Watchtower reagiert auf Commits in den Masterbranch und sorgt für CD
+- Erste Versuche mit dem Mailserver, es wird noch überlegt, diesen von einem externen Anbieter hosten zu lassen. (Mehr dazu in den kommenden Tagen)
+
+Adrian zeigt ein paar Codetemplates zur Kommunikation mit RabittMQ und wie man mit Vue ein "gebautes" Frontend direkt vom Backend als 
+statischen Ordner einbinden lassen kann.
+
+Bezüglich der Datenbank wird folgendes Festgehalten:
+- Da durch regelmäßige Arbeiten am Server keine durchgehende Funktionalität gewährleistet werden kann, sollte jeder Service eine eigene
+Datenbank zu Testzwecken einrichten. Dies kann entweder mittels MySQL, oder über einen lokalen Dockercontainer gelöst werden.
+
+Passwörter zu Datenbankservern und ähnlichem sollen in GitHub-Secrets angelegt werden und von da aus mittels CI/CD in Docker als
+Umgebungsvariablen festgehalten werden.
+
+In Zukunft sollen JSON-Daten, die direkt aus der Queue gelesen werden, vor der Verwendung mit JSON-Schemas auf Gültigkeit geprüft werden.
+Dazu müssen JSON-Schemas für jedes Event angelegt werden, bei Fragen an Adrian wenden.
+
+Da dies gegen Ende des Meetings nochmal aufgekommen ist:
+- Adrian ist in seiner Rolle als **Software Architekt** für die generelle
+Codestruktur und Qualität zuständig. Er soll darauf achten, dass sich jeder an festgelegte Strukturen und Vorgaben hält.
+Natürlich kann jeder neue Ideen und Anregungen einbringen, doch schlussendlich legt Adrian diese Dinge fest und 
+weißt auf mögliche Probleme im Code oder in der Spezifikation hin. Inhaltlich und Designtechnisch sind die Services
+natürlich vollständig dem entsprechenden Entwickler überlassen.
