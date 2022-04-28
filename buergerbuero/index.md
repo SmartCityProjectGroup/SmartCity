@@ -143,6 +143,10 @@ Zusätzlich können die Bürger über das Bürgerbüro verschiedene Genehmigunge
 ### Physisches Datenmodell
 ![PDM](media/pdm.png)
 
+#### Begriffserklärung
+**Requests**: Anträge die einmalig bearbeitet werden und dann abgeschlossen sind. Zum Beispiel ein Antrag auf Namensänderung  
+**Permit**: Dauerhafte/Zeitbegrenzte Genehmigung zugeordnet zu einem Bürger. Beipiele: Baugenehmigung, Haltung großer Hunde, ...
+
 ## Abläufe
 <!--
 - Aktivitätsdiagramm für den Ablauf sämtlicher Use Cases
