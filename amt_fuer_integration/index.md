@@ -258,7 +258,7 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | createRefugee() | RefugeeData d | Refugee r |
 | assignHousing() | Refugee \[\] list | Boolean b |
 | createHousing() | HousingData d | Housing h |
-| createQRCode()  | Refugee r | QRCode c |
+| createQRCode()  | Refugee r | String s |
 
 
 #### Queries
@@ -285,7 +285,7 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 
 | **Name** | **Method** | **URL** | **Parameter** | **Response Example** | **Response Type** |
 | :------ | :----- | :------ | :------ | :------ | :------ |
-| Refugee status  | GET | api/refugee/:hash | String hash | { "status": true } | json |
+| Refugee status  | GET | api/refugee/:qr_code | String qr_code | { "status": true } | json |
 
 ### Dependencies
 
