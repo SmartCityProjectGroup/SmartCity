@@ -149,6 +149,20 @@ Darüber hinaus erhält jede registrierte Kita ein Verwaltungstool, mit denen ei
   
 [![ER-Diagramm](media/ERM.svg)](https://merlinchiodo.github.io/SmartCity/kita/media/ERM.svg)
 
+### Glossar
+| **Model** | **API route** |
+| :------ | :------	|
+| Einrichtung | kitas	|
+| Bild		  | images	|
+| Antrag 	  | applications |
+| Vertrag 	  | contracts |
+| Kind		  | children |
+| Erziehungsberechtigte | guardians |
+| Mitarbeitende | employees |
+| Dokument | documents |
+| Nachricht | messages |
+
+
 ## Abläufe
 
 <!---
