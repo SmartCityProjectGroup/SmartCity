@@ -85,49 +85,49 @@ Zusätzlich können die Bürger über das Bürgerbüro verschiedene Genehmigunge
   <div>Neuen Bürger im Melderegister eintragen</div>
   <div>Übersicht über eigene Anträge</div>
   <div>Übersicht über eigene Genehmigungen</div>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_main_page.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_main_page.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_main_page.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_new_citizen.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_overview_a.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_overview_g.png">
   </a>
   <div>Antrag auf Namensänderung</div>
   <div>Umzug melden</div>
   <div>Eheschließung beantragen</div>
   <div>Scheidung beantragen</div>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_name_change.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_name_change.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_name_change.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_moving.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_moving.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_moving.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_marriage.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_marriage.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_marriage.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_divorce.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_divorce.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_divorce.png">
   </a>
   <div>Angestellter:<br>offene Anträge</div>
   <div>Angestellter:<br>Antragsdetails</div>
   <div>Angestellter:<br>offene Gemehmigungen</div>
   <div>Angestellter:<br>Genehmigungsdetails</div>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_list_a.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_single_a.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_list_g.png">
   </a>
-  <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png" title="Klick mich!" target="_blank" rel="noopener">
-    <img src="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png">
+  <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png" title="Klick mich!" target="_blank" rel="noopener">
+    <img src="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/mockup_admin_single_g.png">
   </a>
 </div>
 
@@ -145,7 +145,7 @@ Zusätzlich können die Bürger über das Bürgerbüro verschiedene Genehmigunge
 
 #### Begriffserklärung
 **Requests**: Anträge die einmalig bearbeitet werden und dann abgeschlossen sind. Zum Beispiel ein Antrag auf Namensänderung  
-**Permit**: Dauerhafte/Zeitbegrenzte Genehmigung zugeordnet zu einem Bürger. Beipiele: Baugenehmigung, Haltung großer Hunde, ...
+**Permit**: Dauerhafte/Zeitbegrenzte Genehmigung zugeordnet zu einem Bürger. Beipiele: Baugenehmigung, Sachkundenachweis für Hundehalter, ...
 
 ## Abläufe
 <!--
@@ -185,24 +185,22 @@ Ablauf für das Beantragen und bearbeiten von Genehmigungen
 
 | **Pfad** | **Methode** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ | :------ |
-| /info/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
-| /licenses/{ID} | GET | ID: eindeutige Bürger-ID | Auskunft über alle Lizenzen eines einzelnen Bürger<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_licenses_info.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_licenses_info.png)</a> |
-| /children/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu den Kindern des angegebenen Bürgers<a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
+| /citizen/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
+| /citizen/{ID}/hasDogPermit | GET | ID: eindeutige Bürger-ID | Gibt an ob der Büger einen Sachkundenachweis für Hundehalter hat<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_has_dog_permit.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_has_dog_permit.png)</a> |
+| /citizen/{ID}/children | GET | ID: eindeutige Bürger-ID | gibt die IDs der Kinder zurück<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
 
 ### Events
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
 | **Name** | **Beschreibung** | **Payload** |
 | :------ | :----- | :----- |  
-| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!" target="_blank" rel="noopener">![About us](media/event_about_us.png)</a> |
-| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellt](media/event_citizen_created.png)</a> |
-| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!" target="_blank" rel="noopener">![Namensänderung](media/event_name_change.png)</a> |
-| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!" target="_blank" rel="noopener">![Adressänderung](media/event_address_change.png)</a> |
-| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!" target="_blank" rel="noopener">![Eheschließung](media/event_marriage.png)</a> |
-| Scheidung | wird ausgelöst, wenn zwei Bürger sich scheiden lassen | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_divorce.png" title="Klick mich!" target="_blank" rel="noopener">![Scheidung](media/event_divorce.png)</a> |
-| Genehmigung ausgestellt | wird ausgelöst, wenn einem Bürger eine Genehmigung ausgestellt wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_issued.png" title="Klick mich!" target="_blank" rel="noopener">![Genehmigung ausgestellt](media/event_license_issued.png)</a> |
-| Genehmigung widerrufen | wird ausgelöst, wenn einem Bürger eine Genehmigung widerrufen wird | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_license_removed.png" title="Klick mich!" target="_blank" rel="noopener">![Genehmigung widerrufen](media/event_license_removed.png)</a> |
-| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://merlinchiodo.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!" target="_blank" rel="noopener">![Todesmeldung](media/event_citizen_death.png)</a> |
+| About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!" target="_blank" rel="noopener">![About us](media/event_about_us.png)</a> |
+| Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellt](media/event_citizen_created.png)</a> |
+| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!" target="_blank" rel="noopener">![Namensänderung](media/event_name_change.png)</a> |
+| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!" target="_blank" rel="noopener">![Adressänderung](media/event_address_change.png)</a> |
+| Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!" target="_blank" rel="noopener">![Eheschließung](media/event_marriage.png)</a> |
+| Scheidung | wird ausgelöst, wenn zwei Bürger sich scheiden lassen | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_divorce.png" title="Klick mich!" target="_blank" rel="noopener">![Scheidung](media/event_divorce.png)</a> |
+| Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!" target="_blank" rel="noopener">![Todesmeldung](media/event_citizen_death.png)</a> |
 
 
 ### Event-Subscriptions
@@ -212,6 +210,7 @@ Events, von anderen Microservices, die das Bürgerbüro auswertet/verarbeitet
 | :------ | :----- | :----- | 
 | Amt für Integration | Register New Refugee | Bürger in der Datenbank speichern |
 | Amt für Integration | Register New Refugee Family | Bürger in der Datenbank speichern |
+| Tierheim | New Proof Of Competence | Genehmigung abspeichern |
 
 
 ## Technische Umsetzung
@@ -254,31 +253,31 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
   </thead>
   <tbody>
     <tr style="background-color:aliceblue;">
-       <td>GET</td><td>/info/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
+       <td>GET</td><td>/citizen/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
     </tr>
     <tr style="background-color:aliceblue;">
-      <td>GET</td><td>/info/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
+      <td>GET</td><td>/citizen/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
     </tr>
     <tr style="background-color:aliceblue;">
-      <td>GET</td><td>/info/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
+      <td>GET</td><td>/citizen/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
     </tr>
     <tr style="background-color:bisque;">
-      <td>GET</td><td>/licenses/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
+      <td>GET</td><td>/citizen/{ID}/hasDogPermit</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
     </tr>
     <tr style="background-color:bisque;">
-      <td>GET</td><td>/licenses/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
+      <td>GET</td><td>/citizen/{ID}/hasDogPermit</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
     </tr>
     <tr style="background-color:bisque;">
-      <td>GET</td><td>/licenses/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
+      <td>GET</td><td>/citizen/{ID}/hasDogPermit</td><td>500</td><td>Fehler beim Laden der Daten</td>
     </tr>
     <tr style="background-color:#bbdfbb;">
-      <td>GET</td><td>/children/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
+      <td>GET</td><td>/citizen/{ID}/children</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
     </tr>
     <tr style="background-color:#bbdfbb;">
-      <td>GET</td><td>/children/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
+      <td>GET</td><td>/citizen/{ID}/children</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
     </tr>
     <tr style="background-color:#bbdfbb;">
-      <td>GET</td><td>/children/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
+      <td>GET</td><td>/citizen/{ID}/children</td><td>500</td><td>Fehler beim Laden der Daten</td>
     </tr>
   </tbody>
 </table>
