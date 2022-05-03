@@ -291,3 +291,90 @@ Codestruktur und Qualität zuständig. Er soll darauf achten, dass sich jeder an
 Natürlich kann jeder neue Ideen und Anregungen einbringen, doch schlussendlich legt Adrian diese Dinge fest und 
 weißt auf mögliche Probleme im Code oder in der Spezifikation hin. Inhaltlich und Designtechnisch sind die Services
 natürlich vollständig dem entsprechenden Entwickler überlassen.
+
+---
+
+**Meeting 5 - Sprintabschluss/Sprintplanning** DI 03.05 
+
+Anwesend: Alle
+
+Herr Brunsmann beginnt das Meeting und fragt bei jedem nach dem aktuellen Stand. 
+Jeder geht auf seinen Stand ein und bennent eventuelle Problembereiche.
+Wir legen fest, dass das **MVP am 24.05.2022** fertiggestellt sein muss. Dies wirft uns aus dem Sprintrythmus von 2 Wochen,
+daher wird der nächste Sprint auf 3 Wochen verlängert. In den ersten 2 Wochen soll der Focus vor allem auf den externen Schnittstellen und
+Events liegen.
+
+Im Discord wurde der Wunsch geäußert, dass wir nochmal genauer auf RabbitMQ und JSON-Schema eingehen, daher zeigt Adrian
+jetzt nochmal was dazu. Die Beispiele und weitere Tutorials sind im Main-Repo zu finden. Der Zugang zu RabbitMQ ist noch
+nicht für jeden eingerichtet, dies soll sich bis heute Abend ändern.
+
+Tristan hat für das Bürgerbüro bereits einige Events mit RabbitMQ verschickt und zeigt einige Beispiele aus seinem Code.
+Durch das Aufteilen von Connection und Senden, in eine spezielle Wrapperklasse, sind Passwörter und Benutzernamen nur an
+einer Stelle im Projekt zu setzen.
+
+Auch zu Prisma gab es noch ein paar Fragen, die heute geklärt werden sollen. Daher zeigt Max einige Beispiele aus seinem
+Kitaprojekt und geht auf den generellen Umgang mit Prisma ein.
+
+Bzgl. Docker und generellem CD gibt es Momentan noch Probleme, welche auf unzureichende Serverspezifikationen zurückzuführen sind.
+Wir arbeiten noch an einer Lösung. Wenn es schlecht läuft, müssen wir den Provider wechseln. Weiteres dazu, nächste Woche.
+
+Da der Mailserver extreme Probleme auf dem Hauptserver gemacht hat, haben wir uns letzte Woche nach dem Meeting dazu entschieden, 
+den Mailservice von einem externen Anbieter hosten zu lassen. Leider existiert hier kein Framework das durch Rust benutzt werden kann,
+daher übernimmt Jonathan jetzt die Bereitstellung des Mailservers. Sollte dieser bis zum nächsten Meeting am 10.05 nicht lauffähig sein, 
+kümmern sich Janik und Adrian um einen Microservice der eine API für EMail-Verkehr bereitstellt.
+
+Für das Datum soll zukünftig ein einheitliches Format festgelegt werden, dies soll mit JSON-Schemas in AJV konform sein.
+
+Im nachfolgenden Sprintplanning legen wir folgende Ziele für den kommenden Sprint fest:<br>
+(Die Zielsetzung mittels Userstories hat sich im letzten Sprint als problematisch erwiesen, daher nutzen wir für den folgenden Sprint API- und Eventschnittstellen )
+
+
+Tom - Fitnessstudio:
+- Problembereiche aufarbeiten 
+- Grundstruktur, mit Mentoring durch Adrian, aufbauen
+
+Max - Kita:
+- Eventschnittstellen
+- JSON-Schema
+- Testfälle einarbeitung
+
+Celine - Stadtbus:
+- Eventschnittstellen
+- Testfälle
+- Prisma (Fehlerbehebung)
+
+Marius - Newsletter:
+- Eventschnittstellen
+- Testfälle
+- Evtl. Private schnittstellen
+
+Tristan - Bürgerbüro:
+- Testfälle
+- Private Schnittstellen, da die meisten öffentlichen schon implementiert
+- Eventschnittstellen (empfangen)
+
+Jannis - Amt für Integration:
+- Zweiten Pullrequest überarbeiten
+- Logik fürs Backend (privat), da auch hier die meisten öffentlichen schon implementiert sind
+
+Jonathan - SmartAuth:
+- Eine Anmeldung für den User 
+- Auth und Token 
+- EMail-Server bereitstellen
+
+Vivien - Tierheim:
+- Eventschnittstellen
+- Testfälle
+
+Mario - Finanzamt:
+- Eventschnittstellen senden/empfangen
+- Interne Schnittstellen
+- Testen
+
+Paul - CI/CD:
+- Serverprobleme fixen
+
+Janik/Adrian - Landingpage:
+- Weiteres Event zum Löschen von Services
+- Front- und Backend verbinden
+- Testfälle
