@@ -378,3 +378,25 @@ Janik/Adrian - Landingpage:
 - Weiteres Event zum Löschen von Services
 - Front- und Backend verbinden
 - Testfälle
+
+---
+
+**Meeting 6 - Daily Scrum** DI 10.05
+
+Anwesend: Zwei Online, Rest Präsenz
+
+Jeder geht kurz auf seinen Fortschritt, seit letzter Woche, ein und nennt mögliche Probleme oder Hindernisse, die Ihr/Ihm 
+bei der Entwicklung begegnet sind. Ergebnis dieser kurzen Zusammenfassung ist, dass im Gegensatz zu letzter Woche vieles
+besser und auch schneller fortschreitet. 
+
+Unter der Woche kam es zu einem Anbieterwechsel für den Server, da wir in der 
+Vergangenheit große Probleme mit der limitierten Performanz des alten Servers hatten. Mit dem neuen Anbieter sind diese 
+Probleme hoffentlich Geschichte. Paul hat bereits alles portiert und neue Links/Zugangsdaten über Discord verteilt.
+
+Da der Server aufgrund des Anbieterwechels in der vergangenen Woche nur selten zur Verfügung stand, konnten Dinge wie Datenbankschemas
+oder Anbindung an RabbitMQ garnicht oder nur schlecht getestet werden, dies sollte in Zukunft besser laufen.
+
+Außerdem sollen bis zum nächsten Meeting die meisten Dockerfiles für die einzelnen Services erstellt werden, sodass der CD-Teil von
+CI/CD funktionsfähig ist.
+
+Alles in allem sind wir auf einem guten Weg in Richtung MVP und sind zuversichtlich, dass wir die Deadline einhalten können.
