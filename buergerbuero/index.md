@@ -183,11 +183,12 @@ Ablauf für das Beantragen und bearbeiten von Genehmigungen
 
 **Basis - URL:** http://smart.city/microservices/buergerbuero/api
 
-| **Pfad** | **Methode** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ | :------ |
-| /citizen/{ID} | GET | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
-| /citizen/{ID}/hasDogPermit | GET | ID: eindeutige Bürger-ID | Gibt an ob der Büger einen Sachkundenachweis für Hundehalter hat<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_has_dog_permit.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_has_dog_permit.png)</a> |
-| /citizen/{ID}/children | GET | ID: eindeutige Bürger-ID | gibt die IDs der Kinder zurück<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
+| **Pfad** | **Methode** | **Parameter** | **Public** | **Resultat** |
+| :------ | :----- | :------ | :------: | :----- |
+| /citizen/{ID} | GET | ID: eindeutige Bürger-ID | Ja | Informationen zu einem einzelnen Bürger<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
+| /citizen/{ID}/hasDogPermit | GET | ID: eindeutige Bürger-ID | Ja | Gibt an ob der Büger einen Sachkundenachweis für Hundehalter hat<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_has_dog_permit.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_has_dog_permit.png)</a> |
+| /citizen/{ID}/children | GET | ID: eindeutige Bürger-ID | Ja | gibt die IDs der Kinder zurück<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
+| /citizen/ | POST | Json im Request-Body<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_post_create_citizen.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellen](media/api_post_create_citizen.png)</a> | Nein | Erstellt einen neuen Bürger in der SmartCity <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_create_citizen.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellen](media/api_create_citizen.png)</a> |
 
 ### Events
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
@@ -278,6 +279,12 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
     </tr>
     <tr style="background-color:#bbdfbb;">
       <td>GET</td><td>/citizen/{ID}/children</td><td>500</td><td>Fehler beim Laden der Daten</td>
+    </tr>
+    <tr style="background-color:#F7F7F7">
+      <td>POST</td><td>/citizen/</td><td>400</td><td>Falsche Parameter gesendet</td>
+    </tr>
+    <tr style="background-color:#F7F7F7">
+      <td>POST</td><td>/citizen/</td><td>500</td><td>Fehler beim Erstellen des Bürgers</td>
     </tr>
   </tbody>
 </table>
