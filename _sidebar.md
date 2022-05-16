@@ -1,7 +1,7 @@
 * [**Projektübersicht**](_einleitung/projektuebersicht)
 * [**Projektorganisation**](_einleitung/projektorganisation)
 * [**Protokolle**](_einleitung/protokolle)
-* [**MVP-Checklist**](_einleitung/mvp_checklist)
+* [**MVP-Checklist**](_einleitung/mvp_checklist.md)
 <br>
 
 - ***Microservices***
