@@ -170,7 +170,7 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
-
+ <!---
 **Beispiel:**
 
 ### URL
@@ -192,9 +192,28 @@ http://smart.city/microservices/customer
 | :------ | :----- | :------ |
 | createContract() | int id | int id |
 | changeContract() | int id | - |
+--->
+### eingehende Events
 
-### Events
+| **Name** | **Beschreibung** | **Payload** |
+| :------ | :----- | :----- |  
+| newServicePost | legt einen neuen Post mit den verschickten Daten an | {
+  "event_id" : "event_id",
+  "service" : "service",
+  "title" : "title",
+  "short_description" : "short_description",
+  "long_description" : "long_description", (optional)
+  "picture" : "picture", (noch nicht sicher, wie speichern)
+  "event_at" : "event_at" (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll)
+}|
 
+
+### ausgehende Events
+
+| **Name** | **Beschreibung** |
+| :------ | :----- |  
+| About us | wird an die Landingpage gesendet, wenn die About Us-Seite des Forums verändert werden soll | 
+<!---
 **Customer event channel**
 
 | **Name** | **Payload** | 
@@ -208,8 +227,20 @@ http://smart.city/microservices/customer
 | :------ | :----- | 
 | Contract Received | int id |
 | Contract Deleted | int id |
-
+--->
+<!---
 **required Data**
+
+{
+  "event_id" : "event_id",
+  "service" : "service",
+  "title" : "title",
+  "short_description" : "short_description",
+  "long_description" : "long_description", (optional)
+  "picture" : "picture", (noch nicht sicher, wie speichern)
+  "event_at" : "event_at" (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll)
+}
+
 
 - event_id
 - event_name
@@ -218,6 +249,7 @@ http://smart.city/microservices/customer
 - text_long
 - picture 
 - date (der Tag, bei dem das Event im Kalender angezeigt werden soll, ansonsten weglassen)
+--->
 
 
 ### Queries
