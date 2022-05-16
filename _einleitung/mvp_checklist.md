@@ -15,24 +15,24 @@ Funktionale Implementierungen, sollen dann in den Wochen nach der Vorstellung de
 
 | Öffentliche Schnittstellen                                                                      | Erledigt |
 |:------------------------------------------------------------------------------------------------|:---------|
-| Alle Schnittstellen aus meiner Spezifikation sind implementiert. (Events und API)               | []       |
-| Alle in meiner Spezifikation angegebenen Parameter sind beachtet worden.                        | []       |
-| Alle Parameter werden auf ihre Korrektheit geprüft. [(JSON-Schema)](../json_schema_tutorial.md) | []       |
-| Mein Service kann eine Verbindung mit RabbitMQ aufbauen und Events senden/empfangen.            | []       |
-| Alle Routen sind (soweit möglich) mit Testfällen abgedeckt.                                     | []       |
-| Meine Implementierung ist entsprechend der Spezifikation (Parameter, Rückgaben, Routen etc.)    | []       |
-| Mein Kanbanboard ist entsprechend meines Fortschritts geführt.                                  | []       |
+| Alle Schnittstellen aus meiner Spezifikation sind implementiert. (Events und API)               | [ ]      |
+| Alle in meiner Spezifikation angegebenen Parameter sind beachtet worden.                        | [ ]      |
+| Alle Parameter werden auf ihre Korrektheit geprüft. [(JSON-Schema)](../json_schema_tutorial.md) | [ ]      |
+| Mein Service kann eine Verbindung mit RabbitMQ aufbauen und Events senden/empfangen.            | [ ]      |
+| Alle Routen sind (soweit möglich) mit Testfällen abgedeckt.                                     | [ ]      |
+| Meine Implementierung ist entsprechend der Spezifikation (Parameter, Rückgaben, Routen etc.)    | [ ]      |
+| Mein Kanbanboard ist entsprechend meines Fortschritts geführt.                                  | [ ]      |
 
 | Private Schnittstellen                                                                          | Erledigt |
 |:------------------------------------------------------------------------------------------------|:---------|
-| Alle meine öffentlichen Schnittstellen sind entsprechend der Checkliste von oben implementiert. | []       |
-| Alle in meiner Spezifikation angegebenen Parameter sind beachtet worden.                        | []       |
-| Alle Parameter werden auf ihre Korrektheit geprüft. [(JSON-Schema)](../json_schema_tutorial.md) | []       |
-| Alle Routen sind (soweit möglich) mit Testfällen abgedeckt.                                     | []       |
-| Meine Implementierung ist entsprechend der Spezifikation (Parameter, Rückgaben, Routen etc.)    | []       |
-| Ich kann für bestimmte Routen schon mit ersten Frontend-Implementierungen beginnen.             | []       |
-| Mein Datenbankschema ist auf dem Datenbankserver zu erreichen.                                  | []       |
-| Alle wichtigen Module sind installiert                                                          | []       |
+| Alle meine öffentlichen Schnittstellen sind entsprechend der Checkliste von oben implementiert. | [ ]      |
+| Alle in meiner Spezifikation angegebenen Parameter sind beachtet worden.                        | [ ]      |
+| Alle Parameter werden auf ihre Korrektheit geprüft. [(JSON-Schema)](../json_schema_tutorial.md) | [ ]      |
+| Alle Routen sind (soweit möglich) mit Testfällen abgedeckt.                                     | [ ]      |
+| Meine Implementierung ist entsprechend der Spezifikation (Parameter, Rückgaben, Routen etc.)    | [ ]      |
+| Ich kann für bestimmte Routen schon mit ersten Frontend-Implementierungen beginnen.             | [ ]      |
+| Mein Datenbankschema ist auf dem Datenbankserver zu erreichen.                                  | [ ]      |
+| Alle wichtigen Module sind installiert                                                          | [ ]      |
 
 ### Zusammenfassung
 Im Fokus liegen offensichtlich die öffentlichen Schnittstellen. Mit Abgabe des MVPs soll jeder Service in der Lage sein,
