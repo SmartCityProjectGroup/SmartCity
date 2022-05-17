@@ -2,7 +2,6 @@
 
 **Autor:** Scrum Master: Janik Geist
 
-?> WIP
 ## Ein Überblick
 Im Gegensatz zu der [Definition](https://de.wikipedia.org/wiki/Minimum_Viable_Product) auf Wikipedia, dient das MVP, 
 im Rahmen unseres Projektes, als Orientierung für die fortlaufende Projektentwicklung und stellt ein Grundgerüst für 
