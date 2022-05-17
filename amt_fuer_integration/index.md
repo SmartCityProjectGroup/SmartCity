@@ -249,34 +249,21 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 http://smart.city/microservices/integration <!--- TODO replace --->
 
 ### Private Schnittstellen
-#### Commands 
-
-**Asynchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createRefugee() | RefugeeData d | Refugee r |
-| assignHousing() | Refugee \[\] list | Boolean b |
-| createHousing() | HousingData d | Housing h |
-| createQRCode()  | Refugee r | String s |
-
-
-#### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getRefugee() | String hash | Refugee r |
-| getHousings() | - | Housing \[\] list |
 
 #### Rest
-| **Name** | **Method** | **URL** |
-| :------ | :----- | :------ |
-| Event "Register New Refugee" | POST | api/events/buergerbuero |
-| Event "Register New Refugee Family" | POST | api/events/buergerbuero/family |
-| Event "Notify Donation" | POST | api/events/finanzamt |
-| Event "Notify Kita Application" | POST | api/events/kita |
-| Event "Update About Us" | POST | api/events/landingpage |
-| Event "Add Newsletter Post" | POST | api/events/newsletter |
+| **Name** | **Method** | **URL** | **Request**| **Response** |
+| :------ | :----- | :------ | :------ | :------ |
+| Register New Refugee | POST | api/private/refugee/register | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional)<br>} | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional),<br>"qr_code": "John.Doe.23984-9384",<br>"housing_id": 4<br>} |
+| Register New Refugee Family | POST | api/private/refugee/registerFamily | {<br>"parents": \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional)<br>}<br> ... \],<br>children: \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional)<br>}<br> ... \]} | {<br>"parents": \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional),<br>"qr_code": "John.Doe.234234-23424",<br>"housing_id": 5<br>}<br> ... \],<br>children: \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional),<br>"qr_code": "John.Doe.234-234",<br>"housing_id": 5<br>}<br> ... \]} |
+| New Donation | POST | api/private/donation | {<br>"amount": 100.0,<br>"citizen_id": "2398492" (optional)<br>} | {<br>"id": 1,<br> "amount": 100.0,<br>"citizen_id": "2398492" (optional)<br>} |
+| New Kita Application | POST | api/private/kita | {<br>"date": "2000-01-01T00:00:00Z",<br>"care_time": 40,<br>"child":<br>{<br>"citizen_id: 12345,<br>"refugee_id": 45678<br>},<br>"parent":<br>{<br>"citizen_id": 44345,<br>"refugee_id": 423444<br>},<br>} | {<br>"id": 1,<br> "date": "2000-01-01T00:00:00Z",<br>refugee_id: "45678" <br>} |
+| New Post | POST | api/private/post | {<br>"title": "text",<br>"text": "testtext",<br>"picture": "http://testurl.de" (optional),<br>"date": "2000-01-01T00:00:00Z",<br>"employee_id": "2398492"<br>} | {<br>"id": 1,<br>"title": "text",<br>"text": "testtext",<br>"picture": "http://testurl.de" (optional),<br>"date": "2000-01-01T00:00:00Z",<br>"employee_id": "2398492"<br> } |
+| New Housing | POST | api/private/housing | {<br>"housing":<br>{<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional)<br>},<br>"address:<br>{<br>"house_number": 5,<br> "street":"Musterweg",<br>"city_code": 12334<br>},<br>}| {<br>"id": 1,<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22<br>} |
+| Get All Housing | GET | api/private/housing | - | ArrayList of all Housings | 
+| Get Housing | GET | api/private/housing/:id | - | {<br>"id": 1,<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22<br>} |
+| Update Housing | PUT | api/private/housing/:id | {<br>"housing_type": "C117" (optional),<br>"people_assigned": 0 (optional),<br>"people_limit": 4(optional),<br>"size": 80.0 (optional),<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0 (optional),<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22 (optional)<br>} | {<br>"housing_type": "C117" (optional),<br>"people_assigned": 0 (optional),<br>"people_limit": 4(optional),<br>"size": 80.0 (optional),<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0 (optional),<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22 (optional)<br>} |
+| Delete Housing | DELETE | api/private/housing/:id | - | 'Housing Deleted' |
+
 
 ### Öffentliche Schnittstellen
 
@@ -286,10 +273,10 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | :------ | :------ | :----- | 
 | Bürgerbüro | private.integration | {<br>"event_id": 9000,<br>"event_name":"Register New Refugee",<br>"service_name": "integration",<br>"refugee": {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "2000-01-20",<br>&emsp;"email": "john@doe.com",<br>&emsp;}<br> } |
 | Bürgerbüro | private.integration | {<br>"event_id": 9001,<br>"event_name":"Register New Refugee Family",<br>"service_name": "integration",<br>"parents": \[ {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;},<br>&emsp;{<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;} \],<br>"children": \[ {<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;},<br>&emsp;{<br>&emsp;"firstname": "John",<br>&emsp;"lastname": "Doe",<br>&emsp;"date of birth": "12.08.2000",<br>&emsp;"email": "john@doe.com",<br>&emsp;} \]<br> } |
-| Kita-Verwaltung | private.integration | {<br>"event_id": 9002,<br>"event_name":"Refugee Kita Application",<br>"service_name": "integration",<br>"care_time": 35,<br>"child": { "id_citizen": "testid" },<br>"parent": \[{ "id_citizien": "testid" }, { "id_citizien": "testid" }, \]<br>} |
-| Finanzamt | private.integration | {<br>"event_id": 9003,<br>"event_name": "Notify Incoming Donation",<br>"service_name": "integration",<br>"amount": 50.45,<br>"id_citizen": "testid"<br>} |
-| Newsletter| public.integration | {<br>"event_id": 9004,<br>"event_name": "New Newsletter Post",<br>"service_name": "integration",<br>"title": "xyz",<br>"text": "foo bar long",<br>"date": DD.MM.YYYY (optional)<br>} |
-| Landing Page | public.integration | {<br>"event_id": 9005,<br>"event_name": "Update About Us",<br>"service_name": "integration",<br>"date": DD.MM.YYYY,<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1"<br>} |
+| Kita-Verwaltung | private.integration | {<br>"event_id": 9002,<br>"event_name":"Refugee Kita Application",<br>"service_name": "integration",<br>"care_time": 35,<br>"child": { "citizen_id": 12345 },<br>"parent": { "citizen_id": 12345 }<br>} |
+| Finanzamt | private.integration | {<br>"event_id": 9003,<br>"event_name": "Notify Incoming Donation",<br>"service_name": "integration",<br>"amount": 50.45,<br>"citizen_id": 12345<br>} |
+| Newsletter| public.integration | {<br>"event_id": 9004,<br>"event_name": "New Newsletter Post",<br>"service_name": "integration",<br>"title": "xyz",<br>"text": "foo bar long",<br>"picture": "https://google.de/picture1"<br>"date": "YYYY-MM-DDTHH:MM:SS" (optional)<br>} |
+| Landing Page | public.integration | {<br>"event_id": 9005,<br>"event_name": "Update About Us",<br>"service_name": "integration",<br>"date": "YYYY-MM-DDTHH:MM:SS",<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1"<br>} |
 
 #### Queries
 
