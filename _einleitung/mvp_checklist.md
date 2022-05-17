@@ -32,7 +32,13 @@ Funktionale Implementierungen, sollen dann in den Wochen nach der Vorstellung de
 | Meine Implementierung ist entsprechend der Spezifikation (Parameter, Rückgaben, Routen etc.)    | [ ]      |
 | Ich kann für bestimmte Routen schon mit ersten Frontend-Implementierungen beginnen.             | [ ]      |
 | Mein Datenbankschema ist auf dem Datenbankserver zu erreichen.                                  | [ ]      |
-| Alle wichtigen Module sind installiert                                                          | [ ]      |
+| Alle wichtigen Module sind installiert.                                                         | [ ]      |
+
+| Allgemein                                                    | Erledigt |
+|:-------------------------------------------------------------|:---------|
+| Mein Service hat eine rudimentäre Startseite.                | [ ]      |
+| Es existiert ein vernüftiges Dockerfile für meinen Service.  | [ ]      |
+| Mein Service ist auf dem Server erreichbar. (Startseite)     | [ ]      |
 
 ### Zusammenfassung
 Im Fokus liegen offensichtlich die öffentlichen Schnittstellen. Mit Abgabe des MVPs soll jeder Service in der Lage sein,
