@@ -13,15 +13,15 @@ Funktionale Implementierungen, sollen dann in den Wochen nach der Vorstellung de
 
 ## Was sollte man beim MVP beachten?
 
-| Öffentliche Schnittstellen                                                                      | Erledigt |
-|:------------------------------------------------------------------------------------------------|:---------|
-| Alle Schnittstellen aus meiner Spezifikation sind implementiert. (Events und API)               | [ ]      |
-| Alle in meiner Spezifikation angegebenen Parameter sind beachtet worden.                        | [ ]      |
-| Alle Parameter werden auf ihre Korrektheit geprüft. [(JSON-Schema)](../json_schema_tutorial.md) | [ ]      |
-| Mein Service kann eine Verbindung mit RabbitMQ aufbauen und Events senden/empfangen.            | [ ]      |
-| Alle Routen sind (soweit möglich) mit Testfällen abgedeckt.                                     | [ ]      |
-| Meine Implementierung ist entsprechend der Spezifikation (Parameter, Rückgaben, Routen etc.)    | [ ]      |
-| Mein Kanbanboard ist entsprechend meines Fortschritts geführt.                                  | [ ]      |
+| Öffentliche Schnittstellen                                                                          | Erledigt |
+|:----------------------------------------------------------------------------------------------------|:---------|
+| Alle Schnittstellen aus meiner Spezifikation sind implementiert. (Events und API)                   | [ ]      |
+| Alle in meiner Spezifikation angegebenen Parameter sind beachtet worden.                            | [ ]      |
+| Alle Parameter werden auf ihre Korrektheit geprüft. [(JSON-Schema)](../json_schema_tutorial.md)     | [ ]      |
+| Mein Service kann eine Verbindung mit RabbitMQ aufbauen und Events senden/empfangen.                | [ ]      |
+| Alle Routen sind (soweit möglich) mit Testfällen abgedeckt.                                         | [ ]      |
+| Meine Spezifikation ist entsprechend meiner Implementierung. (Parameter, Rückgaben, Routen etc.)    | [ ]      |
+| Mein Kanbanboard ist entsprechend meines Fortschritts geführt.                                      | [ ]      |
 
 | Private Schnittstellen                                                                          | Erledigt |
 |:------------------------------------------------------------------------------------------------|:---------|
