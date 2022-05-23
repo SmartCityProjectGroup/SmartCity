@@ -1,4 +1,4 @@
-<div style="text-align: center; font-size: 3em; font-weight: bold; margin: 0px 0px 0px 0px">Softwareprojekt<br>Smart City</div>
+<div style="text-align: center; font-size: 3em; font-weight: bold; margin: 0px 0px 0px 0px">Softwareprojekt<br>Smart City - Münster</div>
  
 
 <div style="text-align: center; font-size: 1.5em;margin: 50px 0px 0px 0px">
