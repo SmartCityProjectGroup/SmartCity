@@ -212,41 +212,10 @@ http://smart.city/microservices/kita
 
 | **Service** | **Key** | **Payload** | 
 | :------ | :------ | :----- | 
-| stadtbus | private.kita | {
-      event_id: 3001,
-      event_name: "New Kita Inquiry",
-      service_name: "kita",
-      number_of_passengers: 999,
-      person_responsible: "Hans Merkel",
-      date: "08.05.2022",
-    } |
-| landingpage | private.kita | {
-      event_id: 3002,
-      event_name: "Updated About US",
-      service_name: "kita",
-      about_us: "Kita-Service der SmartCity",
-      date: "22.05.2022",
-    } |
-| forum | private.kita | {
-      event_id: 3003,
-      event_name: "New Calendar Entry",
-      service_name: "kita",
-      title: "Tag der offenen Tür",
-      text_short: "Smarte Events in der Kita",
-      text_long:
-        "Taucht ein in die digitale Welt der SmartCity! Euch erwarten exklusive Einblicke in eine Reihe von Front- und Backends.",
-      date: "01.01.2025",
-    } |
-| forum | {
-      event_id: 3004,
-      event_name: "New Newsletter Post",
-      service_name: "kita",
-      title: "Noch Kitaplätze frei",
-      text_short: "Jetzt zugreifen! Kitaplätze für alle",
-      text_long:
-          "Ihr sucht einen Kitaplatz? Kommt in die SmartCity!",
-      date: "22.05.2022",
-    } |	
+| stadtbus | private.kita | {<br>event_id: 3001,<br>event_name: "New Kita Inquiry",<br>service_name: "kita",<br>number_of_passengers: 40,<br>person_responsible: "Hans Merkel",<br>date: "22.05.2022"}<br> |
+| landingpage | private.kita | {<br>event_id: 3002,<br>event_name: "Updated About US",<br>service_name: "kita",<br>about_us: "Kita-Service der SmartCity",<br>date: "22.05.2022"}<br> |
+| forum | private.kita | {<br>event_id: 3003,<br>event_name: "New Calendar Entry",<br>service_name: "kita",<br>title: "Tag der offenen Tür",<br>text_short: "Smarte Events in der Kita",<br>text_long: "Taucht ein in die digitale Welt der SmartCity! Euch erwarten exklusive Einblicke in eine Reihe von Front- und Backends.",<br>date: "22.05.2022"}<br> |
+| forum | {<br>event_id: 3004,<br>event_name: "New Newsletter Post",<br>service_name: "kita",<br>title: "Noch Kitaplätze frei",<br>text_short: "Jetzt zugreifen! Kitaplätze für alle",<br>text_long: "Ihr sucht einen Kitaplatz? Kommt in die SmartCity!",<br>date: "22.05.2022"}<br> |	
 	
 	
 #### Event-Subscriptions
@@ -268,16 +237,18 @@ http://smart.city/microservices/kita
 
 | **Service** | **Funktion** |
 | :------ | :----- | 
-| SmartAuth | authenticateUser() |
-| SmartAuth | authenticateEmployee() |
+| auth | authenticateUser() |
+| auth | authenticateEmployee() |
+| buergerbuero | GET /citizen/{ID} |
+| buergerbuero | GET /citizen{ID}/children |
 
 
-#### Abhängigkeiten zu anderen Services in Textform
-- Bürgerbüro: vermutlich starke Abhängigkeit, benötige sicheren Zugriff auf persönliche Daten aus der Datenbank des Bürgerbüros
-- Amt für Integration: schwache Abhängigkeit, biete Beantragung von Kita-Plätzen mit Unterstützung durch das AfI (z.B. Geflüchtete) mit erhöhter Priorität
-- Bus-Service: schwache Abhängigkeit, benötige Beantragung von Gruppentickets durch Verwaltungsmitarbeiter\*innen
-- Tierheim: schwache Abhängigkeit, benötige Terminvereinbarung für einen Tierbesuch
+#### Textuelle Beschreibung der Abhängigkeiten zu anderen Services
+- Bürgerbüro: starke Abhängigkeit, benötige sicheren Zugriff auf persönliche Daten aus der Datenbank des Bürgerbüros
+- Integration: schwache Abhängigkeit, biete Beantragung von Kita-Plätzen mit Unterstützung durch das AfI (z.B. Geflüchtete) mit erhöhter Priorität
+- Stadtbus: schwache Abhängigkeit, benötige Beantragung von Gruppentickets durch Verwaltungsmitarbeiter\*innen
 - Forum: schwache Abhängigkeit, biete Inhalte für Newsletter & Schwarzes Brett
+- Tierheim: schwache Abhängigkeit, benötige Terminvereinbarung für einen Tierbesuch
 
 <!---
 Aus Meeting:
