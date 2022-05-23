@@ -193,6 +193,7 @@ http://smart.city/microservices/customer
 | createContract() | int id | int id |
 | changeContract() | int id | - |
 --->
+
 ### eingehende Events
 
 | **Name** | **Beschreibung** |
@@ -216,6 +217,7 @@ http://smart.city/microservices/customer
 | **Name** | **Beschreibung** |
 | :------ | :----- |  
 | About us | wird an die Landingpage gesendet, wenn die About Us-Seite des Forums verändert werden soll | 
+
 <!---
 **Customer event channel**
 
