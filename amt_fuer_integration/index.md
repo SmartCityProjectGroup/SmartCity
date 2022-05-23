@@ -263,6 +263,7 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | Get Housing | GET | api/private/housing/:id | - | {<br>"id": 1,<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22<br>} |
 | Update Housing | PUT | api/private/housing/:id | {<br>"housing_type": "C117" (optional),<br>"people_assigned": 0 (optional),<br>"people_limit": 4(optional),<br>"size": 80.0 (optional),<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0 (optional),<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22 (optional)<br>} | {<br>"housing_type": "C117" (optional),<br>"people_assigned": 0 (optional),<br>"people_limit": 4(optional),<br>"size": 80.0 (optional),<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0 (optional),<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22 (optional)<br>} |
 | Delete Housing | DELETE | api/private/housing/:id | - | 'Housing Deleted' |
+| Get All Employees | GET | api/private/employee | - | ArrayList of all Employees |
 
 
 ### Öffentliche Schnittstellen

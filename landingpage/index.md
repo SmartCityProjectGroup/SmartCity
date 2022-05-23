@@ -123,10 +123,80 @@ http://smart.city/microservices/customer
 
 #### Event
 
-| **Service**   | **Payload**                                                                                                                                                                                                    |
-|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| **Service**   | **Payload**                                                                                                                                                                                                                                           |
+|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
 | Alle Services | {<br/>event_id: <i>Abhängig von den einzelnen Services</i>,<br/>event_name:"Updated About US<br/>service_name: <i>service</i><br/>date: <i>date</i><br/>about_us:"Neuer About Us Text" (optional)<br/>picture: <i>URL to picture</i> (optional)<br/>} |
+| Alle Services | {<br/>event_id: <i>Abhängig von den einzelnen Services</i>,<br/>event_name:"Delete My Service"<br/>service_name:<i>service</i><br/>date: <i>date</i><br/>}                                                                                            |
 
+##### JSON-Schema
+**Updated About Us**
+```
+{
+"title": "Change About Us",
+"description": "Schema for the event to change the about us",
+"type": "object",
+"properties": {
+"event_id" : {
+"type": "integer",
+"minimum": 0,
+"maximum": 10000
+},
+"event_name": {
+"type": "string",
+"const": "Updated About US"
+},
+"service_name": {
+"type": "string"
+},
+"date": {
+"type": "string"
+},
+"about_us":{
+"type": "string"
+},
+"picture": {
+"type": "string"
+}
+},
+"required": [
+"event_id",
+"event_name",
+"service_name",
+"date"
+]
+}
+```
+**Delete My Service**
+```
+{
+    "title": "Delete My Service",
+    "description": "Schema for the event to delete an existing service",
+    "type": "object",
+    "properties": {
+        "event_id" : {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10000
+        },
+        "event_name": {
+            "type": "string",
+            "const": "Delete My Service"
+        },
+        "service_name": {
+            "type": "string"
+        },
+        "date": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "event_id",
+        "event_name",
+        "service_name",
+        "date"
+    ]
+}
+```
 ## Technische Umsetzung
 
 
