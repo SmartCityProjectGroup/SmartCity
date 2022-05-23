@@ -178,16 +178,17 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 | :------ | :----- |  
 | newServicePost | legt einen neuen Post mit den verschickten Daten an | 
 
-{
-  "event_id" : "event_id",
-  "event_name" : "event_name",
-  "service" : "service",
-  "title" : "title",
-  "short_description" : "short_description",
-  "long_description" : "long_description", (optional)
-  "picture_url" : "picture", 
-  "event_on" : "event_on" (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll)
-}
+| **Key** | **Value** |
+| :------ | :----- | 
+|  event_id |  event_id |
+|  event_name | event_name |
+|  service | service |
+|  title | title |
+|  short_description | short_description |
+|  long_description | long_description (optional) |
+|  picture_url | picture (optional)|
+|  event_on | event_on (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll) |
+
 
 
 ### ausgehende Events
