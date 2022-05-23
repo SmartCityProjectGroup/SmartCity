@@ -170,31 +170,9 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 - In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
- <!---
-**Beispiel:**
-
-### URL
-
-http://smart.city/microservices/customer
-
-### Commands
-
-**Synchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createCustomer() | int id | int id |
-| deleteOrder() | int id | int id |
-
-**Asynchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createContract() | int id | int id |
-| changeContract() | int id | - |
---->
-
-### eingehende Events
+ 
+ 
+ ### eingehende Events
 
 | **Name** | **Beschreibung** |
 | :------ | :----- |  
@@ -216,71 +194,9 @@ http://smart.city/microservices/customer
 
 | **Name** | **Beschreibung** |
 | :------ | :----- |  
-| About us | wird an die Landingpage gesendet, wenn die About Us-Seite des Forums verändert werden soll | 
-
-<!---
-**Customer event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Customer Authorized | int id |
-| Customer Deleted | int id |
-
-**Contract event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Contract Received | int id |
-| Contract Deleted | int id |
---->
-<!---
-**required Data**
-
-{
-  "event_id" : "event_id",
-  "service" : "service",
-  "title" : "title",
-  "short_description" : "short_description",
-  "long_description" : "long_description", (optional)
-  "picture" : "picture", (noch nicht sicher, wie speichern)
-  "event_at" : "event_at" (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll)
-}
-
-
-- event_id
-- event_name
-- title
-- text_short
-- text_long
-- picture 
-- date (der Tag, bei dem das Event im Kalender angezeigt werden soll, ansonsten weglassen)
---->
-<!---
-
-### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
-
-### Dependencies
-
-#### RPC
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Authorization Service | authenticateUser() |
-| Hospital Service | blockDate() |
-
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Cinema channel | CancelFilmCreatedEvent |
-| Customer reply channel | CreateCustomerEvent |
-
---->
+| About us | wird an die Landingpage gesendet, wenn die About Us-Seite des Forums verändert werden soll |
+ 
+ 
 
 ## Technische Umsetzung
 
