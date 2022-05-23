@@ -2,8 +2,6 @@
 
 **Autor:** Maximilian Hertzke
 
-!> WIP
-
 ## Überblick
 
 ### Textuelle Beschreibung der Anwendungsdomäne
@@ -204,54 +202,58 @@ Watchlist
 
 
 #### Public
-...
-
-
-
-
-- Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
-- In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
-- Aufteilen in Commands, Events, Queries
-- Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
-
-
-**Beispiel:**
 
 ### URL
 
 http://smart.city/microservices/kita
 
-### Commands
-
-**Synchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createCustomer() | int id | int id |
-| deleteOrder() | int id | int id |
-
-**Asynchronous**
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| createContract() | int id | int id |
-| changeContract() | int id | - |
 
 ### Events
 
-**Customer event channel**
+| **Service** | **Key** | **Payload** | 
+| :------ | :------ | :----- | 
+| stadtbus | private.kita | {
+      event_id: 3001,
+      event_name: "New Kita Inquiry",
+      service_name: "kita",
+      number_of_passengers: 999,
+      person_responsible: "Hans Merkel",
+      date: "08.05.2022",
+    } |
+| landingpage | private.kita | {
+      event_id: 3002,
+      event_name: "Updated About US",
+      service_name: "kita",
+      about_us: "Kita-Service der SmartCity",
+      date: "22.05.2022",
+    } |
+| forum | private.kita | {
+      event_id: 3003,
+      event_name: "New Calendar Entry",
+      service_name: "kita",
+      title: "Tag der offenen Tür",
+      text_short: "Smarte Events in der Kita",
+      text_long:
+        "Taucht ein in die digitale Welt der SmartCity! Euch erwarten exklusive Einblicke in eine Reihe von Front- und Backends.",
+      date: "01.01.2025",
+    } |
+| forum | {
+      event_id: 3004,
+      event_name: "New Newsletter Post",
+      service_name: "kita",
+      title: "Noch Kitaplätze frei",
+      text_short: "Jetzt zugreifen! Kitaplätze für alle",
+      text_long:
+          "Ihr sucht einen Kitaplatz? Kommt in die SmartCity!",
+      date: "22.05.2022",
+    } |	
+	
+	
+#### Event-Subscriptions
 
-| **Name** | **Payload** | 
+| **Service** | **Funktion** |
 | :------ | :----- | 
-| Customer Authorized | int id |
-| Customer Deleted | int id |
-
-**Contract event channel**
-
-| **Name** | **Payload** | 
-| :------ | :----- | 
-| Contract Received | int id |
-| Contract Deleted | int id |
+| integration | Refugee Kita Application |	
 
 ### Queries
 
@@ -266,15 +268,9 @@ http://smart.city/microservices/kita
 
 | **Service** | **Funktion** |
 | :------ | :----- | 
-| Authorization Service | authenticateUser() |
-| Hospital Service | blockDate() |
+| SmartAuth | authenticateUser() |
+| SmartAuth | authenticateEmployee() |
 
-#### Event-Subscriptions
-
-| **Service** | **Funktion** |
-| :------ | :----- | 
-| Cinema channel | CancelFilmCreatedEvent |
-| Customer reply channel | CreateCustomerEvent |
 
 #### Abhängigkeiten zu anderen Services in Textform
 - Bürgerbüro: vermutlich starke Abhängigkeit, benötige sicheren Zugriff auf persönliche Daten aus der Datenbank des Bürgerbüros
