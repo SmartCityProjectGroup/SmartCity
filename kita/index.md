@@ -201,32 +201,32 @@ Datensätze anlegen/bearbeiten
 | GET | getContractsGuardian() | int id_ezb | return alle aktuellen Verträge des/der EZB |
 | GET | getContractsKita() | int id_kita | return alle aktuellen Verträge der Kita |
 | PATCH | patchContract() | json body | Vertrag wird verändert |
-| DELETE | deleteContract | id_vertrag | Vertrag wird gelöscht | 
+| DELETE | deleteContract | int id_vertrag | Vertrag wird gelöscht | 
 | GET | documentsList |  | return alle Dokumente |
-| GET | getDocumentById | id_dokument | return Dokument mit id |
-| POST | createDocument |  | Neues Dokument wird angelegt | 
-| PATCH | patchDocument |  | Dokument wird verändert |
-| DELETE | deleteDocument |  | Dokument wird gelöscht |
+| GET | getDocumentById | int id_dokument | return Dokument mit id |
+| POST | createDocument | json body | Neues Dokument wird angelegt | 
+| PATCH | patchDocument | int id_dokument, json body | Dokument wird verändert |
+| DELETE | deleteDocument | int id_dokument | Dokument wird gelöscht |
 | GET | employeesList |  | return alle Angestellten |
-| GET | getEmployeeById |  | return Angestellte mit id |
-| POST | createEmployee |  | Neue Angestellte wird angelegt | 
-| PATCH | patchEmployee |  | Angestellte wird verändert |
-| DELETE | deleteEmployee |  | Angestellte wird gelöscht |
+| GET | getEmployeeById | int id_angestellte | return Angestellte mit id |
+| POST | createEmployee | json body | Neue Angestellte wird angelegt | 
+| PATCH | patchEmployee | int id_angestellte, json body | Angestellte wird verändert |
+| DELETE | deleteEmployee | int id_angestellte | Angestellte wird gelöscht |
 | GET | guardiansList |  | return alle EZB |
-| GET | getGuardianById | id_ezb | return EZB mit id |
-| POST | createGuardian |  | Neue EZB wird angelegt | 
-| PATCH | patchGuardian | id_ezb, json body | EZB wird verändert |
-| DELETE | deleteGuardian | id_ezb | EZB wird gelöscht |
+| GET | getGuardianById | int id_ezb | return EZB mit id |
+| POST | createGuardian | json body | Neue EZB wird angelegt | 
+| PATCH | patchGuardian | int id_ezb, json body | EZB wird verändert |
+| DELETE | deleteGuardian | int id_ezb | EZB wird gelöscht |
 | GET | imagesList |  | return alle Bilder |
-| GET | getImageById | id_bild | return Bild mit id |
+| GET | getImageById | int id_bild | return Bild mit id |
 | POST | createImage | json body | Neues Bild wird angelegt | 
-| PATCH | patchImage | id_bild, json body | Bild wird verändert |
-| DELETE | deleteImage | id_bild | Bild wird gelöscht |
+| PATCH | patchImage | int id_bild, json body | Bild wird verändert |
+| DELETE | deleteImage | int id_bild | Bild wird gelöscht |
 | GET | kitasList |  | return alle Kitas |
-| GET | getKitaById | id_kita | return Kita mit id |
+| GET | getKitaById | int id_kita | return Kita mit id |
 | POST | createKita | json body | Neue Kita wird angelegt | 
-| PATCH | patchKita | id_kita, json body | Kita wird verändert |
-| DELETE | deleteKita | id_kita | Kita wird gelöscht |
+| PATCH | patchKita | int id_kita, json body | Kita wird verändert |
+| DELETE | deleteKita | int id_kita | Kita wird gelöscht |
 
 
 Watchlist
@@ -258,12 +258,6 @@ http://smart.city/microservices/kita
 | :------ | :----- | 
 | integration | Refugee Kita Application |	
 
-### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
 
 ### Dependencies
 
