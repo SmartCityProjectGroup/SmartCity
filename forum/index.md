@@ -195,17 +195,20 @@ http://smart.city/microservices/customer
 --->
 ### eingehende Events
 
-| **Name** | **Beschreibung** | **Payload** |
-| :------ | :----- | :----- |  
-| newServicePost | legt einen neuen Post mit den verschickten Daten an | {
+| **Name** | **Beschreibung** |
+| :------ | :----- |  
+| newServicePost | legt einen neuen Post mit den verschickten Daten an | 
+
+{
   "event_id" : "event_id",
+  "event_name" : "event_name",
   "service" : "service",
   "title" : "title",
   "short_description" : "short_description",
   "long_description" : "long_description", (optional)
-  "picture" : "picture", (noch nicht sicher, wie speichern)
-  "event_at" : "event_at" (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll)
-}|
+  "picture_url" : "picture", 
+  "event_on" : "event_on" (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll)
+}
 
 
 ### ausgehende Events
@@ -250,7 +253,7 @@ http://smart.city/microservices/customer
 - picture 
 - date (der Tag, bei dem das Event im Kalender angezeigt werden soll, ansonsten weglassen)
 --->
-
+<!---
 
 ### Queries
 
@@ -275,6 +278,7 @@ http://smart.city/microservices/customer
 | Cinema channel | CancelFilmCreatedEvent |
 | Customer reply channel | CreateCustomerEvent |
 
+--->
 
 ## Technische Umsetzung
 
