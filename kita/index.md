@@ -227,8 +227,6 @@ Datensätze anlegen/bearbeiten
 | POST | createKita | json body | Neue Kita wird angelegt | 
 | PATCH | patchKita | int id_kita, json body | Kita wird verändert |
 | DELETE | deleteKita | int id_kita | Kita wird gelöscht |
-
-
 Watchlist
 | PUT | addKitaToWatchlist() | int id_ezb, int id_einrichtung | Kita wird den vorgemerkten Kitas des Users hinzugefügt |
 | PATCH | removeKitaFromWatchlist() | int id_ezb, int id_einrichtung | Kita wird aus den vorgemerkten Kitas des Users entfernt | 
@@ -239,7 +237,7 @@ Watchlist
 
 ### URL
 
-http://smart.city/microservices/kita
+*keine public API*
 
 
 ### Events
