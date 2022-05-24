@@ -400,3 +400,112 @@ Außerdem sollen bis zum nächsten Meeting die meisten Dockerfiles für die einz
 CI/CD funktionsfähig ist.
 
 Alles in allem sind wir auf einem guten Weg in Richtung MVP und sind zuversichtlich, dass wir die Deadline einhalten können.
+
+---
+
+**Meeting 8 - Abgabe MVP & Sprintplanning** DI 24.05
+
+Anwesend: Alle
+
+Vorab: Das Meeting letzte Woche hat stattgefunden, jedoch war ein Protokoll nicht nötig, bzw. wäre in einem Einzeiler 
+zusammenzufassen.
+
+Wir fangen an und führen zuerst unseren Sprintabschluss durch.
+
+Nach dem Sprintabschluss treffen wir einige Absprachen bezüglich verschiedener Themen, Ergebnisse dieser Absprachen sind 
+weiter unten aufgelistet.
+
+Pull-Requests:
+* Ab sofort soll wirklich **jedes Feature** mit einem Pull-Request in den Mainbranch gemerged werden. Dafür am besten direkt zu 
+  Anfang der Entwicklung einen Request mit dem [WIP]-Tag erstellen und dann bei Fertigstellung das Tag entfernen.
+
+Zeitplanung:
+
+![Zeitplan](../Zeitplan.png)
+* Ich hatte bereits im Discord einen Zeitplan hochgeladen der die ungefähre Restzeit abbildet, die wir noch für das
+  Projekt haben. Wir legen fest, dass wir versuchen diese Zeiteinteilung einzuhalten und behalten Sprints im 2 Wochenrhythmus
+  bei. Außerdem beschließen wir, unseren Fokus während der Entwicklung auf interne Schnittstellen zu legen, welche 
+  im späteren Verlauf wichtig für die Kommunikation zwischen den Services ist. So kann diese Kommunikation in den späteren
+  Sprints effektiv und funktional implementiert werden. Auf dem Zeitplan ist momentan noch eine "Refactoring-Phase" angegeben, 
+  diese führen wir nur durch, wenn noch genügend Zeit über bleibt. 
+
+Verzögerungen:
+* Da Verzögerungen ab jetzt noch schwerwiegender auf Fortschritt unseres Projekts wirken, legen wir ein paar Grundregeln 
+  zum Umgang mit diesen fest. So sollen Verzögerungen frühzeitig angesprochen werden, damit wir entsprechend reagieren
+  können. Sollten Verzögerungen auftreten, legen wir auch hier den Fokus eher auf Kommunikation zwischen den Services
+  und stellen in dem Fall erstmal "interne" Eigenschaften zurück. So hoffen wir, auch mit Verzögerungen ein fertiges Produkt 
+  abgeben zu können.
+
+Scrummeetings:
+* In den vergangenen Meetings hatten wir oft nicht viel zu klären, da das Ziel klar war und jeder seinen Teil getan hat.
+  Da wir nicht damit rechnen, dass das ab jetzt immer noch der Fall ist, belassen wir es bei den wöchentlichen Meetings um
+  so auf eventuelle Probleme zeitnah reagieren zu können.
+
+Nach dem all diese Dinge geklärt sind, fangen wir mit dem Sprintplanning des kommenden Sprints an, folgende Ziele wurden festgelegt.
+
+Janik & Adrian:
+* About Us-Event überarbeiten, sodass auch Links mitgeschickt werden
+* Frontend mit Backend verbinden
+
+Jonathan:
+* Registrieren 
+* Einloggen
+* Fixes
+
+Mario:
+* Userstory 12
+* Userstory 14
+* Userstory 11
+* Userstory 08
+* Userstory 03
+
+Tom:
+* Userstory 02
+* Userstory 03
+* Userstory 06
+* Userstory 07
+
+Tristan:
+* Datenbankprobleme beheben
+* Melden (Userstory 01)
+
+Celine:
+* Userstory 11
+* Userstory 07
+* Userstory 16
+* Userstory 15
+* (Karte wenn noch Zeit)
+
+Max:
+* Events implementieren (senden)
+* Userstory 25
+* Userstory 26
+* Userstory 31
+* Events empfangen
+* (Userstory 01)
+
+Marius:
+* Userstory 01
+* Userstory 05
+
+Jannis:
+* Userstory 01
+* Userstory 02
+* Userstory 03
+* Userstory 04
+* Userstory 05
+* Userstory 06
+* Userstory 07
+* Userstory 08
+* Userstory 09
+* Userstory 13
+  * Meist Frontend
+
+Vivien:
+* Userstory 07
+* Userstory 01
+* Userstory 09
+* Userstory 10
+
+Paul: 
+* Weiterhin CI/CD (never ending)
