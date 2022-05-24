@@ -183,18 +183,50 @@ Darüber hinaus erhält jede registrierte Kita ein Verwaltungstool, mit denen ei
 ## Schnittstellen
 
 ### APIs
-!> WIP: unvollständig
 #### Private
+
 | **Methode** | **Name** | **Parameter** | **Resultat** |
 | :------ | :----- | :------ | :------ |
-Datensätze anlegen
+Datensätze anlegen/bearbeiten
 | POST | createApplication() | int id_einrichtung, int id_kind, int id_ezb, date datum, int priority, str status | response status code |
-| GET | getApplications() | int id_ezb | return alle aktuellen Anträge des Users |
-| DELETE | deleteApplication() | int id_antrag, int id | Antrag wird gelöscht |
+| GET | applicationsList() | - | return alle Anträge |
+| GET | getApplicationById() | int id_antrag | return Antrag mit id |
+| GET | getApplicationsGuardian() | int id_ezb | return alle aktuellen Anträge des/der EZB |
+| GET | getApplicationsKita() | int id_kita | return alle aktuellen Anträge der Kita |
+| POST | createApplication() | json body | |
+| PATCH | patchApplication() | int id_antrag, json body | |
+| DELETE | deleteApplication() | int id_antrag | Antrag wird gelöscht |
+| GET | contractsList() | - | return alle Verträge |
 | POST | createContract() | int id_einrichtung, int id_kind, int id_ezb, (date beginn), (date ende), int betreuungsstunden | Neuer Vertrag wird angelegt |
-| GET | getContractsUser() | int id_ezb | return alle aktuellen Verträge des Users |
+| GET | getContractsGuardian() | int id_ezb | return alle aktuellen Verträge des/der EZB |
 | GET | getContractsKita() | int id_kita | return alle aktuellen Verträge der Kita |
-| PATCH | terminateContract() | int id_vertrag, date ende | Enddatum des Vetrags wird verändert |
+| PATCH | patchContract() | json body | Vertrag wird verändert |
+| DELETE | deleteContract | int id_vertrag | Vertrag wird gelöscht | 
+| GET | documentsList |  | return alle Dokumente |
+| GET | getDocumentById | int id_dokument | return Dokument mit id |
+| POST | createDocument | json body | Neues Dokument wird angelegt | 
+| PATCH | patchDocument | int id_dokument, json body | Dokument wird verändert |
+| DELETE | deleteDocument | int id_dokument | Dokument wird gelöscht |
+| GET | employeesList |  | return alle Angestellten |
+| GET | getEmployeeById | int id_angestellte | return Angestellte mit id |
+| POST | createEmployee | json body | Neue Angestellte wird angelegt | 
+| PATCH | patchEmployee | int id_angestellte, json body | Angestellte wird verändert |
+| DELETE | deleteEmployee | int id_angestellte | Angestellte wird gelöscht |
+| GET | guardiansList |  | return alle EZB |
+| GET | getGuardianById | int id_ezb | return EZB mit id |
+| POST | createGuardian | json body | Neue EZB wird angelegt | 
+| PATCH | patchGuardian | int id_ezb, json body | EZB wird verändert |
+| DELETE | deleteGuardian | int id_ezb | EZB wird gelöscht |
+| GET | imagesList |  | return alle Bilder |
+| GET | getImageById | int id_bild | return Bild mit id |
+| POST | createImage | json body | Neues Bild wird angelegt | 
+| PATCH | patchImage | int id_bild, json body | Bild wird verändert |
+| DELETE | deleteImage | int id_bild | Bild wird gelöscht |
+| GET | kitasList |  | return alle Kitas |
+| GET | getKitaById | int id_kita | return Kita mit id |
+| POST | createKita | json body | Neue Kita wird angelegt | 
+| PATCH | patchKita | int id_kita, json body | Kita wird verändert |
+| DELETE | deleteKita | int id_kita | Kita wird gelöscht |
 Watchlist
 | PUT | addKitaToWatchlist() | int id_ezb, int id_einrichtung | Kita wird den vorgemerkten Kitas des Users hinzugefügt |
 | PATCH | removeKitaFromWatchlist() | int id_ezb, int id_einrichtung | Kita wird aus den vorgemerkten Kitas des Users entfernt | 
@@ -205,48 +237,17 @@ Watchlist
 
 ### URL
 
-http://smart.city/microservices/kita
+*keine public API*
 
 
 ### Events
 
 | **Service** | **Key** | **Payload** | 
 | :------ | :------ | :----- | 
-| stadtbus | private.kita | {
-      event_id: 3001,
-      event_name: "New Kita Inquiry",
-      service_name: "kita",
-      number_of_passengers: 999,
-      person_responsible: "Hans Merkel",
-      date: "08.05.2022",
-    } |
-| landingpage | private.kita | {
-      event_id: 3002,
-      event_name: "Updated About US",
-      service_name: "kita",
-      about_us: "Kita-Service der SmartCity",
-      date: "22.05.2022",
-    } |
-| forum | private.kita | {
-      event_id: 3003,
-      event_name: "New Calendar Entry",
-      service_name: "kita",
-      title: "Tag der offenen Tür",
-      text_short: "Smarte Events in der Kita",
-      text_long:
-        "Taucht ein in die digitale Welt der SmartCity! Euch erwarten exklusive Einblicke in eine Reihe von Front- und Backends.",
-      date: "01.01.2025",
-    } |
-| forum | {
-      event_id: 3004,
-      event_name: "New Newsletter Post",
-      service_name: "kita",
-      title: "Noch Kitaplätze frei",
-      text_short: "Jetzt zugreifen! Kitaplätze für alle",
-      text_long:
-          "Ihr sucht einen Kitaplatz? Kommt in die SmartCity!",
-      date: "22.05.2022",
-    } |	
+| stadtbus | private.kita | {<br>event_id: 3001,<br>event_name: "New Kita Inquiry",<br>service_name: "kita",<br>number_of_passengers: 40,<br>person_responsible: "Hans Merkel",<br>date: "22.05.2022"}<br> |
+| landingpage | private.kita | {<br>event_id: 3002,<br>event_name: "Updated About US",<br>service_name: "kita",<br>about_us: "Kita-Service der SmartCity",<br>date: "22.05.2022"}<br> |
+| forum | private.kita | {<br>event_id: 3003,<br>event_name: "New Calendar Entry",<br>service_name: "kita",<br>title: "Tag der offenen Tür",<br>text_short: "Smarte Events in der Kita",<br>text_long: "Taucht ein in die digitale Welt der SmartCity! Euch erwarten exklusive Einblicke in eine Reihe von Front- und Backends.",<br>date: "22.05.2022"}<br> |
+| forum | private.kita | {<br>event_id: 3004,<br>event_name: "New Newsletter Post",<br>service_name: "kita",<br>title: "Noch Kitaplätze frei",<br>text_short: "Jetzt zugreifen! Kitaplätze für alle",<br>text_long: "Ihr sucht einen Kitaplatz? Kommt in die SmartCity!",<br>date: "22.05.2022"}<br> |	
 	
 	
 #### Event-Subscriptions
@@ -255,12 +256,6 @@ http://smart.city/microservices/kita
 | :------ | :----- | 
 | integration | Refugee Kita Application |	
 
-### Queries
-
-| **Name** | **Parameter** | **Resultat** |
-| :------ | :----- | :------ |
-| getContracts() | - | Contract [] list |
-| getContract() | int id | Contract c |
 
 ### Dependencies
 
@@ -268,24 +263,19 @@ http://smart.city/microservices/kita
 
 | **Service** | **Funktion** |
 | :------ | :----- | 
-| SmartAuth | authenticateUser() |
-| SmartAuth | authenticateEmployee() |
+| auth | authenticateUser() |
+| auth | authenticateEmployee() |
+| buergerbuero | GET /citizen/{ID} |
+| buergerbuero | GET /citizen{ID}/children |
 
 
-#### Abhängigkeiten zu anderen Services in Textform
-- Bürgerbüro: vermutlich starke Abhängigkeit, benötige sicheren Zugriff auf persönliche Daten aus der Datenbank des Bürgerbüros
-- Amt für Integration: schwache Abhängigkeit, biete Beantragung von Kita-Plätzen mit Unterstützung durch das AfI (z.B. Geflüchtete) mit erhöhter Priorität
-- Bus-Service: schwache Abhängigkeit, benötige Beantragung von Gruppentickets durch Verwaltungsmitarbeiter\*innen
-- Tierheim: schwache Abhängigkeit, benötige Terminvereinbarung für einen Tierbesuch
+#### Textuelle Beschreibung der Abhängigkeiten zu anderen Services
+- Bürgerbüro: starke Abhängigkeit, benötige sicheren Zugriff auf persönliche Daten aus der Datenbank des Bürgerbüros
+- Integration: schwache Abhängigkeit, biete Beantragung von Kita-Plätzen mit Unterstützung durch das AfI (z.B. Geflüchtete) mit erhöhter Priorität
+- Stadtbus: schwache Abhängigkeit, benötige Beantragung von Gruppentickets durch Verwaltungsmitarbeiter\*innen
 - Forum: schwache Abhängigkeit, biete Inhalte für Newsletter & Schwarzes Brett
+- Tierheim: schwache Abhängigkeit, benötige Terminvereinbarung für einen Tierbesuch
 
-<!---
-Aus Meeting:
-- Jonathan erhält von mir Zugangsschlüssel mit sehr hohen Rechten (darf immer Userdaten abfragen etc.)
-- Userdaten: ich speichere bei SmartCity-Mitgliedern nur die user_id und frage alles andere beim BB ab
-- falls Familienrelation seitens BB nicht funktioniert: Eltern geben Kindesdaten selbst ein, ich prüfe beim BB ob das Kind dort vorhanden ist und EZB-Frage muss (imaginär) von Kitamitarbeitenden geklärt werden
-- bei allen Elementen, wo eine Liste mehrerer User angezeigt wird, Loading spinner implementieren da Ladezeiten länger werden könnten
---->
 
 ## Technische Umsetzung
 
@@ -297,14 +287,14 @@ Aus Meeting:
 Hier stellen Sie die Verteilung der Softwarebausteine auf die Rechnerknoten dar. Das ist die Softwarearchitektur. Zum Beispiel Javascript-Software auf dem Client und Java-Software auf dem Server. In der Regel wird die Software dabei sowohl auf dem Client als auch auf dem Server in Schichten dargestellt.
 
 * Server
-  * Web-Schicht
-  * Logik-Schicht
-  * Persistenz-Schicht
+  * Web-Schicht: JavaScript Node.js
+  * Logik-Schicht: JavaScript Express.js
+  * Persistenz-Schicht: MySQL
 
 * Client
-  * View-Schicht
-  * Logik-Schicht
-  * Kommunikation-Schicht
+  * View-Schicht: Vue.js
+  * Logik-Schicht: Vue.js
+  * Kommunikation-Schicht: JavaScript Fetch-API
 
 Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach "unten". Die Softwarearchitektur aus Kapitel "Softwarearchitektur" ist demnach detaillierter als die Systemübersicht aus dem Kapitel "Systemübersicht". Die Schichten können entweder als Ganzes als ein Softwarebaustein angesehen werden. In der Regel werden die Schichten aber noch weiter detailliert und in Softwarebausteine aufgeteilt. 
 
@@ -333,6 +323,6 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
 
 ### Verwendete Technologien
 
-* Frontend: Vue.js
-* Backend: Express.js + Node.js, Multer
+* Frontend: Vue.js, Pinia, Vue-Router
+* Backend: Express.js + Node.js, Prisma, Ajv, AMQP
 * Datenbank: mySQL

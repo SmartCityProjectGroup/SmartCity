@@ -64,7 +64,7 @@ Statistiken
 
 - Modellierung des physikalischen Datenmodells 
   - RDBMS: ER-Diagramm bzw. Dokumentenorientiert: JSON-Schema
-![ERM](media/er%20busmicroservice.png)
+![ERM](media/er%20bus.png)
 
 ## Abläufe
 
@@ -85,19 +85,29 @@ http://smart.city/microservices/stadtbus
 |DELETE| removeInfoPost | meldung_id | angegebener Post wird gelöscht |
 |GET| getInfoPost | meldung_id | angegebener Post wird returned
 |POST| addTicket | {<br> "busreisende_id" : " ",<br>"ticket_art: " ",<br> "geltungstag": "00.00.0000",<br> "preis": " ", <br>} | verkauftes Ticket wird hinzugefügt |
-|POST| submitFeedback | {<br>"fahrt_id" : " ", <br>"nachricht": " ", <br> "bewertung": " ", <br> "verspätung": " "<br>} | Feedback wird eingereicht |
 |GET| getSoldTicketsPerRoute | int route_id | Tickets [] list
-|GET| getFeedbackPerRoute | int route_id | Feedback [] list 
+
 
 
 ### Events
-
 **Forum event channel**
 
 | **Name** | **Payload** | 
 | :------ | :----- | 
-| Newsletter | {<br>"event_id": 2000,<br>"event_name": "New Newsletter Post",<br> "service_name": "stadtbus",<br>"title": " ",<br>"text": " "<br>} |
-| Calendar | {<br>"event_id": 2001,<br>"event_name": "New Calendar Post",<br> "service_name": "stadtbus",<br>"title": " ",<br>"text": " ",<br>"date": " "<br>} |
+| Newsletter | {<br>"event_id": 2001,<br>"event_name": "New Newsletter Post",<br> "service_name": "stadtbus",<br>"title": " ",<br>"short_description": " ",<br>"long_description": " ",<br>"event_on": " "<br>, "picture_url": " "<br>} |
+| Calendar | {<br>"event_id": 2002,<br>"event_name": "New Calendar Post",<br> "service_name": "stadtbus",<br>"title": " ",<br>"short_description": " ",<br>"long_description": " ",<br>"event_on": " "<br>, "picture_url": " "<br>} | |
+
+**Landingpage event channel**
+| **Name** | **Payload** | 
+| :------ | :----- | 
+| About Us | {<br>"event_id": 2003,<br>"event_name": "",<br> "service_name": "stadtbus",<br>"title": " ",<br>"text": " ",<br>"date": " "<br>} |
+| Delete Service | {<br>"event_id": 2004,<br>"event_name": "",<br> "service_name": "stadtbus",<br>"date": " "<br>} |
+
+**Kita event channel**
+| **Name** | **Payload** | 
+| :------ | :----- | 
+| Kita Inquiry |  {<br>event_id: 3001,<br>event_name: "New Kita Inquiry",<br>service_name: "kita",<br>number_of_passengers: 40,<br>person_responsible: "Hans Merkel",<br>date: "22.05.2022"<br>} |
+
 
 ### Softwarearchitektur
 
