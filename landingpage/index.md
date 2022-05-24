@@ -123,10 +123,10 @@ http://smart.city/microservices/customer
 
 #### Event
 
-| **Service**   | **Payload**                                                                                                                                                                                                                                           |
-|:--------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
-| Alle Services | {<br/>event_id: <i>Abhängig von den einzelnen Services</i>,<br/>event_name:"Updated About US<br/>service_name: <i>service</i><br/>date: <i>date</i><br/>about_us:"Neuer About Us Text" (optional)<br/>picture: <i>URL to picture</i> (optional)<br/>} |
-| Alle Services | {<br/>event_id: <i>Abhängig von den einzelnen Services</i>,<br/>event_name:"Delete My Service"<br/>service_name:<i>service</i><br/>date: <i>date</i><br/>}                                                                                            |
+| **Service**   | **Payload**                                                                                                                                                                                                                                                                    |
+|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| 
+| Alle Services | {<br/>event_id: <i>Abhängig von den einzelnen Services</i>,<br/>event_name:"Updated About US<br/>service_name: <i>service</i><br/>date: <i>date</i><br/>about_us:"Neuer About Us Text" (optional)<br/>picture: <i>URL to picture</i> (optional)<br/>url: URL to Homepage<br/>} |
+| Alle Services | {<br/>event_id: <i>Abhängig von den einzelnen Services</i>,<br/>event_name:"Delete My Service"<br/>service_name:<i>service</i><br/>date: <i>date</i><br/>}                                                                                                                     |
 
 ##### JSON-Schema
 **Updated About Us**
@@ -156,13 +156,17 @@ http://smart.city/microservices/customer
 },
 "picture": {
 "type": "string"
-}
+},
+"url":{
+"type": "string",
+},
 },
 "required": [
 "event_id",
 "event_name",
 "service_name",
-"date"
+"date",
+"url"
 ]
 }
 ```
