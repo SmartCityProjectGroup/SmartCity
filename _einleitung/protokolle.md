@@ -509,3 +509,24 @@ Vivien:
 
 Paul: 
 * Weiterhin CI/CD (never ending)
+
+---
+
+**Meeting 9 Daily Scrum** DI 31.05.
+
+Anwesend: 2 Online, Rest vor Rrt
+
+Wir fangen an mit dem Fortschritt der einzelnen Services. Jeder geht kurz auf Probleme oder Schwierigkeiten
+während der Entwicklung ein. Grob zusammengefasst, geht es bei den meisten gut voran und wir sind zuversichtlich,
+dass wir für die nächste Präsentation des MVPs einiges vorzeigen können.
+
+Bezüglich der Präsentation am **DI 07.06** legen wir fest, dass wir uns am **Montag 06.06 um 10:00 nochmal online treffen**,
+um einen vernünftigen Ablauf der Präsentation festzulegen.
+
+Um auch mit weniger funktionalen Aspekten der Projektentwicklung weiterzukommen, legen wir uns auf ein vorläufiges Logodesign 
+fest, welches ab jetzt unser Projekt grafisch repräsentieren soll. Mit Upload dieses Protokolls, ist das Logo unter dem Namen
+logo_4.png im Hauptverzeichnis zu finden. Außerdem lade ich noch ein weiteres Symbollogo hoch, welches unter dem Namen
+logo_icon.png ebenfalls im Hauptverzeichnis zu finden ist.
+
+![Logo](../Logo_4.png)
+![LogoIcon](../logo_icon.png)
