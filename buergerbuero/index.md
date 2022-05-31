@@ -2,6 +2,7 @@
 
 **Autor:** Tristan Kechlo
 
+?> http://vps2290194.fastwebserver.de:9710/
 
 ## Überblick
 
@@ -181,14 +182,40 @@ Ablauf für das Beantragen und bearbeiten von Genehmigungen
 ### API
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
 
-**Basis - URL:** http://smart.city/microservices/buergerbuero/api
+**URL der API:** http://vps2290194.fastwebserver.de:9710/api
 
-| **Pfad** | **Methode** | **Parameter** | **Public** | **Resultat** |
-| :------ | :----- | :------ | :------: | :----- |
-| /citizen/{ID} | GET | ID: eindeutige Bürger-ID | Ja | Informationen zu einem einzelnen Bürger<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
-| /citizen/{ID}/hasDogPermit | GET | ID: eindeutige Bürger-ID | Ja | Gibt an ob der Büger einen Sachkundenachweis für Hundehalter hat<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_has_dog_permit.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_has_dog_permit.png)</a> |
-| /citizen/{ID}/children | GET | ID: eindeutige Bürger-ID | Ja | gibt die IDs der Kinder zurück<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
-| /citizen/ | POST | Json im Request-Body<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_post_create_citizen.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellen](media/api_post_create_citizen.png)</a> | Nein | Erstellt einen neuen Bürger in der SmartCity <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_create_citizen.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellen](media/api_create_citizen.png)</a> |
+#### Öffentliche API
+
+| **Methode** | **Pfad** | **Parameter** |  **Resultat** |
+| :------ | :----- | :------ | :----- |
+| GET | `<api-url>/citizen/<id>/` | ID: eindeutige Bürger-ID | Informationen zu einem einzelnen Bürger<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_bürger_info_single.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_b%C3%BCrger_info_single.png)</a> |
+| GET | `<api-url>/citizen/<id>/hasDogPermit/` | ID: eindeutige Bürger-ID | Gibt an ob der Büger einen Sachkundenachweis für Hundehalter hat<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_has_dog_permit.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger](media/api_has_dog_permit.png)</a> |
+| GET | `<api-url>/citizen/<id>/children/` | ID: eindeutige Bürger-ID | gibt die IDs der Kinder zurück<a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/api_children.png" title="Klick mich!" target="_blank" rel="noopener">![Kinder](media/api_children.png) |
+
+#### Private API
+
+| **Methode** | **Pfad** | **Parameter** |  **Resultat** |
+| :------ | :----- | :------ | :----- |
+| | **API zum Bürger** | | |
+| POST | `<api-url>/citizen/` | Json im Request-Body | der neu erstellte Bürger |
+| GET | `<api-url>/citizen/<id>/permits/` | ID des Bürgers | Alle aktuellen Genehmigungen eines Bürgers |
+| | **API zu Genehmigungen** | | |
+| POST | `<api-url>/permits/` | Json im Request-Body | die neu erstellte Genehmigung |
+| GET | `<api-url>/permits/<id>/` | ID der Genehmigung | die angefragte Genehmigung |
+| PUT | `<api-url>/permits/<id>/` | ID der Genehmigung | die überarbeitete Genehmigung |
+| DELETE | `<api-url>/permits/<id>/` | ID der Genehmigung | Boolean, ob die Genehmigung gelöscht wurde |
+| GET | `<api-url>/permits/` | - | alle Genehmigungen |
+| POST | `<api-url>/permits/requestPermits/` | Json im Request-Body | die neu beantragte Genehmigung |
+| GET | `<api-url>/permits/open/` | - | alle offenen Genehmigungen |
+| POST | `<api-url>/permits/approve/<id>/` | - | Boolean, ob die Genehmigung überarbeitet wurde |
+| POST | `<api-url>/permits/reject/<id>/` | - | Boolean, ob die Genehmigung überarbeitet wurde |
+| | **API zu Anträgen** | | |
+| POST | `<api-url>/requests/` | Json im Request-Body | der neu erstellte Antrag |
+| GET | `<api-url>/requests/<id>/` | ID des Antrags | der angefragte Antrag |
+| GET | `<api-url>/requests/` | - | alle offenen Anträge |
+| DELETE | `<api-url>/requests/<id>/` | ID des Antrags | Boolean, ob der Antrag gelöscht wurde |
+| POST | `<api-url>/requests/approve/<id>/` | ID des Antrags | Boolean, ob der Antrag überarbeitet wurde |
+| POST | `<api-url>/requests/reject/<id>/` | ID des Antrags | Boolean, ob der Antrag überarbeitet wurde |
 
 ### Events
 ?> Klicke auf die Bilder um sie in voller Größe zu sehen
@@ -197,8 +224,7 @@ Ablauf für das Beantragen und bearbeiten von Genehmigungen
 | :------ | :----- | :----- |  
 | About us | wird ausgelöst wenn sich die About-Us-Seite des Bürgerbüros ändern soll | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_about_us.png" title="Klick mich!" target="_blank" rel="noopener">![About us](media/event_about_us.png)</a> |
 | Neuer Bürger gemeldet | wird ausgelöst sobald sich ein Bürger bei der Stadt meldet | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_citizen_created.png" title="Klick mich!" target="_blank" rel="noopener">![Bürger erstellt](media/event_citizen_created.png)</a> |
-| Namensänderung | wird ausgelöst, wenn ein Bürger seinen Namen änder lässt | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_name_change.png" title="Klick mich!" target="_blank" rel="noopener">![Namensänderung](media/event_name_change.png)</a> |
-| Adressänderung | wird ausgelöst, wenn ein Bürger innerhalb der Stadt umzieht | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_address_change.png" title="Klick mich!" target="_blank" rel="noopener">![Adressänderung](media/event_address_change.png)</a> |
+| Datenänderung | wird ausgelöst, wenn ein Bürger seine Daten (Name/Adresse/...) ändern lässt | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_data_change.png" title="Klick mich!" target="_blank" rel="noopener">![Namensänderung](media/event_data_change.png)</a> |
 | Eheschließung | wird ausgelöst, wenn zwei Bürger heiraten | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_marriage.png" title="Klick mich!" target="_blank" rel="noopener">![Eheschließung](media/event_marriage.png)</a> |
 | Scheidung | wird ausgelöst, wenn zwei Bürger sich scheiden lassen | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_divorce.png" title="Klick mich!" target="_blank" rel="noopener">![Scheidung](media/event_divorce.png)</a> |
 | Todesmeldung | wird ausgelöst, wenn ein Bürger stirbt | <a href="https://smartcityprojectgroup.github.io/SmartCity/buergerbuero/media/event_citizen_death.png" title="Klick mich!" target="_blank" rel="noopener">![Todesmeldung](media/event_citizen_death.png)</a> |
@@ -246,48 +272,14 @@ Die Abhängigkeit ist bei diesen Schichten immer unidirektional von "oben" nach 
 * Nicht nur Fehler technischer Art ("Datenbankserver nicht erreichbar") definieren, sondern auch fachliche Fehler wie "Kunde nicht gefunden", "Nachricht wurde bereits gelöscht" o.ä. sind relevant. 
 -->
 #### API-Aufrufe
-<table>
-  <thead>
-    <tr style="background-color:lightgrey;">
-      <th>Methode</th> <th>Route</th> <th>Fehlercode</th> <th>Beschriebung</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background-color:aliceblue;">
-       <td>GET</td><td>/citizen/{ID}</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
-    </tr>
-    <tr style="background-color:aliceblue;">
-      <td>GET</td><td>/citizen/{ID}</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
-    </tr>
-    <tr style="background-color:aliceblue;">
-      <td>GET</td><td>/citizen/{ID}</td><td>500</td><td>Fehler beim Laden der Daten</td>
-    </tr>
-    <tr style="background-color:bisque;">
-      <td>GET</td><td>/citizen/{ID}/hasDogPermit</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
-    </tr>
-    <tr style="background-color:bisque;">
-      <td>GET</td><td>/citizen/{ID}/hasDogPermit</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
-    </tr>
-    <tr style="background-color:bisque;">
-      <td>GET</td><td>/citizen/{ID}/hasDogPermit</td><td>500</td><td>Fehler beim Laden der Daten</td>
-    </tr>
-    <tr style="background-color:#bbdfbb;">
-      <td>GET</td><td>/citizen/{ID}/children</td><td>401</td><td>Keine Berechtigung diese Daten abzurufen</td>
-    </tr>
-    <tr style="background-color:#bbdfbb;">
-      <td>GET</td><td>/citizen/{ID}/children</td><td>404</td><td>Der angegebene Bürger wurde nicht gefunden</td>
-    </tr>
-    <tr style="background-color:#bbdfbb;">
-      <td>GET</td><td>/citizen/{ID}/children</td><td>500</td><td>Fehler beim Laden der Daten</td>
-    </tr>
-    <tr style="background-color:#F7F7F7">
-      <td>POST</td><td>/citizen/</td><td>400</td><td>Falsche Parameter gesendet</td>
-    </tr>
-    <tr style="background-color:#F7F7F7">
-      <td>POST</td><td>/citizen/</td><td>500</td><td>Fehler beim Erstellen des Bürgers</td>
-    </tr>
-  </tbody>
-</table>
+Es gelten für alle API-Aufrufe die üblichen HTTP-Statuscodes.  
+Zusätzlich wird bei Fehlern immer ein JSON im Antwort-Body liegen, welches die Fehler näher erläutert.  
+Hier die im Backend meistbenutzen Statuscodes:
+ - **200**: Die Anfrage wurde erfolgreich bearbeitet
+ - **400**: Die Anfrage-Nachricht war fehlerhaft aufgebaut
+ - **401**: Die Anfrage kann nicht ohne gültige Authentifizierung durchgeführt werden
+ - **404**: Die angeforderte Ressource wurde nicht gefunden
+ - **500**: Sammelfehler für unerwartete Serverfehler
 
 ### Validierung
 
