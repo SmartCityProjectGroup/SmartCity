@@ -165,12 +165,19 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 
 ## Schnittstellen
 
+<!---
 - Schnittstellenbeschreibung (API), z.B. mit OpenAPI 
 - Auflistung der nach außen sichtbaren Schnittstelle des Microservices. Über welche Schnittstelle kann z.B. der Client den Server erreichen?
 - In Event-gesteuerten Systemen ebenfalls die Definition der Ereignisse und deren Attribute
 - Aufteilen in Commands, Events, Queries
 * Abhängigkeiten: Liste mit Kommunikationsabhängigkeiten zu anderen Microservices
- 
+ --->
+
+ ### Private API
+
+| **Methode** | **Name** | 
+| :------ | :----- | 
+
  
  ### eingehende Events
 
@@ -180,14 +187,14 @@ Aber auch Fragen können gestellt oder Veranstaltungen angekündigt werden.
 
 | **Key** | **Value** |
 | :------ | :----- | 
-|  event_id |  event_id |
-|  event_name | event_name |
-|  service | service |
-|  title | title |
-|  short_description | short_description |
-|  long_description | long_description (optional) |
-|  picture_url | picture (optional)|
-|  event_on | event_on (optional, der Tag, bei dem das Event im Kalender angezeigt werden soll) |
+|  event_id |  4000 |
+|  event_name | "newServicePost" (event_name muss "newServicePost" sein)|
+|  service | "forum" |
+|  title | "neue Posts vom Forum!" |
+|  short_description | "hier eine kurze Beschreibung" |
+|  long_description | "hier eine lange beschreibung" (optional) |
+|  picture_url | "url" (optional)|
+|  event_on | "1595-11-17T03:24:00" (optional; wenn event_on mitgeschickt wird, wird der Post an dem Datum zusätzlich im Kalender angezeigt) |
 
 
 
