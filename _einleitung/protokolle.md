@@ -530,3 +530,38 @@ logo_icon.png ebenfalls im Hauptverzeichnis zu finden ist.
 
 ![Logo](../Logo_4.png)
 ![LogoIcon](../logo_icon.png)
+
+---
+
+**Meeting 10 Präsentationsplanung** DI 06.06
+
+Anwesend: Fast alle (Janik zu spät, Merlin verhindert)
+
+Heute wollen wir den Ablauf der MVP-Präsentation besprechen. Die Präsentation soll einen
+sinnvollen Verlauf haben, der bereits implementierte Events und Funktionen in passender Reihenfolge
+darstellt. Dazu legen wir folgendes Fest:
+
+**(Fast alle Funktionen werden auf dem Live-Server präsentiert, nur vereinzelt wird etwas lokal ausgeführt sein)**
+
+1. Wir starten bei der Landingpage und zeigen wie sich das Bürgerbüro registriert und leiten von der Landingpage 
+direkt zum Bürgerbüro weiter.
+
+2. Das Bürgerbüro verschickt ein "Bürger-melden-Event", welche dann von SmartAuth verarbeitet werden soll.
+
+3. SmartAuth nimmt das "Bürger-melden-Event" entgegen und zeigt die Verarbeitung eventuell mit Registrierung.
+
+4. Das Tierheim nimmt dann diese Registrierung und zeigt das Einloggen und prüfen auf Mitarbeiter/User.
+
+5. Danach verschickt das Amt für Integration ein Spenden-Event und ein Kita-Event, welche dann von den jeweiligen Services 
+entgegengenommen werden.
+
+6. Das Finanzamt nimmt das Spenden-Event an und verschickt zusätzlich ein Event an das Forum.
+
+7. Daraufhin zeigt die Kita wie mit dem Event vom Amt für Integration umgegangen wird und verschickt ein Event an den Stadtbus.
+Außerdem wird auch von der Kita ein Event an das Forum verschickt.
+
+8. Der Stadtbus zeigt dann die Verarbeitung des empfangenen Events und verschickt ebenfalls ein Event an das Forum.
+
+9. Anschließend fasst das Forum alle empfangenen Events zusammen.
+
+10. Zum Abschluss zeigt das Fitnessstudio seinen Fortschritt und verschickt eventuell ein eigenes Event.
