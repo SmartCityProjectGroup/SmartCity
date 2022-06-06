@@ -9,8 +9,8 @@ Integrationsprozess zu begleiten. Dabei sollen bürokratischen Hürden überwund
 um schnelle, flexible Hilfe gewährleisten.<br>
 <br>
 Die Gefüchteten können sich und ihre Familie bei der Ankunft digital mit ihren Dokumenten anmelden. 
-Bei diesem Event werden ihnen eine geeigente Unterkunft/Wohnung zugewiesen, sowie ein QR-Code mit 
-dem sie Zugang zur Unterkunft haben. Dieser wird ihnen direkt als Download zur Verfügung gestellt.<br>
+Ein Mitarbeiter wird den Flüchtlingen annehmen Wohnraum zuordnen. Sie bekommen eine QR-Code ausgestellt.
+Dieser wird ihnen direkt als Download zur Verfügung gestellt.<br>
 Des Weiteren können sich die Flüchtlinge mit dem QR-Code Ausweisen. Dadurch können andere Einrichtungen ihren Status abfragen.
 Mit dem QR-Code können Geflüchtete kostenlos mit öffentlichen Verkehrsmittel fahren, sowie an Freitzeitaktivitäten 
 teilnehmen, wie beispielsweise im Fitnessstudio.<br>
@@ -53,51 +53,55 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 ### Anmeldevorgang
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
 | :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
-| 1  | Flüchtling | mich Anmelden | um gemeldet zu sein und Zugang zum Portal zu bekommen | Relevante Meldedaten werden ans Bürgerbüro weitergeleitet + Anmeldefunktion bereitgestellt | Must |
+| 1  | Flüchtling | mich Anmelden | um gemeldet zu sein und Zugang zum Portal zu bekommen | Anmeldefunktion bereitgestellt | Must |
 | 2  | Flüchtling | Informationen zum Kontakt mit dem Amt für Integration finden | ich Hilfe auch vor Ort oder per Telefon bekomme | Informationen werden im Service angezeigt | Must |
 | 3  | Flüchtling | einen QR-Code ausgestellt bekommen | diesen Nutzen kann | QR-Code bereitgestellt | Must |
 | 4  | Flüchtling | meinen QR-Code downloaden | ich ihn auf meinen Geräten speichern kann | QR-Code steht zum Download bereit | Must |
 | 5  | Flüchtling | meinen QR-Code drucken | ich ihn habe (falls ich kein mobiles Endgerät besitze) | QR-Code steht zum Drucken bereit | Must |
-| 6  | Flüchtling | eine Unterkunft bekommen | ich dort leben kann | Flüchtling bekommt Unterkunft zugewiesen | Must |
+| 6  | Flüchtling | eine Unterkunft bekommen | ich dort leben kann | Mitarbeiter kann Flüchtling Wohnraum zuweisen | Must |
 | 7  | Flüchtling | mich mit meinem QR-Code ausweisen können | öffentliche Verkehrsmittel oder Freitzeitangebote zu nutzen | Wert des QR-Code ist ein individueller Code der zur Abfrage genutzt werden kann | Must |
-| 8  | Flüchtling | mit meinem QR-Code die Unterkunft öffnen | ich Zugang zur Unterkunft habe | QR-Code-Wert bei der Unterkunft hinterlegt | Must |
-| 9  | Flüchtling | nicht mit meinem QR-Code andere Unterkünfte öffnen | ich sie berauben kann | QR-Code nur einer Unterkunft zugwiesen | Must |
+| 8  | Flüchtling | mit meinem QR-Code die Unterkunft öffnen | ich Zugang zur Unterkunft habe | QR-Code-Wert bei der Unterkunft hinterlegt | Never |
+| 9  | Flüchtling | nicht mit meinem QR-Code andere Unterkünfte öffnen | ich sie berauben kann | QR-Code nur einer Unterkunft zugwiesen | Never |
 
 ### Integration mit Portal
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
 | :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
-| 10 | Flüchtling | meinen QR-Code aufrufen können | ihn jederzeit wieder downloaden oder drucken kann | QR-Code steht zum Drucken bereit | Must |
+| 10 | Flüchtling | meinen QR-Code aufrufen können | ihn jederzeit wieder downloaden oder drucken kann | QR-Code steht zum Drucken bereit | Should |
 | 11 | Flüchtling | neuen QR-Code beantragen | falls ich den alten verloren habe | QR-Code steht zum Drucken/Download bereit | Could |
 | 12 | Flüchtling | die Unterbringung meines Kindes in der Kita beantragen | mein Kind in die Kita gehen kann | Betantragung im Service möglich | Must |
 | 13 | Bürger | Geld spenden | um Flüchtlinge zu unterstüzten | Spenden-Funktionalität bereitgstellt | Must |
-| 14 | Bürger | nicht, das meine Zahlungsdaten öffentlich gemacht werden | die Daten missbraucht werden können | Externer Anbieter mit exellenter Sicherheit durch jahrelanger Erfahrung | Must |
+| 14 | Bürger | nicht, das meine Zahlungsdaten öffentlich gemacht werden | die Daten missbraucht werden können | externer Anbieter mit  Erfahrung in Sicherheitsthemen | Must |
 | 15 | Bürger | Wohnraum bereitstellen | um Flüchtlinge zu helfen | Formular zum Eintragen von zur Verfügung gestellten Wohnraum | Should |
 | 16 | Bürger | im Portal einloggen | ich Geld spenden oder Wohnraum bereitstellen kann | Link zum Portal | Must |
 | 17 | Finanzamt | Informationen zu Spende eines Bürger bekommen | dies steuerlich gelten machen kann und Spendenquittungen ausstellen kann | entsprechendes Event wird getriggert beim Eingang einer neuen Spenden und Informationen werden ausgetauscht | Must |
 | 18 | Kita-Verwaltung | Benachritgung über Bewerbung eines Kita-Platzes bekommen | ich dieses bearbeiten kann | Event wird bereitgesteltl | Must |
+| 19 | Mitarbeiter | Post an Forum schicken | Event wird ausgelöst | Event  | Must |
+| 20 | Mitarbeiter | Flüchtlings Registierung annehmen  | diese in Smart City aufgenommen werden | Event wird ausgelöst, Registierung bekommt Status akzeptiert | Must |
 
 ### Datenabfrage
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
 | :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
-| 19 | Fitnesstudio | den Flüchtlingsstatus abfragen | diese kostenlos mein Angebot nutzen können | Abfrage ist über Events bereitgestellt | Must |
-| 20 | Busunternehmen | den Flüchtlingsstatus abfragen | diese kostenlos mein Angebot nutzen können | Abfrage ist über Events bereitgestellt | Must |
+| 21 | Fitnesstudio | den Flüchtlingsstatus abfragen | diese kostenlos mein Angebot nutzen können | Abfrage ist über Events bereitgestellt | Must |
+| 22 | Busunternehmen | den Flüchtlingsstatus abfragen | diese kostenlos mein Angebot nutzen können | Abfrage ist über Events bereitgestellt | Must |
 
 ### Verwaltung
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
 | :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
-| 21 | Mitarbeiter | Informationen an den Newsletter schicken | Bürger informiert werden können | Event  | Must |
-| 22 | Mitarbeiter | Informationen auf der Landing-Page updaten | um ggf. Änderungen vorzunehmen | Event | Must |
-| 23 | Mitarbeiter | mich im Mitarbeiterbereich einloggen | um meine Aufgaben zu erledigen | Login für Mitarbeiter | Must |
-| 24 | Mitarbeiter | mich im Mitarbeiterbereich ausloggen | keinen unbefugten Zugriff gibt | Logout für Mitarbeiter | Must |
-| 25 | Mitarbeiter | Wohnraum einsehen | ich diesen bearbeiten kann | Wohnraumauflistung im Mitarbeiterbereich mit Bearbeitungsfunktion | Could |
-| 26 | Mitarbeiter | neuen Wohnraum hinzufügen | ich neuen Wohnraum in Datenbank aufnehmen kann | Wohnraum kann hinzugefügt werden | Could |
+| 23 | Mitarbeiter | Newsletter Posts erstellen | Funktionalität bereitgestellt | Event  | Must |
+| 24 | Mitarbeiter | Erstellte Post ansehen | Funktionalität bereitgestellt | Event  | Must |
+| 25 | Mitarbeiter | Informationen auf der Landing-Page updaten | um ggf. Änderungen vorzunehmen | Event wird ausgelöst | Must |
+| 26 | Mitarbeiter | Den Service auf der Landing Page löschen | um Service zu aus der Smart City zu entfernen | Event wird ausgelöst | Must |
+| 27 | Mitarbeiter | mich im Mitarbeiterbereich einloggen | um meine Aufgaben zu erledigen | Login für Mitarbeiter | Must |
+| 28 | Mitarbeiter | mich im Mitarbeiterbereich ausloggen | keinen unbefugten Zugriff gibt | Logout für Mitarbeiter | Must |
+| 29 | Mitarbeiter | Flüchtlings Wohnraum zuweisen  | damit sie eine Wohnung bekommen | Wohnraum wird in der Datenbank mit Flüchtling verknüpft | Must |
+| 30 | Mitarbeiter | neuen Wohnraum hinzufügen | ich neuen Wohnraum in Datenbank aufnehmen kann | Wohnraum kann hinzugefügt werden | Could |
 
 ### User Interface
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
 | :----: | :------ | :------------- | :---------- | :------------ | :-----------: |
-| 27 | User | den Service vom PC aufrufen können | ich eine gute User Expericence habe | Responsive Design | Must |
-| 28 | User | den Service vom mobilen Endgerät aufrufen können | ich eine gute User Expericence habe | Responsive Design | Must |
-| 29 | User | Dark oder White-Mode einstellen | ich eine gute User Expericence habe | Dark-Mode toggle, am Start auf Systempräferenz eingestellt | Must |
+| 31 | User | den Service vom PC aufrufen können | ich eine gute User Expericence habe | Responsive Design | Must |
+| 32 | User | den Service vom mobilen Endgerät aufrufen können | ich eine gute User Expericence habe | Responsive Design | Must |
+| 33 | User | Dark oder White-Mode einstellen | ich eine gute User Expericence habe | Dark-Mode toggle, am Start auf Systempräferenz eingestellt | Could |
 
 ## Graphische Benutzerschnittstelle
 
@@ -253,17 +257,23 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 #### Rest
 | **Name** | **Method** | **URL** | **Request**| **Response** |
 | :------ | :----- | :------ | :------ | :------ |
-| Register New Refugee | POST | api/private/refugee/register | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional)<br>} | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional),<br>"qr_code": "John.Doe.23984-9384",<br>"housing_id": 4<br>} |
-| Register New Refugee Family | POST | api/private/refugee/registerFamily | {<br>"parents": \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional)<br>}<br> ... \],<br>children: \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional)<br>}<br> ... \]} | {<br>"parents": \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional),<br>"qr_code": "John.Doe.234234-23424",<br>"housing_id": 5<br>}<br> ... \],<br>children: \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>"language": "german" (optional),<br>"document": "testbuffer" (optional),<br>"qr_code": "John.Doe.234-234",<br>"housing_id": 5<br>}<br> ... \]} |
-| New Donation | POST | api/private/donation | {<br>"amount": 100.0,<br>"citizen_id": "2398492" (optional)<br>} | {<br>"id": 1,<br> "amount": 100.0,<br>"citizen_id": "2398492" (optional)<br>} |
-| New Kita Application | POST | api/private/kita | {<br>"date": "2000-01-01T00:00:00Z",<br>"care_time": 40,<br>"child":<br>{<br>"citizen_id: 12345,<br>"refugee_id": 45678<br>},<br>"parent":<br>{<br>"citizen_id": 44345,<br>"refugee_id": 423444<br>},<br>} | {<br>"id": 1,<br> "date": "2000-01-01T00:00:00Z",<br>refugee_id: "45678" <br>} |
-| New Post | POST | api/private/post | {<br>"title": "text",<br>"text": "testtext",<br>"picture": "http://testurl.de" (optional),<br>"date": "2000-01-01T00:00:00Z",<br>"employee_id": "2398492"<br>} | {<br>"id": 1,<br>"title": "text",<br>"text": "testtext",<br>"picture": "http://testurl.de" (optional),<br>"date": "2000-01-01T00:00:00Z",<br>"employee_id": "2398492"<br> } |
-| New Housing | POST | api/private/housing | {<br>"housing":<br>{<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional)<br>},<br>"address:<br>{<br>"house_number": 5,<br> "street":"Musterweg",<br>"city_code": 12334<br>},<br>}| {<br>"id": 1,<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22<br>} |
-| Get All Housing | GET | api/private/housing | - | ArrayList of all Housings | 
-| Get Housing | GET | api/private/housing/:id | - | {<br>"id": 1,<br>"housing_type": "C117",<br>"people_assigned": 0,<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22<br>} |
-| Update Housing | PUT | api/private/housing/:id | {<br>"housing_type": "C117" (optional),<br>"people_assigned": 0 (optional),<br>"people_limit": 4(optional),<br>"size": 80.0 (optional),<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0 (optional),<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22 (optional)<br>} | {<br>"housing_type": "C117" (optional),<br>"people_assigned": 0 (optional),<br>"people_limit": 4(optional),<br>"size": 80.0 (optional),<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0 (optional),<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional),<br>"address_id": 22 (optional)<br>} |
-| Delete Housing | DELETE | api/private/housing/:id | - | 'Housing Deleted' |
-| Get All Employees | GET | api/private/employee | - | ArrayList of all Employees |
+| Register | POST | api/private/register | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>family_tag: "1234" (optional),<br>"document": "testbuffer" (optional)<br>} | { message: 'success' } |
+| Register Accept | - | api/private/register/accept/:id | refugee_id | { message: 'success' } |
+| Register Delete | DELETE | api/private/register/:id | refugee_id | { message: 'success' } |
+| New Post | POST | api/private/post | {<br>"title": "text",<br>"short_description": "testtext",<br>"long_description": "testtext" (optional),<br>"picture_url": "http://testurl.de" (optional),<br>"employee_id": "2398492"<br>} | { message: 'success' } |
+| Post Get | GET | api/private/draft | - | \[ post1, post2, ...\] |
+| Post Delete | DELETE | api/private/post/:id | id | { message: 'success' } |
+| Post Publish | - | api/private/post/publish/:id | id | { message: 'success' } |
+| Kita Event | POST | api/private/kita | {<br>"date": "2000-01-01T00:00:00Z",<br>"care_time": 40,<br>"child":<br>{<br>"citizen_id: 12345},<br>"parent":<br>{<br>"citizen_id": 44345},<br>} | { message: 'success' } |
+| New Housing | POST | api/private/housing | {<br>"housing":<br>{<br>"housing_type": "C117",<br>"people_assigned": 0, (optional)<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional)<br>},<br>"address:<br>{<br>"house_number": 5,<br> "street":"Musterweg",<br>"city_code": 12334<br>},<br>}| { message: 'success' }  |
+| Housing Assign | PUT | api/private/housing/assign | {<br>"refugee_id": 1,<br>"housing_id": 1,<br>} | { message: 'success' }  | 
+| Housing Get | GET | api/private/housing | - | \[ housing1, housing2, ...\] | 
+| Housing Delete | GET | api/private/housing/:id | - | { message: 'success' }  | 
+| Employees Get All | GET | api/private/employee | - | \[ employee1, employee2, ... \] |
+| Employees Get | GET | api/private/employee/:email | email | {<br>employee_id: 1, <br>"firstname": "John",<br>"lastname": "Doe",<br>"email": "test@test.com",<br>"phone": 1932943 (optional),<br>"room": "c123" (optional),<br>,"avatar": "src/img/avatar" (optional),<br>} |
+| Donation Event | POST | api/private/donation/publish | {<br>"amount": 100.0,<br>"citizen_id": "2398492"<br>} | { message: 'success' } |
+| Aboutus Event | POST | api/private/aboutus/publish | {<br>"date": "2000-01-01T00:00:00Z",<br>"aboutus": "testest"<br>} | { message: 'success' } |
+| Aboutus Event Delete | POST | api/private/aboutus/delete | {<br>"date": "2000-01-01T00:00:00Z"<br>} | { message: 'success' } |
 
 
 ### Öffentliche Schnittstellen
@@ -278,12 +288,13 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | Finanzamt | private.integration | {<br>"event_id": 9003,<br>"event_name": "Notify Incoming Donation",<br>"service_name": "integration",<br>"amount": 50.45,<br>"citizen_id": 12345<br>} |
 | Newsletter| public.integration | {<br>"event_id": 9004,<br>"event_name": "New Newsletter Post",<br>"service_name": "integration",<br>"title": "xyz",<br>"text": "foo bar long",<br>"picture": "https://google.de/picture1"<br>"date": "YYYY-MM-DDTHH:MM:SS" (optional)<br>} |
 | Landing Page | public.integration | {<br>"event_id": 9005,<br>"event_name": "Update About Us",<br>"service_name": "integration",<br>"date": "YYYY-MM-DDTHH:MM:SS",<br>"about_us": "about us foo bar text .. ",<br>"picture": "https://google.de/picture1"<br>} |
+| Landing Page Delete | public.integration | {<br>"event_id": 9006,<br>"event_name": "Delete My Service",<br>"service_name": "integration",<br>"date": "YYYY-MM-DDTHH:MM:SS",<br>} |
 
 #### Queries
 
 | **Name** | **Method** | **URL** | **Parameter** | **Response Example** | **Response Type** |
 | :------ | :----- | :------ | :------ | :------ | :------ |
-| Refugee status  | GET | api/refugee/:qr_code | String qr_code | { "status": true } | json |
+| Refugee status  | GET | api/public/refugee/:qr_code | String qr_code | { "status": true } | json |
 
 ### Dependencies
 
