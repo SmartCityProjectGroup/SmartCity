@@ -62,7 +62,7 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 | 7  | Flüchtling | mich mit meinem QR-Code ausweisen können | öffentliche Verkehrsmittel oder Freitzeitangebote zu nutzen | Wert des QR-Code ist ein individueller Code der zur Abfrage genutzt werden kann | Must |
 | 8  | Flüchtling | mit meinem QR-Code die Unterkunft öffnen | ich Zugang zur Unterkunft habe | QR-Code-Wert bei der Unterkunft hinterlegt | Never |
 | 9  | Flüchtling | nicht mit meinem QR-Code andere Unterkünfte öffnen | ich sie berauben kann | QR-Code nur einer Unterkunft zugwiesen | Never |
-| 32  | Flüchtling | meine Familie anmelden | um gemeldet zu sein und eine gemeinsame Wohnung zu bekommen | Anmeldefunktion bereitgestellt | Must |
+| 35  | Flüchtling | meine Familie anmelden | um gemeldet zu sein und eine gemeinsame Wohnung zu bekommen | Anmeldefunktion bereitgestellt | Must |
 
 ### Integration mit Portal
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
@@ -96,7 +96,7 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 | 28 | Mitarbeiter | mich im Mitarbeiterbereich ausloggen | keinen unbefugten Zugriff gibt | Logout für Mitarbeiter | Must |
 | 29 | Mitarbeiter | Flüchtlings Wohnraum zuweisen  | damit sie eine Wohnung bekommen | Wohnraum wird in der Datenbank mit Flüchtling verknüpft | Must |
 | 30 | Mitarbeiter | neuen Wohnraum hinzufügen | ich neuen Wohnraum in Datenbank aufnehmen kann | Wohnraum kann hinzugefügt werden | Could |
-| 31 | Mitarbeiter | Flüchtlinge(Familien) annehmen | um ihnen Zugang zum Smart City Portal zu gewähren | Funktinaliät wird bereitgestellt und Events werden ausgelöst | Must |
+| 34 | Mitarbeiter | Flüchtlinge(Familien) annehmen | um ihnen Zugang zum Smart City Portal zu gewähren | Funktinaliät wird bereitgestellt und Events werden ausgelöst | Must |
 
 ### User Interface
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
