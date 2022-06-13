@@ -259,6 +259,8 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | :------ | :----- | :------ | :------ | :------ |
 | Register | POST | api/private/register | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>family_tag: "1234" (optional),<br>"document": "testbuffer" (optional)<br>} | { message: 'success' } |
 | Register Accept | - | api/private/register/accept/:id | refugee_id | { message: 'success' } |
+| Register Accept Family | POST | api/private/register/accept/family | {<br>"parents": \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com"} ,..  <br> \],<br>"children":\[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com"} ,... <br>\],<br>"family_tag": "abcde"<br>} | { message: 'success' } |
+| Register Family | GET | api/private/register/family | - | List of refugees with family_tag order by family_tag |
 | Register Delete | DELETE | api/private/register/:id | refugee_id | { message: 'success' } |
 | New Post | POST | api/private/post | {<br>"title": "text",<br>"short_description": "testtext",<br>"long_description": "testtext" (optional),<br>"picture_url": "http://testurl.de" (optional),<br>"employee_id": "2398492"<br>} | { message: 'success' } |
 | Post Get | GET | api/private/draft | - | \[ post1, post2, ...\] |
@@ -268,6 +270,7 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | New Housing | POST | api/private/housing | {<br>"housing":<br>{<br>"housing_type": "C117",<br>"people_assigned": 0, (optional)<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional)<br>},<br>"address:<br>{<br>"house_number": 5,<br> "street":"Musterweg",<br>"city_code": 12334<br>},<br>}| { message: 'success' }  |
 | Housing Assign | PUT | api/private/housing/assign | {<br>"refugee_id": 1,<br>"housing_id": 1,<br>} | { message: 'success' }  | 
 | Housing Get | GET | api/private/housing | - | \[ housing1, housing2, ...\] | 
+| Housing Refugee | GET | api/private/housing/refugee | List of all refugees no housing assigned  | \[<br> {"firstname": "Peter",<br>"lastname": "Held",<br>"email": "peter@gmx.net",<br>"family_tag="abcdef" (optional)<br>}...\] | 
 | Housing Delete | GET | api/private/housing/:id | - | { message: 'success' }  | 
 | Employees Get All | GET | api/private/employee | - | \[ employee1, employee2, ... \] |
 | Employees Get | GET | api/private/employee/:email | email | {<br>employee_id: 1, <br>"firstname": "John",<br>"lastname": "Doe",<br>"email": "test@test.com",<br>"phone": 1932943 (optional),<br>"room": "c123" (optional),<br>,"avatar": "src/img/avatar" (optional),<br>} |
