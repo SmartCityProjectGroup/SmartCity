@@ -62,6 +62,7 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 | 7  | Flüchtling | mich mit meinem QR-Code ausweisen können | öffentliche Verkehrsmittel oder Freitzeitangebote zu nutzen | Wert des QR-Code ist ein individueller Code der zur Abfrage genutzt werden kann | Must |
 | 8  | Flüchtling | mit meinem QR-Code die Unterkunft öffnen | ich Zugang zur Unterkunft habe | QR-Code-Wert bei der Unterkunft hinterlegt | Never |
 | 9  | Flüchtling | nicht mit meinem QR-Code andere Unterkünfte öffnen | ich sie berauben kann | QR-Code nur einer Unterkunft zugwiesen | Never |
+| 35  | Flüchtling | meine Familie anmelden | um gemeldet zu sein und eine gemeinsame Wohnung zu bekommen | Anmeldefunktion bereitgestellt | Must |
 
 ### Integration mit Portal
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
@@ -95,6 +96,7 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 | 28 | Mitarbeiter | mich im Mitarbeiterbereich ausloggen | keinen unbefugten Zugriff gibt | Logout für Mitarbeiter | Must |
 | 29 | Mitarbeiter | Flüchtlings Wohnraum zuweisen  | damit sie eine Wohnung bekommen | Wohnraum wird in der Datenbank mit Flüchtling verknüpft | Must |
 | 30 | Mitarbeiter | neuen Wohnraum hinzufügen | ich neuen Wohnraum in Datenbank aufnehmen kann | Wohnraum kann hinzugefügt werden | Could |
+| 34 | Mitarbeiter | Flüchtlinge(Familien) annehmen | um ihnen Zugang zum Smart City Portal zu gewähren | Funktinaliät wird bereitgestellt und Events werden ausgelöst | Must |
 
 ### User Interface
 | **ID** | **Als** | **möchte ich** | **so dass** | **Akzeptanz** | **Priorität** |
@@ -259,6 +261,8 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | :------ | :----- | :------ | :------ | :------ |
 | Register | POST | api/private/register | {<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com",<br>"phone": "555888" (optional),<br>"nationality": "Germany" (optional),<br>family_tag: "1234" (optional),<br>"document": "testbuffer" (optional)<br>} | { message: 'success' } |
 | Register Accept | - | api/private/register/accept/:id | refugee_id | { message: 'success' } |
+| Register Accept Family | POST | api/private/register/accept/family | {<br>"parents": \[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com"} ,..  <br> \],<br>"children":\[<br>{<br>"firstname": "John",<br>"lastname": "Doe",<br>"date_of_brith": "2000-01-01T00:00:00Z",<br>"email": "johndoe@gmail.com"} ,... <br>\],<br>"family_tag": "abcde"<br>} | { message: 'success' } |
+| Register Family | GET | api/private/register/family | - | List of refugees with family_tag order by family_tag |
 | Register Delete | DELETE | api/private/register/:id | refugee_id | { message: 'success' } |
 | New Post | POST | api/private/post | {<br>"title": "text",<br>"short_description": "testtext",<br>"long_description": "testtext" (optional),<br>"picture_url": "http://testurl.de" (optional),<br>"employee_id": "2398492"<br>} | { message: 'success' } |
 | Post Get | GET | api/private/draft | - | \[ post1, post2, ...\] |
@@ -268,6 +272,7 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | New Housing | POST | api/private/housing | {<br>"housing":<br>{<br>"housing_type": "C117",<br>"people_assigned": 0, (optional)<br>"people_limit": 4,<br>"size": 80.0,<br>"shared_bathroom": true (optional),<br>"rooms": 3 (optional),<br>"rent": 0.0,<br>"info": "additional info" (optional),<br>"citizen_id": 234565 (optional)<br>},<br>"address:<br>{<br>"house_number": 5,<br> "street":"Musterweg",<br>"city_code": 12334<br>},<br>}| { message: 'success' }  |
 | Housing Assign | PUT | api/private/housing/assign | {<br>"refugee_id": 1,<br>"housing_id": 1,<br>} | { message: 'success' }  | 
 | Housing Get | GET | api/private/housing | - | \[ housing1, housing2, ...\] | 
+| Housing Refugee | GET | api/private/housing/refugee | List of all refugees no housing assigned  | \[<br> {"firstname": "Peter",<br>"lastname": "Held",<br>"email": "peter@gmx.net",<br>"family_tag="abcdef" (optional)<br>}...\] | 
 | Housing Delete | GET | api/private/housing/:id | - | { message: 'success' }  | 
 | Employees Get All | GET | api/private/employee | - | \[ employee1, employee2, ... \] |
 | Employees Get | GET | api/private/employee/:email | email | {<br>employee_id: 1, <br>"firstname": "John",<br>"lastname": "Doe",<br>"email": "test@test.com",<br>"phone": 1932943 (optional),<br>"room": "c123" (optional),<br>,"avatar": "src/img/avatar" (optional),<br>} |
