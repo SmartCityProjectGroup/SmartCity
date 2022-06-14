@@ -565,3 +565,111 @@ Außerdem wird auch von der Kita ein Event an das Forum verschickt.
 9. Anschließend fasst das Forum alle empfangenen Events zusammen.
 
 10. Zum Abschluss zeigt das Fitnessstudio seinen Fortschritt und verschickt eventuell ein eigenes Event.
+
+---
+
+**Meeting 11 Sprintabschluss & Planning** DI 07.06.
+
+Anwesend: Alle (Einer Online)
+
+Wir fangen an, Herrn Brunsmann das MVP vorzustellen.
+Danach besprechen wir wann wir das Endprodukt präsentieren möchten, zur Auswahl stehen der 
+21.07, 28.07 oder der 05.08. Wir einigen uns darauf, dass wir Herrn Brunsmann am 20.07 über den 
+geplanten Vorstellungstermin informieren. Aktuell gehen wir vom 05.08 aus.
+
+Der aktuelle Stand ist zufriedenstellend, die meisten Services sind nun deployed und die Kommunikation
+funktioniert. Wir sind zuversichtlich, dass wir die meisten Ziele bis zur Abgabe erreichen werden.
+
+Nachdem wir den aktuellen Stand besprochen haben, vereinbaren wir Sprintziele für den kommenden Sprint.
+
+Smart-Auth:
+Mitarbeiter login
+Serviceregistrierung
+Userlogin in zusammenarbeit mit dem Bürgerbüro
+
+Amt für Integration:
+Wohnraumbereitstellung
+Userstories - 18, 12, 6, 15, 20
+
+Bürgerbüro:
+Genehmigungen beantragen annehmen/ablehnen
+Event vom Amt für Integration empfangen und automatisch verarbeiten
+
+Stadtbus:
+Anfragen der Kita bearbeiten (Tickets)
+Userstories - 1, 18, 14, 4
+
+Kita: 
+Userstories - 11 (Anträge sichtbar machen), 2, 4, 5, 34, 33, 7, 8, 28 (Besuche beim Tierheim anmelden)
+
+Forum:
+Nutzer-Implementierung realisieren
+Kalender (falls zu schwer, diesen als Liste darstellen)
+Userstories - 7, 20, 10, 14, 15, 17
+
+Tierheim:
+Userstories - 1, 7, 10, 22, 24
+
+Finanzamt:
+Bürgerbüro Events bearbeiten
+Donations
+Förderung beantragen 
+Vorgänge erstellen
+Userstories: 
+3, 4, 5, 13, 15 (PDF-Export von Vorgängen)
+
+Fitnessstudio:
+Mitglieder anmeldung
+Mitarbeiter verwaltung
+Userstories 1-4, 11-15
+
+Paul kümmert sich um CI in zusammenarbeit mit dem Amt für Integration und dem Bürgerbüro, so
+können wir beispielhaft die CI-Pipeline mit JEST und CYPRESS zeigen.
+
+---
+
+**Meeting 12 Daily Scrum** DI 14.06.
+
+Wir fangen direkt an mit dem aktuellen Fortschritt der einzelnen Services.
+
+Forum:
+Diese Woche leider verhindert aufgrund von anderen Abgaben
+
+Kita:
+Kitas können nun gefiltert und sortiert werden.
+Der Rest soll bis Dienstag aufgeholt werden.
+
+Stadtbus:
+Erste Schritte für die Karte unternommen, hier müssen noch Animationen überarbeitet werden.
+Eingabe für Haltestellen steht, die Berechnung einer passenden Route folgt noch.
+
+Bürgerbüro:
+Eventlistener ist fast fertig.
+Arbeit an Genehmigungen hat begonnen.
+
+Amt für Integration:
+Wohnraum kann nun für Flüchtlinge bereitgestellt werden.
+Familien können nun auch registriert werden.
+Mitarbeiter können diese Registrierungen annehmen und Wohnraum zuweisen.
+
+Finanzamt:
+Landingpage-Events werden verschickt (Hier ist noch ein Fehler bei der Landingpage aufgetaucht, der noch behoben werden muss)
+Bürgerbezüge müssen noch verfeinert werden 
+
+CI/CD:
+Tests für CI laufen für das Amt für Integration.
+Superlinter ist ab jetzt für alle Services aktiviert, verhindert aber keine Commits bei Fehlern!
+
+SmartAuth:
+Container macht aktuell noch Probleme 
+Mails werden mittlerweile an den Bürger verschickt, hier steht dann der Code, welcher zur Registrierung genutzt werden kann.
+SmartAuth funktioniert so weit für Bürger und kann von den anderen Services benutzt werden, leider ist es momentan noch auf einem 
+anderen Server zu erreichen, dies soll sich in der kommenden Woche ändern.
+
+Fitnessstudio:
+Frontend arbeiten laufen.
+Mitgliederverwaltung in Arbeit.
+
+Da SmartAuth in dieser Woche große Schritte gemacht hat, können die anderen Services sich nun darum kümmern diese Funktionalität
+in Ihren Seiten einzubauen. Deshalb legen wir diese Woche den Fokus auf diesen Teil, sodass wir hier endlich einen guten Schritt 
+weiter kommen.
