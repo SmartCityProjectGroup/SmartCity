@@ -673,3 +673,68 @@ Mitgliederverwaltung in Arbeit.
 Da SmartAuth in dieser Woche große Schritte gemacht hat, können die anderen Services sich nun darum kümmern diese Funktionalität
 in Ihren Seiten einzubauen. Deshalb legen wir diese Woche den Fokus auf diesen Teil, sodass wir hier endlich einen guten Schritt 
 weiter kommen.
+
+---
+
+**Meeting 13 Sprintabschluss/-planning** DI 21.06.
+
+Zu Anfang zeigt jeder seinen aktuellen Fortschritt und präsentiert die Ergebnisse der vergangenen zwei Wochen.
+Die meisten haben ihre Sprintziele erfüllt und sind auf einem guten Weg, eine gute Präsentation zu gewährleisten.
+
+Nachdem jeder seinen Fortschritt gezeigt hat, besprechen wir das weitere Vorgehen. Da wir uns nun für den 05.07 als Abgabetermin
+entschieden haben, können wir die kommende Woche noch voll und ganz zum Entwickeln nutzen. Die letzte Woche werden wir dann nur noch 
+zur Präsentationsvorbereitung und eventuell auch für Refactoring/UI-Arbeiten nutzen. So ist der Arbeitsaufwand für alle kurz vor der 
+Klausurphase so gering wie möglich. 
+
+Zum Abschluss legt jeder ein letztes Mal Sprintziele fest, welche er bis zum nächsten Dienstag erreichen möchte.
+
+Kita:
+Userstories 34,33,8,12,9,13,16,19 (Mögliche Änderungen sind auf dem Kanbanboard zu finden)
+
+Amt für Integration:
+Bewerbung für Kita 
+Login Mitarbeiter
+Impressum usw
+
+Bürgerbüro:
+Daten des Bürgers ändern
+Heirat/Scheidungs events
+
+Stadtbus:
+Anmelden 
+Tickets ausstellen
+Route berechnen
+
+Finanzamt:
+Mitarbeiter/Admin Features
+Kontaktformular
+Login 
+Polishing
+
+SmartAuth:
+Mitarbeiter logins
+Error Handling
+Umstellung auf Container
+(Passwortvergessen)
+
+Forum:
+Filtern
+Posts bearbeiten
+Posts verfassen
+Bilder 
+Authentifizierung
+
+Paul - CI/CD:
+JEST mit Bürgerbüro 
+Account in Portainer für alle, für Zugriff auf Logs der Container
+
+Nächste Woche wollen wir uns dann schon mit der Präsentation beschäftigen und einen groben Ablauf, sowie vorzeigbare 
+Features festlegen. Dazu soll jeder bis zum nächsten Meeting folgende Fragen, für einen Rückblick/Lessons Learned Teil 
+während der Präsentation, beantworten.
+
+* Was hatte ich geplant?
+* Was habe ich letzten Endes erreicht?
+* Was habe ich neues gelernt?
+* Was lief gut/schlecht?
+* Was würde ich beim nächsten mal anders machen?
+* Wie lieft die zusammen Arbeit in einem "großen" Team? 
