@@ -252,7 +252,7 @@ Wichtige Informationen für Bürger werden regelmäßig im Newsletter veröffent
 
 ### URL
 
-http://smart.city/microservices/integration <!--- TODO replace --->
+http://vps2290194.fastwebserver.de:9790/
 
 ### Private Schnittstellen
 
@@ -279,6 +279,9 @@ http://smart.city/microservices/integration <!--- TODO replace --->
 | Donation Event | POST | api/private/donation/publish | {<br>"amount": 100.0,<br>"citizen_id": "2398492"<br>} | { message: 'success' } |
 | Aboutus Event | POST | api/private/aboutus/publish | {<br>"date": "2000-01-01T00:00:00Z",<br>"aboutus": "testest"<br>} | { message: 'success' } |
 | Aboutus Event Delete | POST | api/private/aboutus/delete | {<br>"date": "2000-01-01T00:00:00Z"<br>} | { message: 'success' } |
+| Login | POST | api/private/user/login | {<br>"username": "hans",<br> "password": "42424242"<br>} | {<br>"username": "hans",<br>"citizen_id": "42",<br>"user": {user data..},<br> } |
+| Logout | GET | api/private/user/logout | - | {message: 'success'} |
+| CheckAuth | GET | api/private/user/checkAuth | - |{<br>"username": "hans",<br>"citizen_id": "42",<br>"user": {user data..},<br> } |
 
 
 ### Öffentliche Schnittstellen
