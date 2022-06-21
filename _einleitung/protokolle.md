@@ -678,6 +678,8 @@ weiter kommen.
 
 **Meeting 13 Sprintabschluss/-planning** DI 21.06.
 
+Anwesend: 10/11 (Einer krank)
+
 Zu Anfang zeigt jeder seinen aktuellen Fortschritt und präsentiert die Ergebnisse der vergangenen zwei Wochen.
 Die meisten haben ihre Sprintziele erfüllt und sind auf einem guten Weg, eine gute Präsentation zu gewährleisten.
 
