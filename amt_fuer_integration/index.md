@@ -282,6 +282,9 @@ http://vps2290194.fastwebserver.de:9790/
 | Login | POST | api/private/user/login | {<br>"username": "hans",<br> "password": "42424242"<br>} | {<br>"username": "hans",<br>"citizen_id": "42",<br>"user": {user data..},<br> } |
 | Logout | GET | api/private/user/logout | - | {message: 'success'} |
 | CheckAuth | GET | api/private/user/checkAuth | - |{<br>"username": "hans",<br>"citizen_id": "42",<br>"user": {user data..},<br> } |
+| Login Employee | POST | api/private/employee/login | {<br>"username": "hans",<br> "password": "42424242"<br>} | {<br>"username": "hans", <br>"firstname: "Hans",<br>"lastname: "Kahl",<br> } |
+| Logout Employee | GET | api/private/employee/logout | - | {message: 'success'} |
+| CheckAuth Employee | GET | api/private/employee/checkAuth | - |{<br>"username": "hans",<br> "password": "42424242"<br>} | {<br>"username": "hans", <br>"firstname: "Hans",<br>"lastname: "Kahl",<br> } |
 
 
 ### Öffentliche Schnittstellen
