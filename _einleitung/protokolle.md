@@ -739,4 +739,46 @@ während der Präsentation, beantworten.
 * Was habe ich neues gelernt?
 * Was lief gut/schlecht?
 * Was würde ich beim nächsten mal anders machen?
-* Wie lieft die zusammen Arbeit in einem "großen" Team? 
+* Wie lieft die zusammen Arbeit in einem "großen" Team?
+
+---
+
+**Meeting 14 Daily Scrum** DI 27.06.
+
+Wir fangen wie immer an, mit dem Fortschritt der einzelnen Services.
+Im groben und ganzen ist ein guter Fortschritt zu verzeichnen und alle geplanten Features wurden implementiert.
+Abgesehen von ein paar Frontendarbeiten und minimalen Bugfixes, ist das Projekt bereit zur Abgabe.
+
+Danach besprechen wir den Ablauf der Präsentation.
+Wer stellt was vor? Wie soll es vorgestellt werden?
+
+Ablauf:
+
+Präsentation (Powerpoint) Paul, Adrian, Janik
+* Während der Präsentation gehen wir kurz auf den generellen Ablauf und die Zusammenarbeit im Team während des Projekts ein.
+Wir zeigen positive und negative Eindrücke auf und bieten einen Rückblick über das Gesamtprojekt.
+
+Featurepräsentation (Janik):
+* Wir zeigen die Routinen, die ein neuer Anwohner, sowie ein Flüchtling mithilfe unserer Smart City durchlaufen
+
+Landingpage - Beginn der Präsentation
+Bürgeramt - Registrieren
+SmartAuth - Anmeldung im Portal
+Amt für integration - Spende
+Finanzamt - Vorgänge bearbeiten, Spende verarbeiten,
+Bürgerbüro - Datenänderung
+Amt für Integration - Familie registrieren, Familie bei Kita melden
+Kita - User stellt ebenfalls einen Antrag, (Switch auf Mitarbeiter) Kind verarbeiten, Ticket beim Stadtbus registrieren
+Stadtbus - Ticket anzeigen, Map präsentieren, Forumpost
+Forum - Post eines Services zeigen, Nutzer verfasst einen Post
+Fitnessstudio - vorhandene Funktionen zeigen (Landingpage registrierung)
+SmartAuth - (Wenn vorhanden passwort vergessen)
+
+Nachdem wir die Features anhand des Produktes vorgestellt haben, werden wir 
+einzeln auf den Code eingehen.
+
+Damit bei der Präsentation am 05.07 auch alles glattläuft, vereinbaren wir einen 
+Probetermin am kommenden Samstag. Die genaue Uhrzeit besprechen wir noch mittels Discord.
+
+
+
