@@ -13,7 +13,7 @@ Ansatz (Microservices):
 Kommunal
 - Landingpage (Adrian & Janik)
 - Bürgeramt (Tristan)
-  - Dokumentenservice (Upload/Dowload/Neue Dokumente)
+  - Dokumentenservice (Upload/Download/Neue Dokumente)
 - Microservice Newsletter (Jonathan)
 - Authentifizierung (Jonathan)
 - Finanzamt (Mario) 
@@ -765,10 +765,10 @@ Landingpage - Beginn der Präsentation
 Bürgeramt - Registrieren
 SmartAuth - Anmeldung im Portal
 Amt für integration - Spende
-Finanzamt - Vorgänge bearbeiten, Spende verarbeiten,
+Finanzamt - (User Vorgang erstellen und PDF export)Vorgänge bearbeiten, Spende verarbeiten,
 Bürgerbüro - Datenänderung
 Amt für Integration - Familie registrieren, Familie bei Kita melden
-Kita - User stellt ebenfalls einen Antrag, (Switch auf Mitarbeiter) Kind verarbeiten, Ticket beim Stadtbus registrieren
+Kita - User stellt ebenfalls einen Antrag (für 2tes Kind), (Switch auf Mitarbeiter) Kind verarbeiten, Ticket beim Stadtbus registrieren
 Stadtbus - Ticket anzeigen, Map präsentieren, Forumpost
 Forum - Post eines Services zeigen, Nutzer verfasst einen Post
 Fitnessstudio - vorhandene Funktionen zeigen (Landingpage registrierung)
