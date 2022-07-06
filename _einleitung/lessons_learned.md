@@ -1,5 +1,7 @@
 # Lessons Learned
 
+![](img_1.png)
+
 Im Verlaufe der vergangenen Monate haben wir in Bezug zu unserer Projektarbeit viel erlebt. Wir haben viele 
 Hürden überwinden müssen und im Zuge dessen einiges gelernt. Um das Gelernte und gesammelte Eindrücke in Worte fassen zu können,
 hat jeder aus unserem Team folgende Fragen für sich beantwortet:
