@@ -15,7 +15,7 @@ Ich (Janik) habe später dann diese Antworten zusammengefasst und den "Lessons L
 hergeleitet. Wie gewünscht, führe ich hier nun die gesammelten Antworten auf. Es ist zu bedenken, dass diese von Anfang an
 dazu gedacht waren, zusammengefasst zu werden und daher nicht immer sehr ausführlich sind. 
 
-###Marius - Forum:
+### Marius - Forum:
 
 **Was hatte ich geplant?**
 - Forum, in dem Services benachrichtigungen/Meldungen mit Nutzern der Smart-City teilen können
@@ -63,7 +63,7 @@ dazu gedacht waren, zusammengefasst zu werden und daher nicht immer sehr ausfüh
 - Repos der anderen Services als Hilfe
 - Kommunikation in den Meetings meist gut, hat sich von Meeting zu Meeting verbessert(anfangs war es in den meetings ruhiger)
 
-###Jonathan - SmartAuth
+### Jonathan - SmartAuth
 
 **Was hatte ich geplant?**
 - OAuth2 Server Implementation als Microservice mit Rechteverwaltung, Single Sign On
@@ -95,7 +95,7 @@ Ding was die Arbeit eher schwerer als einfacher gemacht hat (MoonZoon)
 **Wie lieft die zusammen Arbeit in einem "großen" Team?**
 - m.E Insg. ganz gut. Viele Services sind von meinem "abhängig", das war recht stressig. 
 
-###Mario - Finanzamt
+### Mario - Finanzamt
 
 **Was hatte ich geplant?**
 - (Finanzamt)
@@ -162,7 +162,7 @@ Ding was die Arbeit eher schwerer als einfacher gemacht hat (MoonZoon)
 **Wie lief die zusammen Arbeit in einem "großen" Team?**
 - keine Probleme, da gute Kommunikation im Team
 
-###Tom - Fitnessstudio
+### Tom - Fitnessstudio
 
 **Was hatte ich geplant?**
 - (Fitnessstudio)
@@ -196,7 +196,7 @@ Ding was die Arbeit eher schwerer als einfacher gemacht hat (MoonZoon)
 **Wie lief die zusammen Arbeit in einem "großen" Team?**
 - keine Probleme, da gute Kommunikation im Team
 
-###Max - Kita
+### Max - Kita
 **Was hatte ich geplant?**
 - Kita-System, das die Platzvergabe erleichtert und in Zusammenarbeit mit den übrigen SmartCity-Services Verwaltungsfunktionen anbietet
 - Verwaltungsfunktionen sowohl für SmartCity-Teilnehmer als auch "klassisch" eingepflegte Kita-Kunden
