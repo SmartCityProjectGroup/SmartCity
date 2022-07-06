@@ -1,7 +1,5 @@
 # Lessons Learned
 
-![](img_1.png)
-
 Im Verlaufe der vergangenen Monate haben wir in Bezug zu unserer Projektarbeit viel erlebt. Wir haben viele 
 Hürden überwinden müssen und im Zuge dessen einiges gelernt. Um das Gelernte und gesammelte Eindrücke in Worte fassen zu können,
 hat jeder aus unserem Team folgende Fragen für sich beantwortet:
@@ -204,11 +202,15 @@ Ding was die Arbeit eher schwerer als einfacher gemacht hat (MoonZoon)
 - Verwaltungsfunktionen sowohl für SmartCity-Teilnehmer als auch "klassisch" eingepflegte Kita-Kunden
 
 **Was habe ich letzten Endes erreicht?**
-- durchsuchbare Kitaliste
+- Implementierung von SmartAuth für User & Mitarbeitende
+- durchsuchbare/sortierbare Kitaliste
 - Kita-Detailansicht
 - Antragserstellung durch User & durch Amt für Integration
+- File Upload: Kita-Bildergalerie von Mitarbeitenden verwaltet, Dokumente können an Vertrag angehängt & von Mitarbeitenden eingesehen werden
 - Bearbeitung von Anträgen durch Mitarbeitende
 - Einbindung in SmartCity-Ökosystem wo möglich (Gruppenticket beantragen, SmartAuth, Forumsbeiträge, Amt für Integration)
+- Mitgliedschaften ("Meine Verträge", "Meine Anträge"), Zurückziehen von Anträgen
+
 
 **Was habe ich neues gelernt?**
 - Backend/REST Apis: Expressjs konkret, sowie allgemeines Verständnis von Struktur und Zielen eines Backends (hatte bisher nur Frontend gemacht)
